@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+
+    <!--简化配置:
+    	1、自动注册DefaultAnnotationHandlerMapping,AnnotationMethodHandlerAdapter
+    	2、提供一系列:数据绑定,数字和日期的format,@NumberFormat,@DataTimeFormat,xml,json默认读写支持
+    -->
+    <mvc:annotation-driven/>
+
+    <!--静态资源默认servlet配置
+    	1、加入对静态资源的处理:js,css,gif,png
+    	2、允许使用"/"做整体映射
+    -->
+    <mvc:default-servlet-handler/>
+
+    <!--通用异常处理-->
+    <bean id="DefaultExceptionHandler" class="com.qianjiajia.kitchen.common.exception.ExceptionInterceptor"/>
+    <!--权限及登录验证器-->
+    <!--<mvc:interceptors>-->
+    <!--&lt;!&ndash; 使用bean定义一个Interceptor，直接定义在mvc:interceptors根下面的Interceptor将拦截所有的请求 &ndash;&gt;-->
+    <!--&lt;!&ndash;<bean class="com.yulintu.scale.core.sysmanager.interceptor.AuthInterceptor"/>&ndash;&gt;-->
+    <!--</mvc:interceptors>-->
+
+    <!-- 启动Springmvc注解驱动 -->
+    <mvc:annotation-driven/>
+
+    <!--&lt;!&ndash; 返回json 方法一 需要导入 fastjson.jar包 &ndash;&gt;-->
+    <!--<mvc:annotation-driven>-->
+        <!--<mvc:message-converters register-defaults="false">-->
+            <!--&lt;!&ndash; 避免IE执行AJAX时,返回JSON出现下载文件 &ndash;&gt;-->
+            <!--<bean id="fastJsonHttpMessageConverter" class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">-->
+                <!--<property name="supportedMediaTypes">-->
+                    <!--<list>-->
+                        <!--&lt;!&ndash; 这里顺序不能反，一定先写textml,不然ie下出现下载提示 &ndash;&gt;-->
+                        <!--<value>text/json;charset=UTF-8</value>-->
+                        <!--<value>application/json;charset=UTF-8</value>-->
+                    <!--</list>-->
+                <!--</property>-->
+            <!--</bean>-->
+        <!--</mvc:message-converters>-->
+    <!--</mvc:annotation-driven>-->
+
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="mappingJackson2HttpMessageConverter" />
+            </list>
+        </property>
+    </bean>
+    <bean id="mappingJackson2HttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>text/html;charset=UTF-8</value>
+                <value>text/json;charset=UTF-8</value>
+                <value>application/json;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
+</beans>
