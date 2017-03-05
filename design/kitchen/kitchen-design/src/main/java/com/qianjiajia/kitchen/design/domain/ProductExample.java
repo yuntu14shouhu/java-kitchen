@@ -175,6 +175,66 @@ public class ProductExample {
             return (Criteria) this;
         }
 
+        public Criteria andPutawayDateIsNull() {
+            addCriterion("PUTAWAY_DATE is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPutawayDateIsNotNull() {
+            addCriterion("PUTAWAY_DATE is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPutawayDateEqualTo(Date value) {
+            addCriterion("PUTAWAY_DATE =", value, "putawayDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andPutawayDateNotEqualTo(Date value) {
+            addCriterion("PUTAWAY_DATE <>", value, "putawayDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andPutawayDateGreaterThan(Date value) {
+            addCriterion("PUTAWAY_DATE >", value, "putawayDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andPutawayDateGreaterThanOrEqualTo(Date value) {
+            addCriterion("PUTAWAY_DATE >=", value, "putawayDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andPutawayDateLessThan(Date value) {
+            addCriterion("PUTAWAY_DATE <", value, "putawayDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andPutawayDateLessThanOrEqualTo(Date value) {
+            addCriterion("PUTAWAY_DATE <=", value, "putawayDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andPutawayDateIn(List<Date> values) {
+            addCriterion("PUTAWAY_DATE in", values, "putawayDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andPutawayDateNotIn(List<Date> values) {
+            addCriterion("PUTAWAY_DATE not in", values, "putawayDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andPutawayDateBetween(Date value1, Date value2) {
+            addCriterion("PUTAWAY_DATE between", value1, value2, "putawayDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andPutawayDateNotBetween(Date value1, Date value2) {
+            addCriterion("PUTAWAY_DATE not between", value1, value2, "putawayDate");
+            return (Criteria) this;
+        }
+
         public Criteria andKindsIsNull() {
             addCriterion("KINDS is null");
             return (Criteria) this;
@@ -845,123 +905,123 @@ public class ProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andDiscountpriceIsNull() {
-            addCriterion("DISCOUNTPRICE is null");
+        public Criteria andDiscountPriceIsNull() {
+            addCriterion("DISCOUNT_PRICE is null");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountpriceIsNotNull() {
-            addCriterion("DISCOUNTPRICE is not null");
+        public Criteria andDiscountPriceIsNotNull() {
+            addCriterion("DISCOUNT_PRICE is not null");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountpriceEqualTo(Double value) {
-            addCriterion("DISCOUNTPRICE =", value, "discountprice");
+        public Criteria andDiscountPriceEqualTo(Double value) {
+            addCriterion("DISCOUNT_PRICE =", value, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountpriceNotEqualTo(Double value) {
-            addCriterion("DISCOUNTPRICE <>", value, "discountprice");
+        public Criteria andDiscountPriceNotEqualTo(Double value) {
+            addCriterion("DISCOUNT_PRICE <>", value, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountpriceGreaterThan(Double value) {
-            addCriterion("DISCOUNTPRICE >", value, "discountprice");
+        public Criteria andDiscountPriceGreaterThan(Double value) {
+            addCriterion("DISCOUNT_PRICE >", value, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountpriceGreaterThanOrEqualTo(Double value) {
-            addCriterion("DISCOUNTPRICE >=", value, "discountprice");
+        public Criteria andDiscountPriceGreaterThanOrEqualTo(Double value) {
+            addCriterion("DISCOUNT_PRICE >=", value, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountpriceLessThan(Double value) {
-            addCriterion("DISCOUNTPRICE <", value, "discountprice");
+        public Criteria andDiscountPriceLessThan(Double value) {
+            addCriterion("DISCOUNT_PRICE <", value, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountpriceLessThanOrEqualTo(Double value) {
-            addCriterion("DISCOUNTPRICE <=", value, "discountprice");
+        public Criteria andDiscountPriceLessThanOrEqualTo(Double value) {
+            addCriterion("DISCOUNT_PRICE <=", value, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountpriceIn(List<Double> values) {
-            addCriterion("DISCOUNTPRICE in", values, "discountprice");
+        public Criteria andDiscountPriceIn(List<Double> values) {
+            addCriterion("DISCOUNT_PRICE in", values, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountpriceNotIn(List<Double> values) {
-            addCriterion("DISCOUNTPRICE not in", values, "discountprice");
+        public Criteria andDiscountPriceNotIn(List<Double> values) {
+            addCriterion("DISCOUNT_PRICE not in", values, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountpriceBetween(Double value1, Double value2) {
-            addCriterion("DISCOUNTPRICE between", value1, value2, "discountprice");
+        public Criteria andDiscountPriceBetween(Double value1, Double value2) {
+            addCriterion("DISCOUNT_PRICE between", value1, value2, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountpriceNotBetween(Double value1, Double value2) {
-            addCriterion("DISCOUNTPRICE not between", value1, value2, "discountprice");
+        public Criteria andDiscountPriceNotBetween(Double value1, Double value2) {
+            addCriterion("DISCOUNT_PRICE not between", value1, value2, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andIsdiscountIsNull() {
-            addCriterion("ISDISCOUNT is null");
+        public Criteria andIsDiscountIsNull() {
+            addCriterion("IS_DISCOUNT is null");
             return (Criteria) this;
         }
 
-        public Criteria andIsdiscountIsNotNull() {
-            addCriterion("ISDISCOUNT is not null");
+        public Criteria andIsDiscountIsNotNull() {
+            addCriterion("IS_DISCOUNT is not null");
             return (Criteria) this;
         }
 
-        public Criteria andIsdiscountEqualTo(Integer value) {
-            addCriterion("ISDISCOUNT =", value, "isdiscount");
+        public Criteria andIsDiscountEqualTo(Integer value) {
+            addCriterion("IS_DISCOUNT =", value, "isDiscount");
             return (Criteria) this;
         }
 
-        public Criteria andIsdiscountNotEqualTo(Integer value) {
-            addCriterion("ISDISCOUNT <>", value, "isdiscount");
+        public Criteria andIsDiscountNotEqualTo(Integer value) {
+            addCriterion("IS_DISCOUNT <>", value, "isDiscount");
             return (Criteria) this;
         }
 
-        public Criteria andIsdiscountGreaterThan(Integer value) {
-            addCriterion("ISDISCOUNT >", value, "isdiscount");
+        public Criteria andIsDiscountGreaterThan(Integer value) {
+            addCriterion("IS_DISCOUNT >", value, "isDiscount");
             return (Criteria) this;
         }
 
-        public Criteria andIsdiscountGreaterThanOrEqualTo(Integer value) {
-            addCriterion("ISDISCOUNT >=", value, "isdiscount");
+        public Criteria andIsDiscountGreaterThanOrEqualTo(Integer value) {
+            addCriterion("IS_DISCOUNT >=", value, "isDiscount");
             return (Criteria) this;
         }
 
-        public Criteria andIsdiscountLessThan(Integer value) {
-            addCriterion("ISDISCOUNT <", value, "isdiscount");
+        public Criteria andIsDiscountLessThan(Integer value) {
+            addCriterion("IS_DISCOUNT <", value, "isDiscount");
             return (Criteria) this;
         }
 
-        public Criteria andIsdiscountLessThanOrEqualTo(Integer value) {
-            addCriterion("ISDISCOUNT <=", value, "isdiscount");
+        public Criteria andIsDiscountLessThanOrEqualTo(Integer value) {
+            addCriterion("IS_DISCOUNT <=", value, "isDiscount");
             return (Criteria) this;
         }
 
-        public Criteria andIsdiscountIn(List<Integer> values) {
-            addCriterion("ISDISCOUNT in", values, "isdiscount");
+        public Criteria andIsDiscountIn(List<Integer> values) {
+            addCriterion("IS_DISCOUNT in", values, "isDiscount");
             return (Criteria) this;
         }
 
-        public Criteria andIsdiscountNotIn(List<Integer> values) {
-            addCriterion("ISDISCOUNT not in", values, "isdiscount");
+        public Criteria andIsDiscountNotIn(List<Integer> values) {
+            addCriterion("IS_DISCOUNT not in", values, "isDiscount");
             return (Criteria) this;
         }
 
-        public Criteria andIsdiscountBetween(Integer value1, Integer value2) {
-            addCriterion("ISDISCOUNT between", value1, value2, "isdiscount");
+        public Criteria andIsDiscountBetween(Integer value1, Integer value2) {
+            addCriterion("IS_DISCOUNT between", value1, value2, "isDiscount");
             return (Criteria) this;
         }
 
-        public Criteria andIsdiscountNotBetween(Integer value1, Integer value2) {
-            addCriterion("ISDISCOUNT not between", value1, value2, "isdiscount");
+        public Criteria andIsDiscountNotBetween(Integer value1, Integer value2) {
+            addCriterion("IS_DISCOUNT not between", value1, value2, "isDiscount");
             return (Criteria) this;
         }
 
@@ -1262,6 +1322,306 @@ public class ProductExample {
 
         public Criteria andCarriageNotBetween(Double value1, Double value2) {
             addCriterion("CARRIAGE not between", value1, value2, "carriage");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsGroupBuyIsNull() {
+            addCriterion("IS_GROUP_BUY is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsGroupBuyIsNotNull() {
+            addCriterion("IS_GROUP_BUY is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsGroupBuyEqualTo(Integer value) {
+            addCriterion("IS_GROUP_BUY =", value, "isGroupBuy");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsGroupBuyNotEqualTo(Integer value) {
+            addCriterion("IS_GROUP_BUY <>", value, "isGroupBuy");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsGroupBuyGreaterThan(Integer value) {
+            addCriterion("IS_GROUP_BUY >", value, "isGroupBuy");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsGroupBuyGreaterThanOrEqualTo(Integer value) {
+            addCriterion("IS_GROUP_BUY >=", value, "isGroupBuy");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsGroupBuyLessThan(Integer value) {
+            addCriterion("IS_GROUP_BUY <", value, "isGroupBuy");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsGroupBuyLessThanOrEqualTo(Integer value) {
+            addCriterion("IS_GROUP_BUY <=", value, "isGroupBuy");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsGroupBuyIn(List<Integer> values) {
+            addCriterion("IS_GROUP_BUY in", values, "isGroupBuy");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsGroupBuyNotIn(List<Integer> values) {
+            addCriterion("IS_GROUP_BUY not in", values, "isGroupBuy");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsGroupBuyBetween(Integer value1, Integer value2) {
+            addCriterion("IS_GROUP_BUY between", value1, value2, "isGroupBuy");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsGroupBuyNotBetween(Integer value1, Integer value2) {
+            addCriterion("IS_GROUP_BUY not between", value1, value2, "isGroupBuy");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPriceIsNull() {
+            addCriterion("GROUP_BUY_PRICE is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPriceIsNotNull() {
+            addCriterion("GROUP_BUY_PRICE is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPriceEqualTo(Double value) {
+            addCriterion("GROUP_BUY_PRICE =", value, "groupBuyPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPriceNotEqualTo(Double value) {
+            addCriterion("GROUP_BUY_PRICE <>", value, "groupBuyPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPriceGreaterThan(Double value) {
+            addCriterion("GROUP_BUY_PRICE >", value, "groupBuyPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPriceGreaterThanOrEqualTo(Double value) {
+            addCriterion("GROUP_BUY_PRICE >=", value, "groupBuyPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPriceLessThan(Double value) {
+            addCriterion("GROUP_BUY_PRICE <", value, "groupBuyPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPriceLessThanOrEqualTo(Double value) {
+            addCriterion("GROUP_BUY_PRICE <=", value, "groupBuyPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPriceIn(List<Double> values) {
+            addCriterion("GROUP_BUY_PRICE in", values, "groupBuyPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPriceNotIn(List<Double> values) {
+            addCriterion("GROUP_BUY_PRICE not in", values, "groupBuyPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPriceBetween(Double value1, Double value2) {
+            addCriterion("GROUP_BUY_PRICE between", value1, value2, "groupBuyPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPriceNotBetween(Double value1, Double value2) {
+            addCriterion("GROUP_BUY_PRICE not between", value1, value2, "groupBuyPrice");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPersonNumberIsNull() {
+            addCriterion("GROUP_BUY_PERSON_NUMBER is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPersonNumberIsNotNull() {
+            addCriterion("GROUP_BUY_PERSON_NUMBER is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPersonNumberEqualTo(Integer value) {
+            addCriterion("GROUP_BUY_PERSON_NUMBER =", value, "groupBuyPersonNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPersonNumberNotEqualTo(Integer value) {
+            addCriterion("GROUP_BUY_PERSON_NUMBER <>", value, "groupBuyPersonNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPersonNumberGreaterThan(Integer value) {
+            addCriterion("GROUP_BUY_PERSON_NUMBER >", value, "groupBuyPersonNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPersonNumberGreaterThanOrEqualTo(Integer value) {
+            addCriterion("GROUP_BUY_PERSON_NUMBER >=", value, "groupBuyPersonNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPersonNumberLessThan(Integer value) {
+            addCriterion("GROUP_BUY_PERSON_NUMBER <", value, "groupBuyPersonNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPersonNumberLessThanOrEqualTo(Integer value) {
+            addCriterion("GROUP_BUY_PERSON_NUMBER <=", value, "groupBuyPersonNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPersonNumberIn(List<Integer> values) {
+            addCriterion("GROUP_BUY_PERSON_NUMBER in", values, "groupBuyPersonNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPersonNumberNotIn(List<Integer> values) {
+            addCriterion("GROUP_BUY_PERSON_NUMBER not in", values, "groupBuyPersonNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPersonNumberBetween(Integer value1, Integer value2) {
+            addCriterion("GROUP_BUY_PERSON_NUMBER between", value1, value2, "groupBuyPersonNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andGroupBuyPersonNumberNotBetween(Integer value1, Integer value2) {
+            addCriterion("GROUP_BUY_PERSON_NUMBER not between", value1, value2, "groupBuyPersonNumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartGroupBuyDateIsNull() {
+            addCriterion("START_GROUP_BUY_DATE is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartGroupBuyDateIsNotNull() {
+            addCriterion("START_GROUP_BUY_DATE is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartGroupBuyDateEqualTo(Date value) {
+            addCriterion("START_GROUP_BUY_DATE =", value, "startGroupBuyDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartGroupBuyDateNotEqualTo(Date value) {
+            addCriterion("START_GROUP_BUY_DATE <>", value, "startGroupBuyDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartGroupBuyDateGreaterThan(Date value) {
+            addCriterion("START_GROUP_BUY_DATE >", value, "startGroupBuyDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartGroupBuyDateGreaterThanOrEqualTo(Date value) {
+            addCriterion("START_GROUP_BUY_DATE >=", value, "startGroupBuyDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartGroupBuyDateLessThan(Date value) {
+            addCriterion("START_GROUP_BUY_DATE <", value, "startGroupBuyDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartGroupBuyDateLessThanOrEqualTo(Date value) {
+            addCriterion("START_GROUP_BUY_DATE <=", value, "startGroupBuyDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartGroupBuyDateIn(List<Date> values) {
+            addCriterion("START_GROUP_BUY_DATE in", values, "startGroupBuyDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartGroupBuyDateNotIn(List<Date> values) {
+            addCriterion("START_GROUP_BUY_DATE not in", values, "startGroupBuyDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartGroupBuyDateBetween(Date value1, Date value2) {
+            addCriterion("START_GROUP_BUY_DATE between", value1, value2, "startGroupBuyDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andStartGroupBuyDateNotBetween(Date value1, Date value2) {
+            addCriterion("START_GROUP_BUY_DATE not between", value1, value2, "startGroupBuyDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEndGroupBuyDateIsNull() {
+            addCriterion("END_GROUP_BUY_DATE is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEndGroupBuyDateIsNotNull() {
+            addCriterion("END_GROUP_BUY_DATE is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEndGroupBuyDateEqualTo(Date value) {
+            addCriterion("END_GROUP_BUY_DATE =", value, "endGroupBuyDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEndGroupBuyDateNotEqualTo(Date value) {
+            addCriterion("END_GROUP_BUY_DATE <>", value, "endGroupBuyDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEndGroupBuyDateGreaterThan(Date value) {
+            addCriterion("END_GROUP_BUY_DATE >", value, "endGroupBuyDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEndGroupBuyDateGreaterThanOrEqualTo(Date value) {
+            addCriterion("END_GROUP_BUY_DATE >=", value, "endGroupBuyDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEndGroupBuyDateLessThan(Date value) {
+            addCriterion("END_GROUP_BUY_DATE <", value, "endGroupBuyDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEndGroupBuyDateLessThanOrEqualTo(Date value) {
+            addCriterion("END_GROUP_BUY_DATE <=", value, "endGroupBuyDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEndGroupBuyDateIn(List<Date> values) {
+            addCriterion("END_GROUP_BUY_DATE in", values, "endGroupBuyDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEndGroupBuyDateNotIn(List<Date> values) {
+            addCriterion("END_GROUP_BUY_DATE not in", values, "endGroupBuyDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEndGroupBuyDateBetween(Date value1, Date value2) {
+            addCriterion("END_GROUP_BUY_DATE between", value1, value2, "endGroupBuyDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andEndGroupBuyDateNotBetween(Date value1, Date value2) {
+            addCriterion("END_GROUP_BUY_DATE not between", value1, value2, "endGroupBuyDate");
             return (Criteria) this;
         }
 

@@ -92,13 +92,55 @@ public class ProductQuery extends BaseQuery {
      * 优惠价格
      */
     @ApiModelProperty("优惠价格")
-    private Double discountprice;
+    private Double discountPrice;
+
+    /**
+     * 上架日期
+     */
+    @ApiModelProperty("上架日期")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date putawayDate;
+
+    /**
+     * 是否团购
+     */
+    @ApiModelProperty("是否团购")
+    private Integer isGroupBuy;
+
+    /**
+     * 团购价格
+     */
+    @ApiModelProperty("团购价格")
+    private Double groupBuyPrice;
+
+    /**
+     * 团购人数
+     */
+    @ApiModelProperty("团购人数")
+    private Integer groupBuyPersonNumber;
+
+    /**
+     * 团购开始日期
+     */
+    @ApiModelProperty("团购开始日期")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date startGroupBuyDate;
+
+    /**
+     * 团购结束日期
+     */
+    @ApiModelProperty("团购结束日期")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date endGroupBuyDate;
 
     /**
      * 是否优惠
      */
     @ApiModelProperty("是否优惠")
-    private Integer isdiscount;
+    private Integer isDiscount;
 
     /**
      * 用餐人数
@@ -189,11 +231,11 @@ public class ProductQuery extends BaseQuery {
         if(!StringUtils.isEmpty(price)){
             criteria.andPriceEqualTo(price);
         }
-        if(!StringUtils.isEmpty(discountprice)){
-            criteria.andDiscountpriceEqualTo(discountprice);
+        if(!StringUtils.isEmpty(discountPrice)){
+            criteria.andDiscountPriceEqualTo(discountPrice);
         }
-        if(!StringUtils.isEmpty(isdiscount)){
-            criteria.andIsdiscountEqualTo(isdiscount);
+        if(!StringUtils.isEmpty(isDiscount)){
+            criteria.andIsDiscountEqualTo(isDiscount);
         }
         if(!StringUtils.isEmpty(limitNumber)){
             criteria.andLimitNumberEqualTo(limitNumber);
@@ -218,6 +260,24 @@ public class ProductQuery extends BaseQuery {
         }
         if(!StringUtils.isEmpty(keyword)){
             criteria.andKeyClassEqualTo(keyword);
+        }
+        if(!StringUtils.isEmpty(putawayDate)){
+            criteria.andPutawayDateEqualTo(putawayDate);
+        }
+        if(!StringUtils.isEmpty(isGroupBuy)){
+            criteria.andIsGroupBuyEqualTo(isGroupBuy);
+        }
+        if(!StringUtils.isEmpty(groupBuyPersonNumber)){
+            criteria.andGroupBuyPersonNumberEqualTo(groupBuyPersonNumber);
+        }
+        if(!StringUtils.isEmpty(groupBuyPrice)){
+            criteria.andGroupBuyPriceEqualTo(groupBuyPrice);
+        }
+        if(!StringUtils.isEmpty(startGroupBuyDate)){
+            criteria.andStartGroupBuyDateEqualTo(startGroupBuyDate);
+        }
+        if(!StringUtils.isEmpty(endGroupBuyDate)){
+            criteria.andEndGroupBuyDateEqualTo(endGroupBuyDate);
         }
         return productExample;
     }

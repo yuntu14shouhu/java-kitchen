@@ -33,4 +33,14 @@ public interface ProductMapper {
     List<Product> getAll(ProductQuery productQuery);
 
     Product getById(String productId);
+
+    List<Product> productIsDiscount(ProductQuery productQuery);
+
+    List<Product> productIsGroup(ProductQuery productQuery);
+
+    List<Product> productByPutawayDate(ProductQuery productQuery);
+
+    List<Product> queryByBigClass(String bigClass);
+
+    List<Product> queryBySmallClass(String smallClass);
 }

@@ -53,6 +53,9 @@ public interface IShoppingCartService {
      */
     void updateStatus(String id);
 
+    /**
+     *
+     */
     void updateNumber(String id);
 
 

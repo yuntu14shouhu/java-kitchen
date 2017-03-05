@@ -1,12 +1,11 @@
 package com.qianjiajia.kitchen.design.domain;
 
-import lombok.ToString;
-
 import java.util.Date;
 
-@ToString
 public class Product {
     private String id;
+
+    private Date putawayDate;
 
     private String kinds;
 
@@ -28,9 +27,9 @@ public class Product {
 
     private Double price;
 
-    private Double discountprice;
+    private Double discountPrice;
 
-    private Integer isdiscount;
+    private Integer isDiscount;
 
     private Integer limitNumber;
 
@@ -41,6 +40,16 @@ public class Product {
     private Date endDate;
 
     private Double carriage;
+
+    private Integer isGroupBuy;
+
+    private Double groupBuyPrice;
+
+    private Integer groupBuyPersonNumber;
+
+    private Date startGroupBuyDate;
+
+    private Date endGroupBuyDate;
 
     private String keyClass;
 
@@ -54,6 +63,14 @@ public class Product {
 
     public void setId(String id) {
         this.id = id == null ? null : id.trim();
+    }
+
+    public Date getPutawayDate() {
+        return putawayDate;
+    }
+
+    public void setPutawayDate(Date putawayDate) {
+        this.putawayDate = putawayDate;
     }
 
     public String getKinds() {
@@ -136,20 +153,20 @@ public class Product {
         this.price = price;
     }
 
-    public Double getDiscountprice() {
-        return discountprice;
+    public Double getDiscountPrice() {
+        return discountPrice;
     }
 
-    public void setDiscountprice(Double discountprice) {
-        this.discountprice = discountprice;
+    public void setDiscountPrice(Double discountPrice) {
+        this.discountPrice = discountPrice;
     }
 
-    public Integer getIsdiscount() {
-        return isdiscount;
+    public Integer getIsDiscount() {
+        return isDiscount;
     }
 
-    public void setIsdiscount(Integer isdiscount) {
-        this.isdiscount = isdiscount;
+    public void setIsDiscount(Integer isDiscount) {
+        this.isDiscount = isDiscount;
     }
 
     public Integer getLimitNumber() {
@@ -190,6 +207,46 @@ public class Product {
 
     public void setCarriage(Double carriage) {
         this.carriage = carriage;
+    }
+
+    public Integer getIsGroupBuy() {
+        return isGroupBuy;
+    }
+
+    public void setIsGroupBuy(Integer isGroupBuy) {
+        this.isGroupBuy = isGroupBuy;
+    }
+
+    public Double getGroupBuyPrice() {
+        return groupBuyPrice;
+    }
+
+    public void setGroupBuyPrice(Double groupBuyPrice) {
+        this.groupBuyPrice = groupBuyPrice;
+    }
+
+    public Integer getGroupBuyPersonNumber() {
+        return groupBuyPersonNumber;
+    }
+
+    public void setGroupBuyPersonNumber(Integer groupBuyPersonNumber) {
+        this.groupBuyPersonNumber = groupBuyPersonNumber;
+    }
+
+    public Date getStartGroupBuyDate() {
+        return startGroupBuyDate;
+    }
+
+    public void setStartGroupBuyDate(Date startGroupBuyDate) {
+        this.startGroupBuyDate = startGroupBuyDate;
+    }
+
+    public Date getEndGroupBuyDate() {
+        return endGroupBuyDate;
+    }
+
+    public void setEndGroupBuyDate(Date endGroupBuyDate) {
+        this.endGroupBuyDate = endGroupBuyDate;
     }
 
     public String getKeyClass() {

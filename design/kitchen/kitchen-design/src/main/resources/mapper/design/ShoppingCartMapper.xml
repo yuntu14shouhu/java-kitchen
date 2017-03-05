@@ -99,7 +99,6 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-
   <insert id="insert" parameterType="com.qianjiajia.kitchen.design.domain.ShoppingCart">
     insert into shoppingcart (ID, USER_ID, PRODUCT_ID, 
       STATUS, PRODUCT_NUMBER)

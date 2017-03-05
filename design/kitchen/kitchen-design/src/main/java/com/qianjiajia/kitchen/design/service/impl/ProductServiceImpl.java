@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -28,6 +29,7 @@ public class ProductServiceImpl implements IProductService{
     @Transactional
     public void save(Product product) {
         product.setId(UUIDUtil.getUUID());
+        product.setPutawayDate(new Date());
         productMapper.insert(product);
     }
 
@@ -54,4 +56,37 @@ public class ProductServiceImpl implements IProductService{
     public void delete(String productId) {
         productMapper.deleteByPrimaryKey(productId);
     }
+
+    @Override
+    @Page
+    public PageResult productIsDiscount(ProductQuery productQuery) {
+        List<Product> productList = productMapper.productIsDiscount(productQuery);
+        return new PageResult(productList);
+    }
+
+    @Override
+    @Page
+    public PageResult productIsGroup(ProductQuery productQuery) {
+        List<Product> productList = productMapper.productIsGroup(productQuery);
+        return new PageResult(productList);
+    }
+
+    @Override
+    @Page
+    public PageResult productByPutawayDate(ProductQuery productQuery) {
+        List<Product> productList = productMapper.productByPutawayDate(productQuery);
+        return new PageResult(productList);
+    }
+
+    @Override
+    public List<Product> queryByBigClass(String bigClass) {
+        return productMapper.queryByBigClass(bigClass);
+    }
+
+    @Override
+    public List<Product> queryBySmallClass(String smallClass) {
+        return productMapper.queryBySmallClass(smallClass);
+    }
+
+
 }

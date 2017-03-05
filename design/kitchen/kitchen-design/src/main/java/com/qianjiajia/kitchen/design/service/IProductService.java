@@ -4,6 +4,8 @@ import com.qianjiajia.kitchen.common.result.PageResult;
 import com.qianjiajia.kitchen.design.domain.Product;
 import com.qianjiajia.kitchen.design.query.ProductQuery;
 
+import java.util.List;
+
 /**
  * @author qianjiajia
  * @version 1.0
@@ -38,4 +40,30 @@ public interface IProductService {
      * 删除商品
      */
     void delete(String productId);
+
+    /**
+     * 优惠套餐查询
+     */
+    PageResult productIsDiscount(ProductQuery productQuery);
+
+    /**
+     * 劲爆团购查询
+     */
+    PageResult productIsGroup(ProductQuery productQuery);
+
+    /**
+     * 人气推荐查询
+     * 根据商品上架日期逆序排序，返回最前面的四条
+     */
+    PageResult productByPutawayDate(ProductQuery productQuery);
+
+    /**
+     * 根据商品的大类别查询商品
+     */
+    List<Product> queryByBigClass(String bigClass);
+
+    /**
+     * 根据商品的小类别查询商品
+     */
+    List<Product> queryBySmallClass(String smallClass);
 }

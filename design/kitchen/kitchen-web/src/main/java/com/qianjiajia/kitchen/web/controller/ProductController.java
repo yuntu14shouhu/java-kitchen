@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 /**
  * @author qianjiajia
  * @version 1.0
@@ -67,5 +69,45 @@ public class ProductController {
     public MessageResult update(@RequestBody Product product){
         productService.update(product);
         return MessageResult.getSuccessInstance();
+    }
+
+    @ApiOperation(value = "优惠套餐")
+    @ResponseBody
+    @RequestMapping(value = "/productIsDiscount",method = RequestMethod.GET)
+    public MessageResult productIsDiscount(ProductQuery productQuery){
+        PageResult pageResult = productService.productIsDiscount(productQuery);
+        return MessageResult.getSuccessInstance(pageResult);
+    }
+
+    @ApiOperation(value = "劲爆团购")
+    @ResponseBody
+    @RequestMapping(value = "/productIsGroup",method = RequestMethod.GET)
+    public MessageResult productIsGroup(ProductQuery productQuery){
+        PageResult pageResult = productService.productIsGroup(productQuery);
+        return MessageResult.getSuccessInstance(pageResult);
+    }
+
+    @ApiOperation(value = "人气推荐")
+    @ResponseBody
+    @RequestMapping(value = "/productByPutawayDate",method = RequestMethod.GET)
+    public MessageResult productByPutawayDate (ProductQuery productQuery){
+        PageResult pageResult = productService.productByPutawayDate(productQuery);
+        return MessageResult.getSuccessInstance(pageResult);
+    }
+
+    @ApiOperation(value = "根据商品的大类别查询商品")
+    @ResponseBody
+    @RequestMapping(value = "/queryByBigClass",method = RequestMethod.GET)
+    public MessageResult queryByBigClass(String bigClass){
+        List<Product> productList = productService.queryByBigClass(bigClass);
+        return MessageResult.getSuccessInstance(productList);
+    }
+
+    @ApiOperation(value = "根据商品的小类别查询商品")
+    @ResponseBody
+    @RequestMapping(value = "/queryBySmallClass",method = RequestMethod.GET)
+    public MessageResult queryBySmallClass(String smallClass){
+        List<Product> productList = productService.queryBySmallClass(smallClass);
+        return MessageResult.getSuccessInstance(productList);
     }
 }

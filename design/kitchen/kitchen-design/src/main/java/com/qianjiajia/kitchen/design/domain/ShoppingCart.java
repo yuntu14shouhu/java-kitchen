@@ -1,8 +1,5 @@
 package com.qianjiajia.kitchen.design.domain;
 
-import lombok.ToString;
-
-@ToString
 public class ShoppingCart {
     private String id;
 
