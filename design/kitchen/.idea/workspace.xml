@@ -1455,7 +1455,7 @@
       <workItem from="1489371835362" duration="4200000" />
       <workItem from="1489376066291" duration="5516000" />
       <workItem from="1489454409198" duration="8429000" />
-      <workItem from="1489472854590" duration="2048000" />
+      <workItem from="1489472854590" duration="2403000" />
     </task>
     <task id="LOCAL-00001" summary="[kitchen-java]基本接口实现">
       <created>1488468141090</created>
@@ -1500,7 +1500,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196631000" />
+    <option name="totallyTimeSpent" value="196986000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
