@@ -31,7 +31,7 @@ public class ShoppingCartController {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
-    @ApiOperation(value = "购物车查询")
+    @ApiOperation(value = "购物车查询----根据购物车状态，用户id查询购物车")
     @ResponseBody
     @RequestMapping(value = "/query",method = RequestMethod.GET)
     public MessageResult query(int status,String usersId){
@@ -39,7 +39,7 @@ public class ShoppingCartController {
         return MessageResult.getSuccessInstance(shoppingCarts);
     }
 
-    @ApiOperation(value = "购物车查询")
+    @ApiOperation(value = "购物车查询----根据用户id获取购物车中的所有商品")
     @ResponseBody
     @RequestMapping(value = "/queryByUserId",method = RequestMethod.GET)
     public MessageResult queryByUserId(String usersId){
@@ -47,7 +47,7 @@ public class ShoppingCartController {
         return MessageResult.getSuccessInstance(shoppingCarts);
     }
 
-    @ApiOperation(value = "购物车查询")
+    @ApiOperation(value = "购物车查询----根据购物车状态，商品id，用户id查询购物")
     @ResponseBody
     @RequestMapping(value = "/queryByProductId",method = RequestMethod.GET)
     public MessageResult queryByProductId(int status,String productId,String usersId){
@@ -55,7 +55,7 @@ public class ShoppingCartController {
         return MessageResult.getSuccessInstance(shoppingCart);
     }
 
-    @ApiOperation(value = "购物车删除")
+    @ApiOperation(value = "购物车删除----根据购物车状态，商品id，用户id删除购物车")
     @ResponseBody
     @RequestMapping(value = "/delete",method = RequestMethod.GET)
     public MessageResult delete(int status,String productId,String usersId){
@@ -63,7 +63,7 @@ public class ShoppingCartController {
         return MessageResult.getSuccessInstance();
     }
 
-    @ApiOperation(value = "购物车删除")
+    @ApiOperation(value = "购物车删除----根据用户id，购物车状态删除购物车")
     @ResponseBody
     @RequestMapping(value = "/deleteAll",method = RequestMethod.GET)
     public MessageResult deleteAll(String usersId,int status){
@@ -71,7 +71,7 @@ public class ShoppingCartController {
         return MessageResult.getSuccessInstance();
     }
 
-    @ApiOperation(value = "购物车添加")
+    @ApiOperation(value = "购物车添加----该商品已经存在")
     @ResponseBody
     @RequestMapping(value = "/saveById",method = RequestMethod.POST)
     public MessageResult saveById(String id){
@@ -79,7 +79,7 @@ public class ShoppingCartController {
         return MessageResult.getSuccessInstance();
     }
 
-    @ApiOperation(value = "购物车添加")
+    @ApiOperation(value = "购物车添加----商品不存在")
     @ResponseBody
     @RequestMapping(value = "/save",method = RequestMethod.POST)
     public MessageResult save(ShoppingCart shoppingCart){
@@ -87,7 +87,7 @@ public class ShoppingCartController {
         return MessageResult.getSuccessInstance();
     }
 
-    @ApiOperation(value = "购物车修改")
+    @ApiOperation(value = "购物车修改----修改购物车状态")
     @ResponseBody
     @RequestMapping(value = "/updateStatus",method = RequestMethod.POST)
     public MessageResult update(String id){
@@ -95,7 +95,7 @@ public class ShoppingCartController {
         return MessageResult.getSuccessInstance();
     }
 
-    @ApiOperation(value = "购物车修改")
+    @ApiOperation(value = "购物车修改----修改商品数量")
     @ResponseBody
     @RequestMapping(value = "/update",method = RequestMethod.POST)
     public MessageResult updateNumber(String id){

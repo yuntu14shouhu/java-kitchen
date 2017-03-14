@@ -10,8 +10,8 @@
     <result column="STATUS" jdbcType="INTEGER" property="status" />
     <result column="SEX" jdbcType="VARCHAR" property="sex" />
     <result column="AGE" jdbcType="INTEGER" property="age" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
     <result column="REMARK" jdbcType="VARCHAR" property="remark" />
-    <result column="CREATE_TIME" jdbcType="DATE" property="createTime" />
     <result column="CONTACTS" jdbcType="VARCHAR" property="contacts" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -73,7 +73,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    ID, USER_NAME, PASSWORD, NICK_NAME, SALT, STATUS, SEX, AGE, REMARK, CREATE_TIME, 
+    ID, USER_NAME, PASSWORD, NICK_NAME, SALT, STATUS, SEX, AGE, CREATE_TIME, REMARK, 
     CONTACTS
   </sql>
   <select id="selectByExample" parameterType="com.qianjiajia.kitchen.design.domain.UsersExample" resultMap="BaseResultMap">
@@ -109,12 +109,12 @@
   <insert id="insert" parameterType="com.qianjiajia.kitchen.design.domain.Users">
     insert into users (ID, USER_NAME, PASSWORD, 
       NICK_NAME, SALT, STATUS, 
-      SEX, AGE, REMARK, CREATE_TIME, 
-      CONTACTS)
+      SEX, AGE, CREATE_TIME, 
+      REMARK, CONTACTS)
     values (#{id,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{nickName,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
-      #{sex,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, 
-      #{contacts,jdbcType=VARCHAR})
+      #{sex,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{remark,jdbcType=VARCHAR}, #{contacts,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.qianjiajia.kitchen.design.domain.Users">
     insert into users
@@ -143,11 +143,11 @@
       <if test="age != null">
         AGE,
       </if>
-      <if test="remark != null">
-        REMARK,
-      </if>
       <if test="createTime != null">
         CREATE_TIME,
+      </if>
+      <if test="remark != null">
+        REMARK,
       </if>
       <if test="contacts != null">
         CONTACTS,
@@ -178,11 +178,11 @@
       <if test="age != null">
         #{age,jdbcType=INTEGER},
       </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
       <if test="remark != null">
         #{remark,jdbcType=VARCHAR},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=DATE},
       </if>
       <if test="contacts != null">
         #{contacts,jdbcType=VARCHAR},
@@ -222,11 +222,11 @@
       <if test="record.age != null">
         AGE = #{record.age,jdbcType=INTEGER},
       </if>
+      <if test="record.createTime != null">
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
       <if test="record.remark != null">
         REMARK = #{record.remark,jdbcType=VARCHAR},
-      </if>
-      <if test="record.createTime != null">
-        CREATE_TIME = #{record.createTime,jdbcType=DATE},
       </if>
       <if test="record.contacts != null">
         CONTACTS = #{record.contacts,jdbcType=VARCHAR},
@@ -246,8 +246,8 @@
       STATUS = #{record.status,jdbcType=INTEGER},
       SEX = #{record.sex,jdbcType=VARCHAR},
       AGE = #{record.age,jdbcType=INTEGER},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
       REMARK = #{record.remark,jdbcType=VARCHAR},
-      CREATE_TIME = #{record.createTime,jdbcType=DATE},
       CONTACTS = #{record.contacts,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -277,11 +277,11 @@
       <if test="age != null">
         AGE = #{age,jdbcType=INTEGER},
       </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
       <if test="remark != null">
         REMARK = #{remark,jdbcType=VARCHAR},
-      </if>
-      <if test="createTime != null">
-        CREATE_TIME = #{createTime,jdbcType=DATE},
       </if>
       <if test="contacts != null">
         CONTACTS = #{contacts,jdbcType=VARCHAR},
@@ -298,8 +298,8 @@
       STATUS = #{status,jdbcType=INTEGER},
       SEX = #{sex,jdbcType=VARCHAR},
       AGE = #{age,jdbcType=INTEGER},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
       REMARK = #{remark,jdbcType=VARCHAR},
-      CREATE_TIME = #{createTime,jdbcType=DATE},
       CONTACTS = #{contacts,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=VARCHAR}
   </update>

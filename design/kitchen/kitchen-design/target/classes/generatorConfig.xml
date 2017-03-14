@@ -8,8 +8,8 @@
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/shop"
-                        userId="root" password="jiajia">
+                        connectionURL="jdbc:oracle:thin:@//localhost:1521/orcl"
+                        userId="qjj" password="qjj">
         </jdbcConnection>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
@@ -31,7 +31,7 @@
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
 
-        <!--<table tableName="USERS" domainObjectName="Users"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>-->
+        <table tableName="USERS" domainObjectName="Users"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>
         <table tableName="PRODUCT" domainObjectName="Product"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>
         <table tableName="SHOPPINGCART" domainObjectName="ShoppingCart"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>
     </context>

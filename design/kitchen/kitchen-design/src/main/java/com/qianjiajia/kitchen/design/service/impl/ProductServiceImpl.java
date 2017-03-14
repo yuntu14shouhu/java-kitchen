@@ -26,6 +26,11 @@ public class ProductServiceImpl implements IProductService{
     private ProductMapper productMapper;
 
     @Override
+    public List<Product> pageSlide() {
+        return productMapper.getPage();
+    }
+
+    @Override
     @Transactional
     public void save(Product product) {
         product.setId(UUIDUtil.getUUID());

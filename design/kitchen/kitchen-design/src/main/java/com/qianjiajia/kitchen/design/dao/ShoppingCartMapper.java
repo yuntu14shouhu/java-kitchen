@@ -6,6 +6,7 @@ import com.qianjiajia.kitchen.design.query.ShoppingCartQuery;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface ShoppingCartMapper {
     long countByExample(ShoppingCartExample example);

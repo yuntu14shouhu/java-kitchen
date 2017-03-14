@@ -20,11 +20,6 @@
         </dependency>
         <dependency>
             <groupId>com.qianjiajia.kitchen</groupId>
-            <artifactId>kitchen-service</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.qianjiajia.kitchen</groupId>
             <artifactId>kitchen-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

@@ -614,17 +614,47 @@
         AND DISCOUNT_PRICE = #{discountPricePattern}
       </if>
     </where>
-    where IS_DISCOUNT = #{isDiscount,jdbcType=INTEGER}
+    where IS_DISCOUNT = 1
   </select>
   <select id="productIsGroup"  parameterType="com.qianjiajia.kitchen.design.query.ProductQuery" resultMap="BaseResultMap">
     SELECT  ID,PRODUCT_NAME,PRODUCT_IMAGE_URL, GROUP_BUY_PRICE,GROUP_BUY_PERSON_NUMBER ,
       START_GROUP_BUY_DATE ,END_GROUP_BUY_DATE
     FROM product
-    WHERE IS_GROUP_BUY = #{isGroupBuy,jdbcType=INTEGER}
+      <where>
+          <if test="id != null and id != ''">
+              <bind name="idPattern" value="_parameter.getId()"/>
+              AND ID = #{idPattern}
+          </if>
+          <if test="productName != null and productName != ''">
+              <bind name="productNamePattern" value="_parameter.getProductName()"/>
+              AND PRODUCT_NAME = #{productNamePattern}
+          </if>
+          <if test="productImageUrl != null and productImageUrl != ''">
+              <bind name="productImageUrlPattern" value="_parameter.getProductImageUrl()"/>
+              AND PRODUCT_IMAGE_URL = #{productImageUrlPattern}
+          </if>
+          <if test="groupBuyPrice != null and groupBuyPrice != ''">
+              <bind name="groupBuyPricePattern" value="_parameter.getGroupBuyPrice()"/>
+              AND GROUP_BUY_PRICE = #{groupBuyPricePattern}
+          </if>
+          <if test="groupBuyPersonNumber != null and groupBuyPersonNumber != ''">
+              <bind name="groupBuyPersonNumberPattern" value="_parameter.getGroupBuyPersonNumber()"/>
+              AND GROUP_BUY_PERSON_NUMBER = #{groupBuyPersonNumberPattern}
+          </if>
+          <if test="startGroupBuyDate != null and startGroupBuyDate != ''">
+              <bind name="startGroupBuyDatePattern" value="_parameter.getStartGroupBuyDate()"/>
+              AND START_GROUP_BUY_DATE = #{startGroupBuyDatePattern}
+          </if>
+          <if test="endGroupBuyDate != null and endGroupBuyDate != ''">
+              <bind name="endGroupBuyDatePattern" value="_parameter.getEndGroupBuyDate()"/>
+              AND END_GROUP_BUY_DATE = #{endGroupBuyDatePattern}
+          </if>
+      </where>
+    WHERE IS_GROUP_BUY = 1
   </select>
   <select id="productByPutawayDate" parameterType="com.qianjiajia.kitchen.design.query.ProductQuery" resultType="com.qianjiajia.kitchen.design.domain.Product">
     SELECT ID,PRODUCT_NAME,PRODUCT_IMAGE_URL, PRICE
-    FROM product ORDER BY 'putaway_date' DESC LIMIT 4
+      FROM (select * from PRODUCT order by PUTAWAY_DATE)
     <where>
     <if test="id != null and id != ''">
       <bind name="idPattern" value="_parameter.getId()"/>
@@ -643,48 +673,22 @@
       AND PRICE = #{pricePattern}
     </if>
     </where>
+      where rownum &lt;=4 and PRODUCT_NAME != 'string'
   </select>
   <select id="queryByBigClass" parameterType="java.lang.String"  resultType="com.qianjiajia.kitchen.design.domain.Product">
-    SELECT  ID,PRODUCT_NAME,PRODUCT_IMAGE_URL
+    SELECT  ID,KEY_CLASS,PRODUCT_IMAGE_URL
     FROM product
-    <where>
-    <if test="id != null and id != ''">
-      <bind name="idPattern" value="_parameter.getId()"/>
-      AND ID = #{idPattern}
-    </if>
-    <if test="productName != null and productName != ''">
-      <bind name="productNamePattern" value="_parameter.getProductName()"/>
-      AND PRODUCT_NAME = #{productNamePattern}
-    </if>
-    <if test="productImageUrl != null and productImageUrl != ''">
-      <bind name="productImageUrlPattern" value="_parameter.getProductImageUrl()"/>
-      AND PRODUCT_IMAGE_URL = #{productImageUrlPattern}
-    </if>
-    </where>
     WHERE
-      BIG_KEY_CLASS = #{bigKeyClass,jdbcType=VARCHAR}
+      BIG_KEY_CLASS = #{bigKeyClass} and PRICE = 0
   </select>
   <select id="queryBySmallClass" parameterType="java.lang.String" resultType="com.qianjiajia.kitchen.design.domain.Product">
     SELECT ID,PRODUCT_NAME,PRODUCT_IMAGE_URL,PRICE
     FROM product
-    <!--<where>-->
-      <!--<if test="id != null and id != ''">-->
-        <!--<bind name="idPattern" value="_parameter.getId()"/>-->
-        <!--AND ID = #{idPattern}-->
-      <!--</if>-->
-      <!--<if test="productName != null and productName != ''">-->
-        <!--<bind name="productNamePattern" value="_parameter.getProductName()"/>-->
-        <!--AND PRODUCT_NAME = #{productNamePattern}-->
-      <!--</if>-->
-      <!--<if test="productImageUrl != null and productImageUrl != ''">-->
-        <!--<bind name="productImageUrlPattern" value="_parameter.getProductImageUrl()"/>-->
-        <!--AND PRODUCT_IMAGE_URL = #{productImageUrlPattern}-->
-      <!--</if>-->
-      <!--<if test="price != null and price != ''">-->
-        <!--<bind name="pricePattern" value="_parameter.getPrice()"/>-->
-        <!--AND PRICE = #{pricePattern}-->
-      <!--</if>-->
-    <!--</where>-->
-    WHERE KEY_CLASS = #{keyClass,jdbcType=VARCHAR}
+    WHERE KEY_CLASS = #{keyClass,jdbcType=VARCHAR} and PRICE != 0
   </select>
+    <select id="getPage" resultType="com.qianjiajia.kitchen.design.domain.Product">
+        SELECT ID,PRODUCT_IMAGE_URL
+        FROM PRODUCT
+        WHERE KEYWORD = '首页'
+    </select>
 </mapper>

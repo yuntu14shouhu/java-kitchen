@@ -7,6 +7,8 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.springframework.util.StringUtils;
 
+import java.util.Date;
+
 /**
  * @author qianjiajia
  * @version 1.0
@@ -42,6 +44,12 @@ public class UsersQuery extends BaseQuery {
     private String nickName;
 
     /**
+     * 16位盐
+     */
+    @ApiModelProperty("16位盐")
+    private String salt;
+
+    /**
      * 用户状态
      */
     @ApiModelProperty("用户状态")
@@ -58,6 +66,12 @@ public class UsersQuery extends BaseQuery {
      */
     @ApiModelProperty("用户年龄")
     private Integer age;
+
+    /**
+     * 创建时间
+     */
+    @ApiModelProperty("创建时间")
+    private Date createTime;
 
     /**
      * 备注信息
@@ -86,6 +100,9 @@ public class UsersQuery extends BaseQuery {
         if(!StringUtils.isEmpty(nickName)){
             criteria.andNickNameEqualTo(nickName);
         }
+        if(!StringUtils.isEmpty(salt)){
+            criteria.andSaltEqualTo(salt);
+        }
         if(!StringUtils.isEmpty(status)){
             criteria.andStatusEqualTo(status);
         }
@@ -94,6 +111,9 @@ public class UsersQuery extends BaseQuery {
         }
         if(!StringUtils.isEmpty(age)){
             criteria.andAgeEqualTo(age);
+        }
+        if(!StringUtils.isEmpty(createTime)){
+            criteria.andCreateTimeEqualTo(createTime);
         }
         if(!StringUtils.isEmpty(remark)){
             criteria.andRemarkEqualTo(remark);

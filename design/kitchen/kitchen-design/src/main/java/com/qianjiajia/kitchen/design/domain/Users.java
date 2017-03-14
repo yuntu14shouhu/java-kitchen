@@ -1,10 +1,7 @@
 package com.qianjiajia.kitchen.design.domain;
 
-import lombok.ToString;
-
 import java.util.Date;
 
-@ToString
 public class Users {
     private String id;
 
@@ -16,15 +13,15 @@ public class Users {
 
     private String salt;
 
-    private Short status;
+    private Integer status;
 
     private String sex;
 
-    private Short age;
-
-    private String remark;
+    private Integer age;
 
     private Date createTime;
+
+    private String remark;
 
     private String contacts;
 
@@ -74,11 +71,11 @@ public class Users {
         this.salt = salt == null ? null : salt.trim();
     }
 
-    public Short getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Short status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -90,20 +87,12 @@ public class Users {
         this.sex = sex == null ? null : sex.trim();
     }
 
-    public Short getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(Short age) {
+    public void setAge(Integer age) {
         this.age = age;
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark == null ? null : remark.trim();
     }
 
     public Date getCreateTime() {
@@ -112,6 +101,14 @@ public class Users {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
     }
 
     public String getContacts() {

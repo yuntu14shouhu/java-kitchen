@@ -14,6 +14,16 @@ import java.util.List;
 public interface IProductService {
 
     /**
+     * 首页滑动商品图片
+     */
+    List<Product> pageSlide();
+
+//    /**
+//     * 点击首页滑动图片进入到商品详情介绍
+//     */
+//    Product pageInfo(Product product);
+
+    /**
      * 添加商品
      */
     void save(Product product);

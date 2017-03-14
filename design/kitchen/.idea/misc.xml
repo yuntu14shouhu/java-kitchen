@@ -15,6 +15,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/kitchen-dao/pom.xml" />
+        <option value="$PROJECT_DIR$/kitchen-service/pom.xml" />
       </set>
     </option>
   </component>

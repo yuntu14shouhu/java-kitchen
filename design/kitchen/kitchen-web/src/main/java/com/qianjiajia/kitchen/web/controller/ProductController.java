@@ -110,4 +110,13 @@ public class ProductController {
         List<Product> productList = productService.queryBySmallClass(smallClass);
         return MessageResult.getSuccessInstance(productList);
     }
+
+    @ApiOperation(value = "首页滑动商品图片")
+    @ResponseBody
+    @RequestMapping(value = "/pageSlide",method = RequestMethod.GET)
+    public MessageResult pageSlide(){
+        List<Product> productList = productService.pageSlide();
+        return MessageResult.getSuccessInstance(productList);
+    }
+
 }

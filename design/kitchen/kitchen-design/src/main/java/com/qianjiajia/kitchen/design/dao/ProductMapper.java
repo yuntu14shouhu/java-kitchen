@@ -6,6 +6,7 @@ import com.qianjiajia.kitchen.design.query.ProductQuery;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface ProductMapper {
     long countByExample(ProductExample example);
@@ -40,7 +41,9 @@ public interface ProductMapper {
 
     List<Product> productByPutawayDate(ProductQuery productQuery);
 
-    List<Product> queryByBigClass(String bigClass);
+    List<Product> queryByBigClass(@Param("bigKeyClass") String bigClass);
 
     List<Product> queryBySmallClass(String smallClass);
+
+    List<Product> getPage();
 }

@@ -24,7 +24,6 @@
         <processorPath useClasspath="true" />
         <module name="kitchen-common" />
         <module name="kitchen-design" />
-        <module name="kitchen-service" />
         <module name="kitchen-web" />
       </profile>
     </annotationProcessing>
