@@ -195,6 +195,8 @@ public class ProductQuery extends BaseQuery {
     private String keyword;
 
 
+
+
     public ProductExample build(){
         ProductExample productExample = new ProductExample();
         ProductExample.Criteria criteria = productExample.createCriteria();
@@ -282,6 +284,112 @@ public class ProductQuery extends BaseQuery {
         return productExample;
     }
 
+    @Override
+    public String toString() {
+        return "ProductQuery{" +
+                "id='" + id + '\'' +
+                ", kinds='" + kinds + '\'' +
+                ", productName='" + productName + '\'' +
+                ", productImageUrl='" + productImageUrl + '\'' +
+                ", status=" + status +
+                ", productTypes='" + productTypes + '\'' +
+                ", producer='" + producer + '\'' +
+                ", address='" + address + '\'' +
+                ", described='" + described + '\'' +
+                ", productionDate=" + productionDate +
+                ", price=" + price +
+                ", discountPrice=" + discountPrice +
+                ", putawayDate=" + putawayDate +
+                ", isGroupBuy=" + isGroupBuy +
+                ", groupBuyPrice=" + groupBuyPrice +
+                ", groupBuyPersonNumber=" + groupBuyPersonNumber +
+                ", startGroupBuyDate=" + startGroupBuyDate +
+                ", endGroupBuyDate=" + endGroupBuyDate +
+                ", isDiscount=" + isDiscount +
+                ", limitNumber=" + limitNumber +
+                ", kindNumber=" + kindNumber +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", carriage=" + carriage +
+                ", keyClass='" + keyClass + '\'' +
+                ", bigKeyClass='" + bigKeyClass + '\'' +
+                ", keyword='" + keyword + '\'' +
+                '}';
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ProductQuery)) return false;
+
+        ProductQuery ProductQuery = (ProductQuery) o;
+
+        if (id != null ? !id.equals(ProductQuery.id) : ProductQuery.id != null) return false;
+        if (putawayDate != null ? !putawayDate.equals(ProductQuery.putawayDate) : ProductQuery.putawayDate != null) return false;
+        if (kinds != null ? !kinds.equals(ProductQuery.kinds) : ProductQuery.kinds != null) return false;
+        if (productName != null ? !productName.equals(ProductQuery.productName) : ProductQuery.productName != null) return false;
+        if (productImageUrl != null ? !productImageUrl.equals(ProductQuery.productImageUrl) : ProductQuery.productImageUrl != null)
+            return false;
+        if (status != null ? !status.equals(ProductQuery.status) : ProductQuery.status != null) return false;
+        if (productTypes != null ? !productTypes.equals(ProductQuery.productTypes) : ProductQuery.productTypes != null) return false;
+        if (producer != null ? !producer.equals(ProductQuery.producer) : ProductQuery.producer != null) return false;
+        if (address != null ? !address.equals(ProductQuery.address) : ProductQuery.address != null) return false;
+        if (described != null ? !described.equals(ProductQuery.described) : ProductQuery.described != null) return false;
+        if (productionDate != null ? !productionDate.equals(ProductQuery.productionDate) : ProductQuery.productionDate != null)
+            return false;
+        if (price != null ? !price.equals(ProductQuery.price) : ProductQuery.price != null) return false;
+        if (discountPrice != null ? !discountPrice.equals(ProductQuery.discountPrice) : ProductQuery.discountPrice != null)
+            return false;
+        if (isDiscount != null ? !isDiscount.equals(ProductQuery.isDiscount) : ProductQuery.isDiscount != null) return false;
+        if (limitNumber != null ? !limitNumber.equals(ProductQuery.limitNumber) : ProductQuery.limitNumber != null) return false;
+        if (kindNumber != null ? !kindNumber.equals(ProductQuery.kindNumber) : ProductQuery.kindNumber != null) return false;
+        if (startDate != null ? !startDate.equals(ProductQuery.startDate) : ProductQuery.startDate != null) return false;
+        if (endDate != null ? !endDate.equals(ProductQuery.endDate) : ProductQuery.endDate != null) return false;
+        if (carriage != null ? !carriage.equals(ProductQuery.carriage) : ProductQuery.carriage != null) return false;
+        if (isGroupBuy != null ? !isGroupBuy.equals(ProductQuery.isGroupBuy) : ProductQuery.isGroupBuy != null) return false;
+        if (groupBuyPrice != null ? !groupBuyPrice.equals(ProductQuery.groupBuyPrice) : ProductQuery.groupBuyPrice != null)
+            return false;
+        if (groupBuyPersonNumber != null ? !groupBuyPersonNumber.equals(ProductQuery.groupBuyPersonNumber) : ProductQuery.groupBuyPersonNumber != null)
+            return false;
+        if (startGroupBuyDate != null ? !startGroupBuyDate.equals(ProductQuery.startGroupBuyDate) : ProductQuery.startGroupBuyDate != null)
+            return false;
+        if (endGroupBuyDate != null ? !endGroupBuyDate.equals(ProductQuery.endGroupBuyDate) : ProductQuery.endGroupBuyDate != null)
+            return false;
+        if (keyClass != null ? !keyClass.equals(ProductQuery.keyClass) : ProductQuery.keyClass != null) return false;
+        if (bigKeyClass != null ? !bigKeyClass.equals(ProductQuery.bigKeyClass) : ProductQuery.bigKeyClass != null) return false;
+        return keyword != null ? keyword.equals(ProductQuery.keyword) : ProductQuery.keyword == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (putawayDate != null ? putawayDate.hashCode() : 0);
+        result = 31 * result + (kinds != null ? kinds.hashCode() : 0);
+        result = 31 * result + (productName != null ? productName.hashCode() : 0);
+        result = 31 * result + (productImageUrl != null ? productImageUrl.hashCode() : 0);
+        result = 31 * result + (status != null ? status.hashCode() : 0);
+        result = 31 * result + (productTypes != null ? productTypes.hashCode() : 0);
+        result = 31 * result + (producer != null ? producer.hashCode() : 0);
+        result = 31 * result + (address != null ? address.hashCode() : 0);
+        result = 31 * result + (described != null ? described.hashCode() : 0);
+        result = 31 * result + (productionDate != null ? productionDate.hashCode() : 0);
+        result = 31 * result + (price != null ? price.hashCode() : 0);
+        result = 31 * result + (discountPrice != null ? discountPrice.hashCode() : 0);
+        result = 31 * result + (isDiscount != null ? isDiscount.hashCode() : 0);
+        result = 31 * result + (limitNumber != null ? limitNumber.hashCode() : 0);
+        result = 31 * result + (kindNumber != null ? kindNumber.hashCode() : 0);
+        result = 31 * result + (startDate != null ? startDate.hashCode() : 0);
+        result = 31 * result + (endDate != null ? endDate.hashCode() : 0);
+        result = 31 * result + (carriage != null ? carriage.hashCode() : 0);
+        result = 31 * result + (isGroupBuy != null ? isGroupBuy.hashCode() : 0);
+        result = 31 * result + (groupBuyPrice != null ? groupBuyPrice.hashCode() : 0);
+        result = 31 * result + (groupBuyPersonNumber != null ? groupBuyPersonNumber.hashCode() : 0);
+        result = 31 * result + (startGroupBuyDate != null ? startGroupBuyDate.hashCode() : 0);
+        result = 31 * result + (endGroupBuyDate != null ? endGroupBuyDate.hashCode() : 0);
+        result = 31 * result + (keyClass != null ? keyClass.hashCode() : 0);
+        result = 31 * result + (bigKeyClass != null ? bigKeyClass.hashCode() : 0);
+        result = 31 * result + (keyword != null ? keyword.hashCode() : 0);
+        return result;
+    }
 
 }

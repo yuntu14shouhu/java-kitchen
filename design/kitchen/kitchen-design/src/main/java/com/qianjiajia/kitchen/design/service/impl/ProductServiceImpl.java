@@ -26,8 +26,8 @@ public class ProductServiceImpl implements IProductService{
     private ProductMapper productMapper;
 
     @Override
-    public List<Product> pageSlide() {
-        return productMapper.getPage();
+    public List<Product> pageSlide(ProductQuery productQuery) {
+        return productMapper.getPage(productQuery);
     }
 
     @Override
@@ -64,23 +64,23 @@ public class ProductServiceImpl implements IProductService{
 
     @Override
     @Page
-    public PageResult productIsDiscount(ProductQuery productQuery) {
+    public List<Product> productIsDiscount(ProductQuery productQuery) {
         List<Product> productList = productMapper.productIsDiscount(productQuery);
-        return new PageResult(productList);
+        return productList;
     }
 
     @Override
     @Page
-    public PageResult productIsGroup(ProductQuery productQuery) {
+    public List<Product> productIsGroup(ProductQuery productQuery) {
         List<Product> productList = productMapper.productIsGroup(productQuery);
-        return new PageResult(productList);
+        return productList;
     }
 
     @Override
     @Page
-    public PageResult productByPutawayDate(ProductQuery productQuery) {
+    public List<Product> productByPutawayDate(ProductQuery productQuery) {
         List<Product> productList = productMapper.productByPutawayDate(productQuery);
-        return new PageResult(productList);
+        return productList;
     }
 
     @Override

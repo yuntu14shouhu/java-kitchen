@@ -614,7 +614,7 @@
         AND DISCOUNT_PRICE = #{discountPricePattern}
       </if>
     </where>
-    where IS_DISCOUNT = 1
+    where IS_DISCOUNT = #{isDiscount,jdbcType=INTEGER}
   </select>
   <select id="productIsGroup"  parameterType="com.qianjiajia.kitchen.design.query.ProductQuery" resultMap="BaseResultMap">
     SELECT  ID,PRODUCT_NAME,PRODUCT_IMAGE_URL, GROUP_BUY_PRICE,GROUP_BUY_PERSON_NUMBER ,
@@ -650,7 +650,7 @@
               AND END_GROUP_BUY_DATE = #{endGroupBuyDatePattern}
           </if>
       </where>
-    WHERE IS_GROUP_BUY = 1
+    WHERE IS_GROUP_BUY = #{isGroupBuy,jdbcType=INTEGER}
   </select>
   <select id="productByPutawayDate" parameterType="com.qianjiajia.kitchen.design.query.ProductQuery" resultType="com.qianjiajia.kitchen.design.domain.Product">
     SELECT ID,PRODUCT_NAME,PRODUCT_IMAGE_URL, PRICE
@@ -686,9 +686,9 @@
     FROM product
     WHERE KEY_CLASS = #{keyClass,jdbcType=VARCHAR} and PRICE != 0
   </select>
-    <select id="getPage" resultType="com.qianjiajia.kitchen.design.domain.Product">
+    <select id="getPage" parameterType="com.qianjiajia.kitchen.design.query.ProductQuery" resultType="com.qianjiajia.kitchen.design.domain.Product">
         SELECT ID,PRODUCT_IMAGE_URL
         FROM PRODUCT
-        WHERE KEYWORD = '首页'
+        WHERE KEYWORD = #{keyword,jdbcType=VARCHAR}
     </select>
 </mapper>

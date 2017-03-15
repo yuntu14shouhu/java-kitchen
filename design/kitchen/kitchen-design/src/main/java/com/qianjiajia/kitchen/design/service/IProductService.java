@@ -16,7 +16,7 @@ public interface IProductService {
     /**
      * 首页滑动商品图片
      */
-    List<Product> pageSlide();
+    List<Product> pageSlide(ProductQuery productQuery);
 
 //    /**
 //     * 点击首页滑动图片进入到商品详情介绍
@@ -54,18 +54,18 @@ public interface IProductService {
     /**
      * 优惠套餐查询
      */
-    PageResult productIsDiscount(ProductQuery productQuery);
+    List<Product> productIsDiscount(ProductQuery productQuery);
 
     /**
      * 劲爆团购查询
      */
-    PageResult productIsGroup(ProductQuery productQuery);
+    List<Product> productIsGroup(ProductQuery productQuery);
 
     /**
      * 人气推荐查询
      * 根据商品上架日期逆序排序，返回最前面的四条
      */
-    PageResult productByPutawayDate(ProductQuery productQuery);
+    List<Product> productByPutawayDate(ProductQuery productQuery);
 
     /**
      * 根据商品的大类别查询商品

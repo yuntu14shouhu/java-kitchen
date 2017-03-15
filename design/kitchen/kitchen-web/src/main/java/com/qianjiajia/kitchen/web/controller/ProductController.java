@@ -15,7 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author qianjiajia
@@ -75,24 +78,24 @@ public class ProductController {
     @ResponseBody
     @RequestMapping(value = "/productIsDiscount",method = RequestMethod.GET)
     public MessageResult productIsDiscount(ProductQuery productQuery){
-        PageResult pageResult = productService.productIsDiscount(productQuery);
-        return MessageResult.getSuccessInstance(pageResult);
+        List<Product> productList = productService.productIsDiscount(productQuery);
+        return MessageResult.getSuccessInstance(productList);
     }
 
     @ApiOperation(value = "劲爆团购")
     @ResponseBody
     @RequestMapping(value = "/productIsGroup",method = RequestMethod.GET)
     public MessageResult productIsGroup(ProductQuery productQuery){
-        PageResult pageResult = productService.productIsGroup(productQuery);
-        return MessageResult.getSuccessInstance(pageResult);
+        List<Product> productList = productService.productIsGroup(productQuery);
+        return MessageResult.getSuccessInstance(productList);
     }
 
     @ApiOperation(value = "人气推荐")
     @ResponseBody
     @RequestMapping(value = "/productByPutawayDate",method = RequestMethod.GET)
     public MessageResult productByPutawayDate (ProductQuery productQuery){
-        PageResult pageResult = productService.productByPutawayDate(productQuery);
-        return MessageResult.getSuccessInstance(pageResult);
+        List<Product> productList = productService.productByPutawayDate(productQuery);
+        return MessageResult.getSuccessInstance(productList);
     }
 
     @ApiOperation(value = "根据商品的大类别查询商品")
@@ -114,9 +117,39 @@ public class ProductController {
     @ApiOperation(value = "首页滑动商品图片")
     @ResponseBody
     @RequestMapping(value = "/pageSlide",method = RequestMethod.GET)
-    public MessageResult pageSlide(){
-        List<Product> productList = productService.pageSlide();
+    public MessageResult pageSlide(ProductQuery productQuery){
+        List<Product> productList = productService.pageSlide(productQuery);
         return MessageResult.getSuccessInstance(productList);
+    }
+
+    @ApiOperation(value = "分类")
+    @ResponseBody
+    @RequestMapping(value = "/queryType",method = RequestMethod.GET)
+    public Object queryType(String s){
+        List list = new ArrayList();
+        Map<String ,Object> map = new HashMap<>();
+        map.put("bigKeyClass",queryByBigClass(s));
+        map.put("smallKeyClass",queryBySmallClass(s));
+        list.add(map);
+        return list;
+    }
+
+    @ApiOperation(value = "首页")
+    @ResponseBody
+    @RequestMapping(value = "/page",method = RequestMethod.GET)
+    public Object page(ProductQuery productQuery){
+        ProductQuery productQuery1 = new ProductQuery();
+        if(productQuery.getIsDiscount() != null && productQuery.getIsDiscount() == 1){
+          return   productIsDiscount(productQuery);
+        }else if(productQuery.getIsGroupBuy() != null &&productQuery.getIsGroupBuy() == 1){
+            return productIsGroup(productQuery);
+        }else if(productQuery.getKeyword() != null && productQuery.getKeyword().equals("首页")){
+            return pageSlide(productQuery);
+        }else if(productQuery.equals(productQuery1)){
+            return productByPutawayDate(productQuery);
+        }else {
+            return null;
+        }
     }
 
 }
