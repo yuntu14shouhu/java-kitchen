@@ -1,7 +1,6 @@
 package com.qianjiajia.kitchen.design.dao;
 
-import com.qianjiajia.kitchen.design.domain.Product;
-import com.qianjiajia.kitchen.design.domain.ProductExample;
+import com.qianjiajia.kitchen.design.domain.*;
 import com.qianjiajia.kitchen.design.query.ProductQuery;
 import org.apache.ibatis.annotations.Param;
 
@@ -42,7 +41,21 @@ public interface ProductMapper {
 
     List<Product> queryByBigClass(@Param("bigKeyClass") String bigClass);
 
-    List<Product> queryBySmallClass(String smallClass);
+    List<SmallClassProduct> queryBySmallClass(String smallClass);
 
     List<Product> getPage(ProductQuery productQuery);
+
+    List<String> getBigClassData();
+
+    List<String> getKeyClass(String bigKeyClass);
+
+    List<PageShow> getSlide1(Product product);
+
+    List<String> getSlide();
+
+    List<DiscountProduct> getDiscount(Product product);
+
+    List<GroupProduct> getGroup(Product product);
+
+    List<RecommendProduct> getRecommend(Product product);
 }

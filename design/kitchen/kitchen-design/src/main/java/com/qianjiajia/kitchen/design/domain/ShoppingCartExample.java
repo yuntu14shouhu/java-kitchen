@@ -174,73 +174,73 @@ public class ShoppingCartExample {
             return (Criteria) this;
         }
 
-        public Criteria andUserIdIsNull() {
-            addCriterion("USER_ID is null");
+        public Criteria andUserIdShopIsNull() {
+            addCriterion("USER_ID_SHOP is null");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdIsNotNull() {
-            addCriterion("USER_ID is not null");
+        public Criteria andUserIdShopIsNotNull() {
+            addCriterion("USER_ID_SHOP is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdEqualTo(String value) {
-            addCriterion("USER_ID =", value, "userId");
+        public Criteria andUserIdShopEqualTo(String value) {
+            addCriterion("USER_ID_SHOP =", value, "userIdShop");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotEqualTo(String value) {
-            addCriterion("USER_ID <>", value, "userId");
+        public Criteria andUserIdShopNotEqualTo(String value) {
+            addCriterion("USER_ID_SHOP <>", value, "userIdShop");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdGreaterThan(String value) {
-            addCriterion("USER_ID >", value, "userId");
+        public Criteria andUserIdShopGreaterThan(String value) {
+            addCriterion("USER_ID_SHOP >", value, "userIdShop");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdGreaterThanOrEqualTo(String value) {
-            addCriterion("USER_ID >=", value, "userId");
+        public Criteria andUserIdShopGreaterThanOrEqualTo(String value) {
+            addCriterion("USER_ID_SHOP >=", value, "userIdShop");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdLessThan(String value) {
-            addCriterion("USER_ID <", value, "userId");
+        public Criteria andUserIdShopLessThan(String value) {
+            addCriterion("USER_ID_SHOP <", value, "userIdShop");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdLessThanOrEqualTo(String value) {
-            addCriterion("USER_ID <=", value, "userId");
+        public Criteria andUserIdShopLessThanOrEqualTo(String value) {
+            addCriterion("USER_ID_SHOP <=", value, "userIdShop");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdLike(String value) {
-            addCriterion("USER_ID like", value, "userId");
+        public Criteria andUserIdShopLike(String value) {
+            addCriterion("USER_ID_SHOP like", value, "userIdShop");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotLike(String value) {
-            addCriterion("USER_ID not like", value, "userId");
+        public Criteria andUserIdShopNotLike(String value) {
+            addCriterion("USER_ID_SHOP not like", value, "userIdShop");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdIn(List<String> values) {
-            addCriterion("USER_ID in", values, "userId");
+        public Criteria andUserIdShopIn(List<String> values) {
+            addCriterion("USER_ID_SHOP in", values, "userIdShop");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotIn(List<String> values) {
-            addCriterion("USER_ID not in", values, "userId");
+        public Criteria andUserIdShopNotIn(List<String> values) {
+            addCriterion("USER_ID_SHOP not in", values, "userIdShop");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdBetween(String value1, String value2) {
-            addCriterion("USER_ID between", value1, value2, "userId");
+        public Criteria andUserIdShopBetween(String value1, String value2) {
+            addCriterion("USER_ID_SHOP between", value1, value2, "userIdShop");
             return (Criteria) this;
         }
 
-        public Criteria andUserIdNotBetween(String value1, String value2) {
-            addCriterion("USER_ID not between", value1, value2, "userId");
+        public Criteria andUserIdShopNotBetween(String value1, String value2) {
+            addCriterion("USER_ID_SHOP not between", value1, value2, "userIdShop");
             return (Criteria) this;
         }
 
@@ -324,52 +324,52 @@ public class ShoppingCartExample {
             return (Criteria) this;
         }
 
-        public Criteria andStatusEqualTo(Integer value) {
+        public Criteria andStatusEqualTo(Short value) {
             addCriterion("STATUS =", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotEqualTo(Integer value) {
+        public Criteria andStatusNotEqualTo(Short value) {
             addCriterion("STATUS <>", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThan(Integer value) {
+        public Criteria andStatusGreaterThan(Short value) {
             addCriterion("STATUS >", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThanOrEqualTo(Integer value) {
+        public Criteria andStatusGreaterThanOrEqualTo(Short value) {
             addCriterion("STATUS >=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThan(Integer value) {
+        public Criteria andStatusLessThan(Short value) {
             addCriterion("STATUS <", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThanOrEqualTo(Integer value) {
+        public Criteria andStatusLessThanOrEqualTo(Short value) {
             addCriterion("STATUS <=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusIn(List<Integer> values) {
+        public Criteria andStatusIn(List<Short> values) {
             addCriterion("STATUS in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotIn(List<Integer> values) {
+        public Criteria andStatusNotIn(List<Short> values) {
             addCriterion("STATUS not in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusBetween(Integer value1, Integer value2) {
+        public Criteria andStatusBetween(Short value1, Short value2) {
             addCriterion("STATUS between", value1, value2, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotBetween(Integer value1, Integer value2) {
+        public Criteria andStatusNotBetween(Short value1, Short value2) {
             addCriterion("STATUS not between", value1, value2, "status");
             return (Criteria) this;
         }
@@ -384,52 +384,52 @@ public class ShoppingCartExample {
             return (Criteria) this;
         }
 
-        public Criteria andProductNumberEqualTo(Integer value) {
+        public Criteria andProductNumberEqualTo(Short value) {
             addCriterion("PRODUCT_NUMBER =", value, "productNumber");
             return (Criteria) this;
         }
 
-        public Criteria andProductNumberNotEqualTo(Integer value) {
+        public Criteria andProductNumberNotEqualTo(Short value) {
             addCriterion("PRODUCT_NUMBER <>", value, "productNumber");
             return (Criteria) this;
         }
 
-        public Criteria andProductNumberGreaterThan(Integer value) {
+        public Criteria andProductNumberGreaterThan(Short value) {
             addCriterion("PRODUCT_NUMBER >", value, "productNumber");
             return (Criteria) this;
         }
 
-        public Criteria andProductNumberGreaterThanOrEqualTo(Integer value) {
+        public Criteria andProductNumberGreaterThanOrEqualTo(Short value) {
             addCriterion("PRODUCT_NUMBER >=", value, "productNumber");
             return (Criteria) this;
         }
 
-        public Criteria andProductNumberLessThan(Integer value) {
+        public Criteria andProductNumberLessThan(Short value) {
             addCriterion("PRODUCT_NUMBER <", value, "productNumber");
             return (Criteria) this;
         }
 
-        public Criteria andProductNumberLessThanOrEqualTo(Integer value) {
+        public Criteria andProductNumberLessThanOrEqualTo(Short value) {
             addCriterion("PRODUCT_NUMBER <=", value, "productNumber");
             return (Criteria) this;
         }
 
-        public Criteria andProductNumberIn(List<Integer> values) {
+        public Criteria andProductNumberIn(List<Short> values) {
             addCriterion("PRODUCT_NUMBER in", values, "productNumber");
             return (Criteria) this;
         }
 
-        public Criteria andProductNumberNotIn(List<Integer> values) {
+        public Criteria andProductNumberNotIn(List<Short> values) {
             addCriterion("PRODUCT_NUMBER not in", values, "productNumber");
             return (Criteria) this;
         }
 
-        public Criteria andProductNumberBetween(Integer value1, Integer value2) {
+        public Criteria andProductNumberBetween(Short value1, Short value2) {
             addCriterion("PRODUCT_NUMBER between", value1, value2, "productNumber");
             return (Criteria) this;
         }
 
-        public Criteria andProductNumberNotBetween(Integer value1, Integer value2) {
+        public Criteria andProductNumberNotBetween(Short value1, Short value2) {
             addCriterion("PRODUCT_NUMBER not between", value1, value2, "productNumber");
             return (Criteria) this;
         }

@@ -1,5 +1,6 @@
 package com.qianjiajia.kitchen.design.domain;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -455,52 +456,52 @@ public class ProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andStatusEqualTo(Integer value) {
+        public Criteria andStatusEqualTo(Short value) {
             addCriterion("STATUS =", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotEqualTo(Integer value) {
+        public Criteria andStatusNotEqualTo(Short value) {
             addCriterion("STATUS <>", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThan(Integer value) {
+        public Criteria andStatusGreaterThan(Short value) {
             addCriterion("STATUS >", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThanOrEqualTo(Integer value) {
+        public Criteria andStatusGreaterThanOrEqualTo(Short value) {
             addCriterion("STATUS >=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThan(Integer value) {
+        public Criteria andStatusLessThan(Short value) {
             addCriterion("STATUS <", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThanOrEqualTo(Integer value) {
+        public Criteria andStatusLessThanOrEqualTo(Short value) {
             addCriterion("STATUS <=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusIn(List<Integer> values) {
+        public Criteria andStatusIn(List<Short> values) {
             addCriterion("STATUS in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotIn(List<Integer> values) {
+        public Criteria andStatusNotIn(List<Short> values) {
             addCriterion("STATUS not in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusBetween(Integer value1, Integer value2) {
+        public Criteria andStatusBetween(Short value1, Short value2) {
             addCriterion("STATUS between", value1, value2, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotBetween(Integer value1, Integer value2) {
+        public Criteria andStatusNotBetween(Short value1, Short value2) {
             addCriterion("STATUS not between", value1, value2, "status");
             return (Criteria) this;
         }
@@ -855,52 +856,52 @@ public class ProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andPriceEqualTo(Double value) {
+        public Criteria andPriceEqualTo(BigDecimal value) {
             addCriterion("PRICE =", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceNotEqualTo(Double value) {
+        public Criteria andPriceNotEqualTo(BigDecimal value) {
             addCriterion("PRICE <>", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceGreaterThan(Double value) {
+        public Criteria andPriceGreaterThan(BigDecimal value) {
             addCriterion("PRICE >", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceGreaterThanOrEqualTo(Double value) {
+        public Criteria andPriceGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("PRICE >=", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceLessThan(Double value) {
+        public Criteria andPriceLessThan(BigDecimal value) {
             addCriterion("PRICE <", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceLessThanOrEqualTo(Double value) {
+        public Criteria andPriceLessThanOrEqualTo(BigDecimal value) {
             addCriterion("PRICE <=", value, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceIn(List<Double> values) {
+        public Criteria andPriceIn(List<BigDecimal> values) {
             addCriterion("PRICE in", values, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceNotIn(List<Double> values) {
+        public Criteria andPriceNotIn(List<BigDecimal> values) {
             addCriterion("PRICE not in", values, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceBetween(Double value1, Double value2) {
+        public Criteria andPriceBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("PRICE between", value1, value2, "price");
             return (Criteria) this;
         }
 
-        public Criteria andPriceNotBetween(Double value1, Double value2) {
+        public Criteria andPriceNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("PRICE not between", value1, value2, "price");
             return (Criteria) this;
         }
@@ -915,52 +916,52 @@ public class ProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andDiscountPriceEqualTo(Double value) {
+        public Criteria andDiscountPriceEqualTo(BigDecimal value) {
             addCriterion("DISCOUNT_PRICE =", value, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountPriceNotEqualTo(Double value) {
+        public Criteria andDiscountPriceNotEqualTo(BigDecimal value) {
             addCriterion("DISCOUNT_PRICE <>", value, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountPriceGreaterThan(Double value) {
+        public Criteria andDiscountPriceGreaterThan(BigDecimal value) {
             addCriterion("DISCOUNT_PRICE >", value, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountPriceGreaterThanOrEqualTo(Double value) {
+        public Criteria andDiscountPriceGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("DISCOUNT_PRICE >=", value, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountPriceLessThan(Double value) {
+        public Criteria andDiscountPriceLessThan(BigDecimal value) {
             addCriterion("DISCOUNT_PRICE <", value, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountPriceLessThanOrEqualTo(Double value) {
+        public Criteria andDiscountPriceLessThanOrEqualTo(BigDecimal value) {
             addCriterion("DISCOUNT_PRICE <=", value, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountPriceIn(List<Double> values) {
+        public Criteria andDiscountPriceIn(List<BigDecimal> values) {
             addCriterion("DISCOUNT_PRICE in", values, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountPriceNotIn(List<Double> values) {
+        public Criteria andDiscountPriceNotIn(List<BigDecimal> values) {
             addCriterion("DISCOUNT_PRICE not in", values, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountPriceBetween(Double value1, Double value2) {
+        public Criteria andDiscountPriceBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("DISCOUNT_PRICE between", value1, value2, "discountPrice");
             return (Criteria) this;
         }
 
-        public Criteria andDiscountPriceNotBetween(Double value1, Double value2) {
+        public Criteria andDiscountPriceNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("DISCOUNT_PRICE not between", value1, value2, "discountPrice");
             return (Criteria) this;
         }
@@ -975,52 +976,52 @@ public class ProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andIsDiscountEqualTo(Integer value) {
+        public Criteria andIsDiscountEqualTo(Short value) {
             addCriterion("IS_DISCOUNT =", value, "isDiscount");
             return (Criteria) this;
         }
 
-        public Criteria andIsDiscountNotEqualTo(Integer value) {
+        public Criteria andIsDiscountNotEqualTo(Short value) {
             addCriterion("IS_DISCOUNT <>", value, "isDiscount");
             return (Criteria) this;
         }
 
-        public Criteria andIsDiscountGreaterThan(Integer value) {
+        public Criteria andIsDiscountGreaterThan(Short value) {
             addCriterion("IS_DISCOUNT >", value, "isDiscount");
             return (Criteria) this;
         }
 
-        public Criteria andIsDiscountGreaterThanOrEqualTo(Integer value) {
+        public Criteria andIsDiscountGreaterThanOrEqualTo(Short value) {
             addCriterion("IS_DISCOUNT >=", value, "isDiscount");
             return (Criteria) this;
         }
 
-        public Criteria andIsDiscountLessThan(Integer value) {
+        public Criteria andIsDiscountLessThan(Short value) {
             addCriterion("IS_DISCOUNT <", value, "isDiscount");
             return (Criteria) this;
         }
 
-        public Criteria andIsDiscountLessThanOrEqualTo(Integer value) {
+        public Criteria andIsDiscountLessThanOrEqualTo(Short value) {
             addCriterion("IS_DISCOUNT <=", value, "isDiscount");
             return (Criteria) this;
         }
 
-        public Criteria andIsDiscountIn(List<Integer> values) {
+        public Criteria andIsDiscountIn(List<Short> values) {
             addCriterion("IS_DISCOUNT in", values, "isDiscount");
             return (Criteria) this;
         }
 
-        public Criteria andIsDiscountNotIn(List<Integer> values) {
+        public Criteria andIsDiscountNotIn(List<Short> values) {
             addCriterion("IS_DISCOUNT not in", values, "isDiscount");
             return (Criteria) this;
         }
 
-        public Criteria andIsDiscountBetween(Integer value1, Integer value2) {
+        public Criteria andIsDiscountBetween(Short value1, Short value2) {
             addCriterion("IS_DISCOUNT between", value1, value2, "isDiscount");
             return (Criteria) this;
         }
 
-        public Criteria andIsDiscountNotBetween(Integer value1, Integer value2) {
+        public Criteria andIsDiscountNotBetween(Short value1, Short value2) {
             addCriterion("IS_DISCOUNT not between", value1, value2, "isDiscount");
             return (Criteria) this;
         }
@@ -1095,52 +1096,52 @@ public class ProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andKindNumberEqualTo(Integer value) {
+        public Criteria andKindNumberEqualTo(Short value) {
             addCriterion("KIND_NUMBER =", value, "kindNumber");
             return (Criteria) this;
         }
 
-        public Criteria andKindNumberNotEqualTo(Integer value) {
+        public Criteria andKindNumberNotEqualTo(Short value) {
             addCriterion("KIND_NUMBER <>", value, "kindNumber");
             return (Criteria) this;
         }
 
-        public Criteria andKindNumberGreaterThan(Integer value) {
+        public Criteria andKindNumberGreaterThan(Short value) {
             addCriterion("KIND_NUMBER >", value, "kindNumber");
             return (Criteria) this;
         }
 
-        public Criteria andKindNumberGreaterThanOrEqualTo(Integer value) {
+        public Criteria andKindNumberGreaterThanOrEqualTo(Short value) {
             addCriterion("KIND_NUMBER >=", value, "kindNumber");
             return (Criteria) this;
         }
 
-        public Criteria andKindNumberLessThan(Integer value) {
+        public Criteria andKindNumberLessThan(Short value) {
             addCriterion("KIND_NUMBER <", value, "kindNumber");
             return (Criteria) this;
         }
 
-        public Criteria andKindNumberLessThanOrEqualTo(Integer value) {
+        public Criteria andKindNumberLessThanOrEqualTo(Short value) {
             addCriterion("KIND_NUMBER <=", value, "kindNumber");
             return (Criteria) this;
         }
 
-        public Criteria andKindNumberIn(List<Integer> values) {
+        public Criteria andKindNumberIn(List<Short> values) {
             addCriterion("KIND_NUMBER in", values, "kindNumber");
             return (Criteria) this;
         }
 
-        public Criteria andKindNumberNotIn(List<Integer> values) {
+        public Criteria andKindNumberNotIn(List<Short> values) {
             addCriterion("KIND_NUMBER not in", values, "kindNumber");
             return (Criteria) this;
         }
 
-        public Criteria andKindNumberBetween(Integer value1, Integer value2) {
+        public Criteria andKindNumberBetween(Short value1, Short value2) {
             addCriterion("KIND_NUMBER between", value1, value2, "kindNumber");
             return (Criteria) this;
         }
 
-        public Criteria andKindNumberNotBetween(Integer value1, Integer value2) {
+        public Criteria andKindNumberNotBetween(Short value1, Short value2) {
             addCriterion("KIND_NUMBER not between", value1, value2, "kindNumber");
             return (Criteria) this;
         }
@@ -1275,52 +1276,52 @@ public class ProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andCarriageEqualTo(Double value) {
+        public Criteria andCarriageEqualTo(BigDecimal value) {
             addCriterion("CARRIAGE =", value, "carriage");
             return (Criteria) this;
         }
 
-        public Criteria andCarriageNotEqualTo(Double value) {
+        public Criteria andCarriageNotEqualTo(BigDecimal value) {
             addCriterion("CARRIAGE <>", value, "carriage");
             return (Criteria) this;
         }
 
-        public Criteria andCarriageGreaterThan(Double value) {
+        public Criteria andCarriageGreaterThan(BigDecimal value) {
             addCriterion("CARRIAGE >", value, "carriage");
             return (Criteria) this;
         }
 
-        public Criteria andCarriageGreaterThanOrEqualTo(Double value) {
+        public Criteria andCarriageGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("CARRIAGE >=", value, "carriage");
             return (Criteria) this;
         }
 
-        public Criteria andCarriageLessThan(Double value) {
+        public Criteria andCarriageLessThan(BigDecimal value) {
             addCriterion("CARRIAGE <", value, "carriage");
             return (Criteria) this;
         }
 
-        public Criteria andCarriageLessThanOrEqualTo(Double value) {
+        public Criteria andCarriageLessThanOrEqualTo(BigDecimal value) {
             addCriterion("CARRIAGE <=", value, "carriage");
             return (Criteria) this;
         }
 
-        public Criteria andCarriageIn(List<Double> values) {
+        public Criteria andCarriageIn(List<BigDecimal> values) {
             addCriterion("CARRIAGE in", values, "carriage");
             return (Criteria) this;
         }
 
-        public Criteria andCarriageNotIn(List<Double> values) {
+        public Criteria andCarriageNotIn(List<BigDecimal> values) {
             addCriterion("CARRIAGE not in", values, "carriage");
             return (Criteria) this;
         }
 
-        public Criteria andCarriageBetween(Double value1, Double value2) {
+        public Criteria andCarriageBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("CARRIAGE between", value1, value2, "carriage");
             return (Criteria) this;
         }
 
-        public Criteria andCarriageNotBetween(Double value1, Double value2) {
+        public Criteria andCarriageNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("CARRIAGE not between", value1, value2, "carriage");
             return (Criteria) this;
         }
@@ -1335,52 +1336,52 @@ public class ProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andIsGroupBuyEqualTo(Integer value) {
+        public Criteria andIsGroupBuyEqualTo(Short value) {
             addCriterion("IS_GROUP_BUY =", value, "isGroupBuy");
             return (Criteria) this;
         }
 
-        public Criteria andIsGroupBuyNotEqualTo(Integer value) {
+        public Criteria andIsGroupBuyNotEqualTo(Short value) {
             addCriterion("IS_GROUP_BUY <>", value, "isGroupBuy");
             return (Criteria) this;
         }
 
-        public Criteria andIsGroupBuyGreaterThan(Integer value) {
+        public Criteria andIsGroupBuyGreaterThan(Short value) {
             addCriterion("IS_GROUP_BUY >", value, "isGroupBuy");
             return (Criteria) this;
         }
 
-        public Criteria andIsGroupBuyGreaterThanOrEqualTo(Integer value) {
+        public Criteria andIsGroupBuyGreaterThanOrEqualTo(Short value) {
             addCriterion("IS_GROUP_BUY >=", value, "isGroupBuy");
             return (Criteria) this;
         }
 
-        public Criteria andIsGroupBuyLessThan(Integer value) {
+        public Criteria andIsGroupBuyLessThan(Short value) {
             addCriterion("IS_GROUP_BUY <", value, "isGroupBuy");
             return (Criteria) this;
         }
 
-        public Criteria andIsGroupBuyLessThanOrEqualTo(Integer value) {
+        public Criteria andIsGroupBuyLessThanOrEqualTo(Short value) {
             addCriterion("IS_GROUP_BUY <=", value, "isGroupBuy");
             return (Criteria) this;
         }
 
-        public Criteria andIsGroupBuyIn(List<Integer> values) {
+        public Criteria andIsGroupBuyIn(List<Short> values) {
             addCriterion("IS_GROUP_BUY in", values, "isGroupBuy");
             return (Criteria) this;
         }
 
-        public Criteria andIsGroupBuyNotIn(List<Integer> values) {
+        public Criteria andIsGroupBuyNotIn(List<Short> values) {
             addCriterion("IS_GROUP_BUY not in", values, "isGroupBuy");
             return (Criteria) this;
         }
 
-        public Criteria andIsGroupBuyBetween(Integer value1, Integer value2) {
+        public Criteria andIsGroupBuyBetween(Short value1, Short value2) {
             addCriterion("IS_GROUP_BUY between", value1, value2, "isGroupBuy");
             return (Criteria) this;
         }
 
-        public Criteria andIsGroupBuyNotBetween(Integer value1, Integer value2) {
+        public Criteria andIsGroupBuyNotBetween(Short value1, Short value2) {
             addCriterion("IS_GROUP_BUY not between", value1, value2, "isGroupBuy");
             return (Criteria) this;
         }
@@ -1395,52 +1396,52 @@ public class ProductExample {
             return (Criteria) this;
         }
 
-        public Criteria andGroupBuyPriceEqualTo(Double value) {
+        public Criteria andGroupBuyPriceEqualTo(BigDecimal value) {
             addCriterion("GROUP_BUY_PRICE =", value, "groupBuyPrice");
             return (Criteria) this;
         }
 
-        public Criteria andGroupBuyPriceNotEqualTo(Double value) {
+        public Criteria andGroupBuyPriceNotEqualTo(BigDecimal value) {
             addCriterion("GROUP_BUY_PRICE <>", value, "groupBuyPrice");
             return (Criteria) this;
         }
 
-        public Criteria andGroupBuyPriceGreaterThan(Double value) {
+        public Criteria andGroupBuyPriceGreaterThan(BigDecimal value) {
             addCriterion("GROUP_BUY_PRICE >", value, "groupBuyPrice");
             return (Criteria) this;
         }
 
-        public Criteria andGroupBuyPriceGreaterThanOrEqualTo(Double value) {
+        public Criteria andGroupBuyPriceGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("GROUP_BUY_PRICE >=", value, "groupBuyPrice");
             return (Criteria) this;
         }
 
-        public Criteria andGroupBuyPriceLessThan(Double value) {
+        public Criteria andGroupBuyPriceLessThan(BigDecimal value) {
             addCriterion("GROUP_BUY_PRICE <", value, "groupBuyPrice");
             return (Criteria) this;
         }
 
-        public Criteria andGroupBuyPriceLessThanOrEqualTo(Double value) {
+        public Criteria andGroupBuyPriceLessThanOrEqualTo(BigDecimal value) {
             addCriterion("GROUP_BUY_PRICE <=", value, "groupBuyPrice");
             return (Criteria) this;
         }
 
-        public Criteria andGroupBuyPriceIn(List<Double> values) {
+        public Criteria andGroupBuyPriceIn(List<BigDecimal> values) {
             addCriterion("GROUP_BUY_PRICE in", values, "groupBuyPrice");
             return (Criteria) this;
         }
 
-        public Criteria andGroupBuyPriceNotIn(List<Double> values) {
+        public Criteria andGroupBuyPriceNotIn(List<BigDecimal> values) {
             addCriterion("GROUP_BUY_PRICE not in", values, "groupBuyPrice");
             return (Criteria) this;
         }
 
-        public Criteria andGroupBuyPriceBetween(Double value1, Double value2) {
+        public Criteria andGroupBuyPriceBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("GROUP_BUY_PRICE between", value1, value2, "groupBuyPrice");
             return (Criteria) this;
         }
 
-        public Criteria andGroupBuyPriceNotBetween(Double value1, Double value2) {
+        public Criteria andGroupBuyPriceNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("GROUP_BUY_PRICE not between", value1, value2, "groupBuyPrice");
             return (Criteria) this;
         }

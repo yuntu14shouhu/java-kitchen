@@ -53,7 +53,7 @@ public class UsersQuery extends BaseQuery {
      * 用户状态
      */
     @ApiModelProperty("用户状态")
-    private Integer status;
+    private Short status;
 
     /**
      * 用户性别
@@ -65,7 +65,7 @@ public class UsersQuery extends BaseQuery {
      * 用户年龄
      */
     @ApiModelProperty("用户年龄")
-    private Integer age;
+    private Short age;
 
     /**
      * 创建时间

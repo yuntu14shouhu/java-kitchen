@@ -39,13 +39,13 @@ public class ShoppingCartQuery extends BaseQuery {
      * 购物车状态
      */
     @ApiModelProperty("购物车状态")
-    private Integer status;
+    private Short status;
 
     /**
      * 商品数量
      */
     @ApiModelProperty("商品数量")
-    private Integer productNumber;
+    private Short productNumber;
 
     public ShoppingCartExample build(){
         ShoppingCartExample shoppingCartExample = new ShoppingCartExample();
@@ -54,7 +54,7 @@ public class ShoppingCartQuery extends BaseQuery {
             criteria.andIdEqualTo(id);
         }
         if(!StringUtils.isEmpty(userId)){
-            criteria.andUserIdEqualTo(userId);
+            criteria.andUserIdShopEqualTo(userId);
         }
         if(!StringUtils.isEmpty(productId)){
             criteria.andProductIdEqualTo(productId);

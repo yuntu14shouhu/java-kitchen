@@ -14,7 +14,7 @@ public interface IShoppingCartService {
     /**
      * 根据购物车状态，用户id查询购物车
      */
-    List<ShoppingCart> getAppointedProduct(int status,String usersId);
+    List<ShoppingCart> getAppointedProduct(int status, String usersId);
 
     /**
      * 根据用户id获取购物车中的所有商品

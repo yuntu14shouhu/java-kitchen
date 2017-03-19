@@ -2,8 +2,6 @@ package com.qianjiajia.kitchen.design.service.impl;
 
 import com.qianjiajia.kitchen.common.exception.ApiException;
 import com.qianjiajia.kitchen.common.exception.ApiExceptionCode;
-import com.qianjiajia.kitchen.design.utils.ContextUtils;
-import com.qianjiajia.kitchen.design.utils.LocalDomain;
 import com.qianjiajia.kitchen.common.utils.PasswordUtil;
 import com.qianjiajia.kitchen.common.utils.UUIDUtil;
 import com.qianjiajia.kitchen.design.dao.UsersMapper;
@@ -13,15 +11,12 @@ import com.qianjiajia.kitchen.design.service.IUsersService;
 import org.apache.shiro.crypto.hash.Sha512Hash;
 import org.apache.shiro.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.SetOperations;
-import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 /**
  * @author qianjiajia

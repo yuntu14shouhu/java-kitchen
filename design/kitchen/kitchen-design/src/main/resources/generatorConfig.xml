@@ -7,7 +7,7 @@
         <commentGenerator>
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
                         connectionURL="${jdbc.url}"
                         userId="${jdbc.username}" password="${jdbc.password}">
         </jdbcConnection>
@@ -32,7 +32,11 @@
         </javaClientGenerator>
 
         <table tableName="USERS" domainObjectName="Users"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>
-        <table tableName="PRODUCT" domainObjectName="Product"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>
+        <!--<table tableName="PRODUCT" domainObjectName="Product"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>-->
         <table tableName="SHOPPINGCART" domainObjectName="ShoppingCart"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>
+        <!--<table tableName="ADDRESS" domainObjectName="Address"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>-->
+        <!--<table tableName="SHOPPINGCART" domainObjectName="ShoppingCart"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>-->
+
+        <!--<table tableName="CN_AND_EN" domainObjectName="CnAndEn"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>-->
     </context>
 </generatorConfiguration>

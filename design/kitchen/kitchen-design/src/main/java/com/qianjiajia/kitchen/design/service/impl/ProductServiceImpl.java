@@ -4,7 +4,7 @@ import com.qianjiajia.kitchen.common.annotation.Page;
 import com.qianjiajia.kitchen.common.result.PageResult;
 import com.qianjiajia.kitchen.common.utils.UUIDUtil;
 import com.qianjiajia.kitchen.design.dao.ProductMapper;
-import com.qianjiajia.kitchen.design.domain.Product;
+import com.qianjiajia.kitchen.design.domain.*;
 import com.qianjiajia.kitchen.design.query.ProductQuery;
 import com.qianjiajia.kitchen.design.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -89,8 +89,43 @@ public class ProductServiceImpl implements IProductService{
     }
 
     @Override
-    public List<Product> queryBySmallClass(String smallClass) {
+    public List<SmallClassProduct> queryBySmallClass(String smallClass) {
         return productMapper.queryBySmallClass(smallClass);
+    }
+
+    @Override
+    public List<String> getAllBigKeyClass() {
+        return productMapper.getBigClassData();
+    }
+
+    @Override
+    public List<String> getAllKeyClass(String bigKeyClass) {
+        return productMapper.getKeyClass(bigKeyClass);
+    }
+
+    @Override
+    public List<PageShow> getAllSlide(Product product) {
+        return productMapper.getSlide1(product);
+    }
+
+    @Override
+    public List<String> getAllSlide() {
+        return productMapper.getSlide();
+    }
+
+    @Override
+    public List<DiscountProduct> getAllDiscount(Product product) {
+        return productMapper.getDiscount(product);
+    }
+
+    @Override
+    public List<GroupProduct> getAllGroup(Product product) {
+        return productMapper.getGroup(product);
+    }
+
+    @Override
+    public List<RecommendProduct> getAllRecommend(Product product) {
+        return productMapper.getRecommend(product);
     }
 
 

@@ -9,6 +9,7 @@ import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.util.StringUtils;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -50,7 +51,7 @@ public class ProductQuery extends BaseQuery {
      * 1--主图;0--副图
      */
     @ApiModelProperty("图片标识字段")
-    private Integer status;
+    private Short status;
 
     /**
      * 商品型号
@@ -86,13 +87,13 @@ public class ProductQuery extends BaseQuery {
      * 价格
      */
     @ApiModelProperty("价格")
-    private Double price;
+    private BigDecimal price;
 
     /**
      * 优惠价格
      */
     @ApiModelProperty("优惠价格")
-    private Double discountPrice;
+    private BigDecimal discountPrice;
 
     /**
      * 上架日期
@@ -106,13 +107,13 @@ public class ProductQuery extends BaseQuery {
      * 是否团购
      */
     @ApiModelProperty("是否团购")
-    private Integer isGroupBuy;
+    private Short isGroupBuy;
 
     /**
      * 团购价格
      */
     @ApiModelProperty("团购价格")
-    private Double groupBuyPrice;
+    private BigDecimal groupBuyPrice;
 
     /**
      * 团购人数
@@ -140,7 +141,7 @@ public class ProductQuery extends BaseQuery {
      * 是否优惠
      */
     @ApiModelProperty("是否优惠")
-    private Integer isDiscount;
+    private Short isDiscount;
 
     /**
      * 用餐人数
@@ -152,7 +153,7 @@ public class ProductQuery extends BaseQuery {
      * 套餐种类
      */
     @ApiModelProperty("套餐种类")
-    private Integer kindNumber;
+    private Short kindNumber;
 
     /**
      * 优惠活动开始日期
@@ -174,7 +175,7 @@ public class ProductQuery extends BaseQuery {
      * 运费
      */
     @ApiModelProperty("运费")
-    private Double carriage;
+    private BigDecimal carriage;
 
     /**
      * 小类别

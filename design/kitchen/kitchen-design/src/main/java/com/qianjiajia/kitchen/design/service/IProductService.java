@@ -1,7 +1,7 @@
 package com.qianjiajia.kitchen.design.service;
 
 import com.qianjiajia.kitchen.common.result.PageResult;
-import com.qianjiajia.kitchen.design.domain.Product;
+import com.qianjiajia.kitchen.design.domain.*;
 import com.qianjiajia.kitchen.design.query.ProductQuery;
 
 import java.util.List;
@@ -75,5 +75,23 @@ public interface IProductService {
     /**
      * 根据商品的小类别查询商品
      */
-    List<Product> queryBySmallClass(String smallClass);
+    List<SmallClassProduct> queryBySmallClass(String smallClass);
+
+    /**
+     *
+     * @return
+     */
+    List<String> getAllBigKeyClass();
+
+    List<String> getAllKeyClass(String bigKeyClass);
+
+    List<PageShow> getAllSlide(Product product);
+
+    List<String> getAllSlide();
+
+    List<DiscountProduct> getAllDiscount(Product product);
+
+    List<GroupProduct> getAllGroup(Product product);
+
+    List<RecommendProduct> getAllRecommend(Product product);
 }

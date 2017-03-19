@@ -7,23 +7,23 @@
     <result column="KINDS" jdbcType="VARCHAR" property="kinds" />
     <result column="PRODUCT_NAME" jdbcType="VARCHAR" property="productName" />
     <result column="PRODUCT_IMAGE_URL" jdbcType="VARCHAR" property="productImageUrl" />
-    <result column="STATUS" jdbcType="INTEGER" property="status" />
+    <result column="STATUS" jdbcType="DECIMAL" property="status" />
     <result column="PRODUCT_TYPES" jdbcType="VARCHAR" property="productTypes" />
     <result column="PRODUCER" jdbcType="VARCHAR" property="producer" />
     <result column="ADDRESS" jdbcType="VARCHAR" property="address" />
     <result column="DESCRIBED" jdbcType="VARCHAR" property="described" />
     <result column="PRODUCTION_DATE" jdbcType="TIMESTAMP" property="productionDate" />
-    <result column="PRICE" jdbcType="DOUBLE" property="price" />
-    <result column="DISCOUNT_PRICE" jdbcType="DOUBLE" property="discountPrice" />
-    <result column="IS_DISCOUNT" jdbcType="INTEGER" property="isDiscount" />
-    <result column="LIMIT_NUMBER" jdbcType="INTEGER" property="limitNumber" />
-    <result column="KIND_NUMBER" jdbcType="INTEGER" property="kindNumber" />
+    <result column="PRICE" jdbcType="DECIMAL" property="price" />
+    <result column="DISCOUNT_PRICE" jdbcType="DECIMAL" property="discountPrice" />
+    <result column="IS_DISCOUNT" jdbcType="DECIMAL" property="isDiscount" />
+    <result column="LIMIT_NUMBER" jdbcType="DECIMAL" property="limitNumber" />
+    <result column="KIND_NUMBER" jdbcType="DECIMAL" property="kindNumber" />
     <result column="START_DATE" jdbcType="TIMESTAMP" property="startDate" />
     <result column="END_DATE" jdbcType="TIMESTAMP" property="endDate" />
-    <result column="CARRIAGE" jdbcType="DOUBLE" property="carriage" />
-    <result column="IS_GROUP_BUY" jdbcType="INTEGER" property="isGroupBuy" />
-    <result column="GROUP_BUY_PRICE" jdbcType="DOUBLE" property="groupBuyPrice" />
-    <result column="GROUP_BUY_PERSON_NUMBER" jdbcType="INTEGER" property="groupBuyPersonNumber" />
+    <result column="CARRIAGE" jdbcType="DECIMAL" property="carriage" />
+    <result column="IS_GROUP_BUY" jdbcType="DECIMAL" property="isGroupBuy" />
+    <result column="GROUP_BUY_PRICE" jdbcType="DECIMAL" property="groupBuyPrice" />
+    <result column="GROUP_BUY_PERSON_NUMBER" jdbcType="DECIMAL" property="groupBuyPersonNumber" />
     <result column="START_GROUP_BUY_DATE" jdbcType="TIMESTAMP" property="startGroupBuyDate" />
     <result column="END_GROUP_BUY_DATE" jdbcType="TIMESTAMP" property="endGroupBuyDate" />
     <result column="KEY_CLASS" jdbcType="VARCHAR" property="keyClass" />
@@ -101,7 +101,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from product
+    from PRODUCT
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -112,21 +112,21 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from product
+    from PRODUCT
     where ID = #{id,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from product
+    delete from PRODUCT
     where ID = #{id,jdbcType=VARCHAR}
   </delete>
   <delete id="deleteByExample" parameterType="com.qianjiajia.kitchen.design.domain.ProductExample">
-    delete from product
+    delete from PRODUCT
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="com.qianjiajia.kitchen.design.domain.Product">
-    insert into product (ID, PUTAWAY_DATE, KINDS, 
+    insert into PRODUCT (ID, PUTAWAY_DATE, KINDS, 
       PRODUCT_NAME, PRODUCT_IMAGE_URL, STATUS, 
       PRODUCT_TYPES, PRODUCER, ADDRESS, 
       DESCRIBED, PRODUCTION_DATE, PRICE, 
@@ -137,18 +137,18 @@
       END_GROUP_BUY_DATE, KEY_CLASS, BIG_KEY_CLASS, 
       KEYWORD)
     values (#{id,jdbcType=VARCHAR}, #{putawayDate,jdbcType=TIMESTAMP}, #{kinds,jdbcType=VARCHAR}, 
-      #{productName,jdbcType=VARCHAR}, #{productImageUrl,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{productName,jdbcType=VARCHAR}, #{productImageUrl,jdbcType=VARCHAR}, #{status,jdbcType=DECIMAL}, 
       #{productTypes,jdbcType=VARCHAR}, #{producer,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
-      #{described,jdbcType=VARCHAR}, #{productionDate,jdbcType=TIMESTAMP}, #{price,jdbcType=DOUBLE}, 
-      #{discountPrice,jdbcType=DOUBLE}, #{isDiscount,jdbcType=INTEGER}, #{limitNumber,jdbcType=INTEGER}, 
-      #{kindNumber,jdbcType=INTEGER}, #{startDate,jdbcType=TIMESTAMP}, #{endDate,jdbcType=TIMESTAMP}, 
-      #{carriage,jdbcType=DOUBLE}, #{isGroupBuy,jdbcType=INTEGER}, #{groupBuyPrice,jdbcType=DOUBLE}, 
-      #{groupBuyPersonNumber,jdbcType=INTEGER}, #{startGroupBuyDate,jdbcType=TIMESTAMP}, 
+      #{described,jdbcType=VARCHAR}, #{productionDate,jdbcType=TIMESTAMP}, #{price,jdbcType=DECIMAL}, 
+      #{discountPrice,jdbcType=DECIMAL}, #{isDiscount,jdbcType=DECIMAL}, #{limitNumber,jdbcType=DECIMAL}, 
+      #{kindNumber,jdbcType=DECIMAL}, #{startDate,jdbcType=TIMESTAMP}, #{endDate,jdbcType=TIMESTAMP}, 
+      #{carriage,jdbcType=DECIMAL}, #{isGroupBuy,jdbcType=DECIMAL}, #{groupBuyPrice,jdbcType=DECIMAL}, 
+      #{groupBuyPersonNumber,jdbcType=DECIMAL}, #{startGroupBuyDate,jdbcType=TIMESTAMP}, 
       #{endGroupBuyDate,jdbcType=TIMESTAMP}, #{keyClass,jdbcType=VARCHAR}, #{bigKeyClass,jdbcType=VARCHAR}, 
       #{keyword,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.qianjiajia.kitchen.design.domain.Product">
-    insert into product
+    insert into PRODUCT
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         ID,
@@ -249,7 +249,7 @@
         #{productImageUrl,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
-        #{status,jdbcType=INTEGER},
+        #{status,jdbcType=DECIMAL},
       </if>
       <if test="productTypes != null">
         #{productTypes,jdbcType=VARCHAR},
@@ -267,19 +267,19 @@
         #{productionDate,jdbcType=TIMESTAMP},
       </if>
       <if test="price != null">
-        #{price,jdbcType=DOUBLE},
+        #{price,jdbcType=DECIMAL},
       </if>
       <if test="discountPrice != null">
-        #{discountPrice,jdbcType=DOUBLE},
+        #{discountPrice,jdbcType=DECIMAL},
       </if>
       <if test="isDiscount != null">
-        #{isDiscount,jdbcType=INTEGER},
+        #{isDiscount,jdbcType=DECIMAL},
       </if>
       <if test="limitNumber != null">
-        #{limitNumber,jdbcType=INTEGER},
+        #{limitNumber,jdbcType=DECIMAL},
       </if>
       <if test="kindNumber != null">
-        #{kindNumber,jdbcType=INTEGER},
+        #{kindNumber,jdbcType=DECIMAL},
       </if>
       <if test="startDate != null">
         #{startDate,jdbcType=TIMESTAMP},
@@ -288,16 +288,16 @@
         #{endDate,jdbcType=TIMESTAMP},
       </if>
       <if test="carriage != null">
-        #{carriage,jdbcType=DOUBLE},
+        #{carriage,jdbcType=DECIMAL},
       </if>
       <if test="isGroupBuy != null">
-        #{isGroupBuy,jdbcType=INTEGER},
+        #{isGroupBuy,jdbcType=DECIMAL},
       </if>
       <if test="groupBuyPrice != null">
-        #{groupBuyPrice,jdbcType=DOUBLE},
+        #{groupBuyPrice,jdbcType=DECIMAL},
       </if>
       <if test="groupBuyPersonNumber != null">
-        #{groupBuyPersonNumber,jdbcType=INTEGER},
+        #{groupBuyPersonNumber,jdbcType=DECIMAL},
       </if>
       <if test="startGroupBuyDate != null">
         #{startGroupBuyDate,jdbcType=TIMESTAMP},
@@ -317,13 +317,13 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.qianjiajia.kitchen.design.domain.ProductExample" resultType="java.lang.Long">
-    select count(*) from product
+    select count(*) from PRODUCT
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update product
+    update PRODUCT
     <set>
       <if test="record.id != null">
         ID = #{record.id,jdbcType=VARCHAR},
@@ -341,7 +341,7 @@
         PRODUCT_IMAGE_URL = #{record.productImageUrl,jdbcType=VARCHAR},
       </if>
       <if test="record.status != null">
-        STATUS = #{record.status,jdbcType=INTEGER},
+        STATUS = #{record.status,jdbcType=DECIMAL},
       </if>
       <if test="record.productTypes != null">
         PRODUCT_TYPES = #{record.productTypes,jdbcType=VARCHAR},
@@ -359,19 +359,19 @@
         PRODUCTION_DATE = #{record.productionDate,jdbcType=TIMESTAMP},
       </if>
       <if test="record.price != null">
-        PRICE = #{record.price,jdbcType=DOUBLE},
+        PRICE = #{record.price,jdbcType=DECIMAL},
       </if>
       <if test="record.discountPrice != null">
-        DISCOUNT_PRICE = #{record.discountPrice,jdbcType=DOUBLE},
+        DISCOUNT_PRICE = #{record.discountPrice,jdbcType=DECIMAL},
       </if>
       <if test="record.isDiscount != null">
-        IS_DISCOUNT = #{record.isDiscount,jdbcType=INTEGER},
+        IS_DISCOUNT = #{record.isDiscount,jdbcType=DECIMAL},
       </if>
       <if test="record.limitNumber != null">
-        LIMIT_NUMBER = #{record.limitNumber,jdbcType=INTEGER},
+        LIMIT_NUMBER = #{record.limitNumber,jdbcType=DECIMAL},
       </if>
       <if test="record.kindNumber != null">
-        KIND_NUMBER = #{record.kindNumber,jdbcType=INTEGER},
+        KIND_NUMBER = #{record.kindNumber,jdbcType=DECIMAL},
       </if>
       <if test="record.startDate != null">
         START_DATE = #{record.startDate,jdbcType=TIMESTAMP},
@@ -380,16 +380,16 @@
         END_DATE = #{record.endDate,jdbcType=TIMESTAMP},
       </if>
       <if test="record.carriage != null">
-        CARRIAGE = #{record.carriage,jdbcType=DOUBLE},
+        CARRIAGE = #{record.carriage,jdbcType=DECIMAL},
       </if>
       <if test="record.isGroupBuy != null">
-        IS_GROUP_BUY = #{record.isGroupBuy,jdbcType=INTEGER},
+        IS_GROUP_BUY = #{record.isGroupBuy,jdbcType=DECIMAL},
       </if>
       <if test="record.groupBuyPrice != null">
-        GROUP_BUY_PRICE = #{record.groupBuyPrice,jdbcType=DOUBLE},
+        GROUP_BUY_PRICE = #{record.groupBuyPrice,jdbcType=DECIMAL},
       </if>
       <if test="record.groupBuyPersonNumber != null">
-        GROUP_BUY_PERSON_NUMBER = #{record.groupBuyPersonNumber,jdbcType=INTEGER},
+        GROUP_BUY_PERSON_NUMBER = #{record.groupBuyPersonNumber,jdbcType=DECIMAL},
       </if>
       <if test="record.startGroupBuyDate != null">
         START_GROUP_BUY_DATE = #{record.startGroupBuyDate,jdbcType=TIMESTAMP},
@@ -412,29 +412,29 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update product
+    update PRODUCT
     set ID = #{record.id,jdbcType=VARCHAR},
       PUTAWAY_DATE = #{record.putawayDate,jdbcType=TIMESTAMP},
       KINDS = #{record.kinds,jdbcType=VARCHAR},
       PRODUCT_NAME = #{record.productName,jdbcType=VARCHAR},
       PRODUCT_IMAGE_URL = #{record.productImageUrl,jdbcType=VARCHAR},
-      STATUS = #{record.status,jdbcType=INTEGER},
+      STATUS = #{record.status,jdbcType=DECIMAL},
       PRODUCT_TYPES = #{record.productTypes,jdbcType=VARCHAR},
       PRODUCER = #{record.producer,jdbcType=VARCHAR},
       ADDRESS = #{record.address,jdbcType=VARCHAR},
       DESCRIBED = #{record.described,jdbcType=VARCHAR},
       PRODUCTION_DATE = #{record.productionDate,jdbcType=TIMESTAMP},
-      PRICE = #{record.price,jdbcType=DOUBLE},
-      DISCOUNT_PRICE = #{record.discountPrice,jdbcType=DOUBLE},
-      IS_DISCOUNT = #{record.isDiscount,jdbcType=INTEGER},
-      LIMIT_NUMBER = #{record.limitNumber,jdbcType=INTEGER},
-      KIND_NUMBER = #{record.kindNumber,jdbcType=INTEGER},
+      PRICE = #{record.price,jdbcType=DECIMAL},
+      DISCOUNT_PRICE = #{record.discountPrice,jdbcType=DECIMAL},
+      IS_DISCOUNT = #{record.isDiscount,jdbcType=DECIMAL},
+      LIMIT_NUMBER = #{record.limitNumber,jdbcType=DECIMAL},
+      KIND_NUMBER = #{record.kindNumber,jdbcType=DECIMAL},
       START_DATE = #{record.startDate,jdbcType=TIMESTAMP},
       END_DATE = #{record.endDate,jdbcType=TIMESTAMP},
-      CARRIAGE = #{record.carriage,jdbcType=DOUBLE},
-      IS_GROUP_BUY = #{record.isGroupBuy,jdbcType=INTEGER},
-      GROUP_BUY_PRICE = #{record.groupBuyPrice,jdbcType=DOUBLE},
-      GROUP_BUY_PERSON_NUMBER = #{record.groupBuyPersonNumber,jdbcType=INTEGER},
+      CARRIAGE = #{record.carriage,jdbcType=DECIMAL},
+      IS_GROUP_BUY = #{record.isGroupBuy,jdbcType=DECIMAL},
+      GROUP_BUY_PRICE = #{record.groupBuyPrice,jdbcType=DECIMAL},
+      GROUP_BUY_PERSON_NUMBER = #{record.groupBuyPersonNumber,jdbcType=DECIMAL},
       START_GROUP_BUY_DATE = #{record.startGroupBuyDate,jdbcType=TIMESTAMP},
       END_GROUP_BUY_DATE = #{record.endGroupBuyDate,jdbcType=TIMESTAMP},
       KEY_CLASS = #{record.keyClass,jdbcType=VARCHAR},
@@ -445,7 +445,7 @@
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.qianjiajia.kitchen.design.domain.Product">
-    update product
+    update PRODUCT
     <set>
       <if test="putawayDate != null">
         PUTAWAY_DATE = #{putawayDate,jdbcType=TIMESTAMP},
@@ -460,7 +460,7 @@
         PRODUCT_IMAGE_URL = #{productImageUrl,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
-        STATUS = #{status,jdbcType=INTEGER},
+        STATUS = #{status,jdbcType=DECIMAL},
       </if>
       <if test="productTypes != null">
         PRODUCT_TYPES = #{productTypes,jdbcType=VARCHAR},
@@ -478,19 +478,19 @@
         PRODUCTION_DATE = #{productionDate,jdbcType=TIMESTAMP},
       </if>
       <if test="price != null">
-        PRICE = #{price,jdbcType=DOUBLE},
+        PRICE = #{price,jdbcType=DECIMAL},
       </if>
       <if test="discountPrice != null">
-        DISCOUNT_PRICE = #{discountPrice,jdbcType=DOUBLE},
+        DISCOUNT_PRICE = #{discountPrice,jdbcType=DECIMAL},
       </if>
       <if test="isDiscount != null">
-        IS_DISCOUNT = #{isDiscount,jdbcType=INTEGER},
+        IS_DISCOUNT = #{isDiscount,jdbcType=DECIMAL},
       </if>
       <if test="limitNumber != null">
-        LIMIT_NUMBER = #{limitNumber,jdbcType=INTEGER},
+        LIMIT_NUMBER = #{limitNumber,jdbcType=DECIMAL},
       </if>
       <if test="kindNumber != null">
-        KIND_NUMBER = #{kindNumber,jdbcType=INTEGER},
+        KIND_NUMBER = #{kindNumber,jdbcType=DECIMAL},
       </if>
       <if test="startDate != null">
         START_DATE = #{startDate,jdbcType=TIMESTAMP},
@@ -499,16 +499,16 @@
         END_DATE = #{endDate,jdbcType=TIMESTAMP},
       </if>
       <if test="carriage != null">
-        CARRIAGE = #{carriage,jdbcType=DOUBLE},
+        CARRIAGE = #{carriage,jdbcType=DECIMAL},
       </if>
       <if test="isGroupBuy != null">
-        IS_GROUP_BUY = #{isGroupBuy,jdbcType=INTEGER},
+        IS_GROUP_BUY = #{isGroupBuy,jdbcType=DECIMAL},
       </if>
       <if test="groupBuyPrice != null">
-        GROUP_BUY_PRICE = #{groupBuyPrice,jdbcType=DOUBLE},
+        GROUP_BUY_PRICE = #{groupBuyPrice,jdbcType=DECIMAL},
       </if>
       <if test="groupBuyPersonNumber != null">
-        GROUP_BUY_PERSON_NUMBER = #{groupBuyPersonNumber,jdbcType=INTEGER},
+        GROUP_BUY_PERSON_NUMBER = #{groupBuyPersonNumber,jdbcType=DECIMAL},
       </if>
       <if test="startGroupBuyDate != null">
         START_GROUP_BUY_DATE = #{startGroupBuyDate,jdbcType=TIMESTAMP},
@@ -529,28 +529,28 @@
     where ID = #{id,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianjiajia.kitchen.design.domain.Product">
-    update product
+    update PRODUCT
     set PUTAWAY_DATE = #{putawayDate,jdbcType=TIMESTAMP},
       KINDS = #{kinds,jdbcType=VARCHAR},
       PRODUCT_NAME = #{productName,jdbcType=VARCHAR},
       PRODUCT_IMAGE_URL = #{productImageUrl,jdbcType=VARCHAR},
-      STATUS = #{status,jdbcType=INTEGER},
+      STATUS = #{status,jdbcType=DECIMAL},
       PRODUCT_TYPES = #{productTypes,jdbcType=VARCHAR},
       PRODUCER = #{producer,jdbcType=VARCHAR},
       ADDRESS = #{address,jdbcType=VARCHAR},
       DESCRIBED = #{described,jdbcType=VARCHAR},
       PRODUCTION_DATE = #{productionDate,jdbcType=TIMESTAMP},
-      PRICE = #{price,jdbcType=DOUBLE},
-      DISCOUNT_PRICE = #{discountPrice,jdbcType=DOUBLE},
-      IS_DISCOUNT = #{isDiscount,jdbcType=INTEGER},
-      LIMIT_NUMBER = #{limitNumber,jdbcType=INTEGER},
-      KIND_NUMBER = #{kindNumber,jdbcType=INTEGER},
+      PRICE = #{price,jdbcType=DECIMAL},
+      DISCOUNT_PRICE = #{discountPrice,jdbcType=DECIMAL},
+      IS_DISCOUNT = #{isDiscount,jdbcType=DECIMAL},
+      LIMIT_NUMBER = #{limitNumber,jdbcType=DECIMAL},
+      KIND_NUMBER = #{kindNumber,jdbcType=DECIMAL},
       START_DATE = #{startDate,jdbcType=TIMESTAMP},
       END_DATE = #{endDate,jdbcType=TIMESTAMP},
-      CARRIAGE = #{carriage,jdbcType=DOUBLE},
-      IS_GROUP_BUY = #{isGroupBuy,jdbcType=INTEGER},
-      GROUP_BUY_PRICE = #{groupBuyPrice,jdbcType=DOUBLE},
-      GROUP_BUY_PERSON_NUMBER = #{groupBuyPersonNumber,jdbcType=INTEGER},
+      CARRIAGE = #{carriage,jdbcType=DECIMAL},
+      IS_GROUP_BUY = #{isGroupBuy,jdbcType=DECIMAL},
+      GROUP_BUY_PRICE = #{groupBuyPrice,jdbcType=DECIMAL},
+      GROUP_BUY_PERSON_NUMBER = #{groupBuyPersonNumber,jdbcType=DECIMAL},
       START_GROUP_BUY_DATE = #{startGroupBuyDate,jdbcType=TIMESTAMP},
       END_GROUP_BUY_DATE = #{endGroupBuyDate,jdbcType=TIMESTAMP},
       KEY_CLASS = #{keyClass,jdbcType=VARCHAR},
@@ -681,7 +681,7 @@
     WHERE
       BIG_KEY_CLASS = #{bigKeyClass} and PRICE = 0
   </select>
-  <select id="queryBySmallClass" parameterType="java.lang.String" resultType="com.qianjiajia.kitchen.design.domain.Product">
+  <select id="queryBySmallClass" parameterType="java.lang.String" resultType="com.qianjiajia.kitchen.design.domain.SmallClassProduct">
     SELECT ID,PRODUCT_NAME,PRODUCT_IMAGE_URL,PRICE
     FROM product
     WHERE KEY_CLASS = #{keyClass,jdbcType=VARCHAR} and PRICE != 0
@@ -691,4 +691,43 @@
         FROM PRODUCT
         WHERE KEYWORD = #{keyword,jdbcType=VARCHAR}
     </select>
+
+
+  <select id="getBigClassData" resultType="java.lang.String">
+    select DISTINCT BIG_KEY_CLASS
+    from PRODUCT
+    WHERE PRICE = 0
+  </select>
+  <select id="getKeyClass" resultType="java.lang.String">
+    SELECT DISTINCT KEY_CLASS
+    FROM PRODUCT
+    WHERE BIG_KEY_CLASS = #{bigKeyClass,jdbcType=VARCHAR} and KEY_CLASS != 'string'
+  </select>
+  <select id="getSlide1" resultType="com.qianjiajia.kitchen.design.domain.PageShow">
+    SELECT ID,PRODUCT_IMAGE_URL
+    FROM PRODUCT
+    WHERE KEYWORD = '首页'
+  </select>
+  <select id="getSlide" resultType="java.lang.String">
+    SELECT ID,PRODUCT_IMAGE_URL
+    FROM PRODUCT
+    WHERE KEYWORD = '首页'
+  </select>
+  <select id="getDiscount" resultType="com.qianjiajia.kitchen.design.domain.DiscountProduct">
+    SELECT ID,PRODUCT_NAME,PRODUCT_IMAGE_URL, IS_DISCOUNT,PRICE,DISCOUNT_PRICE,START_DATE,END_DATE
+    FROM PRODUCT
+    where IS_DISCOUNT = 1
+  </select>
+  <select id="getGroup" resultType="com.qianjiajia.kitchen.design.domain.GroupProduct">
+    SELECT  ID,PRODUCT_NAME,PRODUCT_IMAGE_URL,IS_GROUP_BUY, GROUP_BUY_PRICE,GROUP_BUY_PERSON_NUMBER ,
+      START_GROUP_BUY_DATE ,END_GROUP_BUY_DATE
+    FROM PRODUCT
+    WHERE IS_GROUP_BUY = 1
+  </select>
+  <select id="getRecommend" resultType="com.qianjiajia.kitchen.design.domain.RecommendProduct">
+    SELECT ID,PRODUCT_NAME,PRODUCT_IMAGE_URL, PRICE
+      FROM (select * from PRODUCT order by PUTAWAY_DATE)
+      WHERE rownum &lt;=6 and PRODUCT_NAME != 'string'
+  </select>
+
 </mapper>

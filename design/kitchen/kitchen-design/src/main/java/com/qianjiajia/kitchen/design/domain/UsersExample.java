@@ -465,52 +465,52 @@ public class UsersExample {
             return (Criteria) this;
         }
 
-        public Criteria andStatusEqualTo(Integer value) {
+        public Criteria andStatusEqualTo(Short value) {
             addCriterion("STATUS =", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotEqualTo(Integer value) {
+        public Criteria andStatusNotEqualTo(Short value) {
             addCriterion("STATUS <>", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThan(Integer value) {
+        public Criteria andStatusGreaterThan(Short value) {
             addCriterion("STATUS >", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThanOrEqualTo(Integer value) {
+        public Criteria andStatusGreaterThanOrEqualTo(Short value) {
             addCriterion("STATUS >=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThan(Integer value) {
+        public Criteria andStatusLessThan(Short value) {
             addCriterion("STATUS <", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThanOrEqualTo(Integer value) {
+        public Criteria andStatusLessThanOrEqualTo(Short value) {
             addCriterion("STATUS <=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusIn(List<Integer> values) {
+        public Criteria andStatusIn(List<Short> values) {
             addCriterion("STATUS in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotIn(List<Integer> values) {
+        public Criteria andStatusNotIn(List<Short> values) {
             addCriterion("STATUS not in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusBetween(Integer value1, Integer value2) {
+        public Criteria andStatusBetween(Short value1, Short value2) {
             addCriterion("STATUS between", value1, value2, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotBetween(Integer value1, Integer value2) {
+        public Criteria andStatusNotBetween(Short value1, Short value2) {
             addCriterion("STATUS not between", value1, value2, "status");
             return (Criteria) this;
         }
@@ -595,52 +595,52 @@ public class UsersExample {
             return (Criteria) this;
         }
 
-        public Criteria andAgeEqualTo(Integer value) {
+        public Criteria andAgeEqualTo(Short value) {
             addCriterion("AGE =", value, "age");
             return (Criteria) this;
         }
 
-        public Criteria andAgeNotEqualTo(Integer value) {
+        public Criteria andAgeNotEqualTo(Short value) {
             addCriterion("AGE <>", value, "age");
             return (Criteria) this;
         }
 
-        public Criteria andAgeGreaterThan(Integer value) {
+        public Criteria andAgeGreaterThan(Short value) {
             addCriterion("AGE >", value, "age");
             return (Criteria) this;
         }
 
-        public Criteria andAgeGreaterThanOrEqualTo(Integer value) {
+        public Criteria andAgeGreaterThanOrEqualTo(Short value) {
             addCriterion("AGE >=", value, "age");
             return (Criteria) this;
         }
 
-        public Criteria andAgeLessThan(Integer value) {
+        public Criteria andAgeLessThan(Short value) {
             addCriterion("AGE <", value, "age");
             return (Criteria) this;
         }
 
-        public Criteria andAgeLessThanOrEqualTo(Integer value) {
+        public Criteria andAgeLessThanOrEqualTo(Short value) {
             addCriterion("AGE <=", value, "age");
             return (Criteria) this;
         }
 
-        public Criteria andAgeIn(List<Integer> values) {
+        public Criteria andAgeIn(List<Short> values) {
             addCriterion("AGE in", values, "age");
             return (Criteria) this;
         }
 
-        public Criteria andAgeNotIn(List<Integer> values) {
+        public Criteria andAgeNotIn(List<Short> values) {
             addCriterion("AGE not in", values, "age");
             return (Criteria) this;
         }
 
-        public Criteria andAgeBetween(Integer value1, Integer value2) {
+        public Criteria andAgeBetween(Short value1, Short value2) {
             addCriterion("AGE between", value1, value2, "age");
             return (Criteria) this;
         }
 
-        public Criteria andAgeNotBetween(Integer value1, Integer value2) {
+        public Criteria andAgeNotBetween(Short value1, Short value2) {
             addCriterion("AGE not between", value1, value2, "age");
             return (Criteria) this;
         }

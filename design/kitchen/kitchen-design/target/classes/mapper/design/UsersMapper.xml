@@ -7,9 +7,9 @@
     <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
     <result column="NICK_NAME" jdbcType="VARCHAR" property="nickName" />
     <result column="SALT" jdbcType="VARCHAR" property="salt" />
-    <result column="STATUS" jdbcType="INTEGER" property="status" />
+    <result column="STATUS" jdbcType="DECIMAL" property="status" />
     <result column="SEX" jdbcType="VARCHAR" property="sex" />
-    <result column="AGE" jdbcType="INTEGER" property="age" />
+    <result column="AGE" jdbcType="DECIMAL" property="age" />
     <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
     <result column="REMARK" jdbcType="VARCHAR" property="remark" />
     <result column="CONTACTS" jdbcType="VARCHAR" property="contacts" />
@@ -82,7 +82,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from users
+    from USERS
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -93,31 +93,31 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from users
+    from USERS
     where ID = #{id,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from users
+    delete from USERS
     where ID = #{id,jdbcType=VARCHAR}
   </delete>
   <delete id="deleteByExample" parameterType="com.qianjiajia.kitchen.design.domain.UsersExample">
-    delete from users
+    delete from USERS
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="com.qianjiajia.kitchen.design.domain.Users">
-    insert into users (ID, USER_NAME, PASSWORD, 
+    insert into USERS (ID, USER_NAME, PASSWORD, 
       NICK_NAME, SALT, STATUS, 
       SEX, AGE, CREATE_TIME, 
       REMARK, CONTACTS)
     values (#{id,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{nickName,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
-      #{sex,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{nickName,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR}, #{status,jdbcType=DECIMAL}, 
+      #{sex,jdbcType=VARCHAR}, #{age,jdbcType=DECIMAL}, #{createTime,jdbcType=TIMESTAMP}, 
       #{remark,jdbcType=VARCHAR}, #{contacts,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.qianjiajia.kitchen.design.domain.Users">
-    insert into users
+    insert into USERS
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         ID,
@@ -170,13 +170,13 @@
         #{salt,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
-        #{status,jdbcType=INTEGER},
+        #{status,jdbcType=DECIMAL},
       </if>
       <if test="sex != null">
         #{sex,jdbcType=VARCHAR},
       </if>
       <if test="age != null">
-        #{age,jdbcType=INTEGER},
+        #{age,jdbcType=DECIMAL},
       </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
@@ -190,13 +190,13 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.qianjiajia.kitchen.design.domain.UsersExample" resultType="java.lang.Long">
-    select count(*) from users
+    select count(*) from USERS
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update users
+    update USERS
     <set>
       <if test="record.id != null">
         ID = #{record.id,jdbcType=VARCHAR},
@@ -214,13 +214,13 @@
         SALT = #{record.salt,jdbcType=VARCHAR},
       </if>
       <if test="record.status != null">
-        STATUS = #{record.status,jdbcType=INTEGER},
+        STATUS = #{record.status,jdbcType=DECIMAL},
       </if>
       <if test="record.sex != null">
         SEX = #{record.sex,jdbcType=VARCHAR},
       </if>
       <if test="record.age != null">
-        AGE = #{record.age,jdbcType=INTEGER},
+        AGE = #{record.age,jdbcType=DECIMAL},
       </if>
       <if test="record.createTime != null">
         CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
@@ -237,15 +237,15 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update users
+    update USERS
     set ID = #{record.id,jdbcType=VARCHAR},
       USER_NAME = #{record.userName,jdbcType=VARCHAR},
       PASSWORD = #{record.password,jdbcType=VARCHAR},
       NICK_NAME = #{record.nickName,jdbcType=VARCHAR},
       SALT = #{record.salt,jdbcType=VARCHAR},
-      STATUS = #{record.status,jdbcType=INTEGER},
+      STATUS = #{record.status,jdbcType=DECIMAL},
       SEX = #{record.sex,jdbcType=VARCHAR},
-      AGE = #{record.age,jdbcType=INTEGER},
+      AGE = #{record.age,jdbcType=DECIMAL},
       CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
       REMARK = #{record.remark,jdbcType=VARCHAR},
       CONTACTS = #{record.contacts,jdbcType=VARCHAR}
@@ -254,7 +254,7 @@
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.qianjiajia.kitchen.design.domain.Users">
-    update users
+    update USERS
     <set>
       <if test="userName != null">
         USER_NAME = #{userName,jdbcType=VARCHAR},
@@ -269,13 +269,13 @@
         SALT = #{salt,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
-        STATUS = #{status,jdbcType=INTEGER},
+        STATUS = #{status,jdbcType=DECIMAL},
       </if>
       <if test="sex != null">
         SEX = #{sex,jdbcType=VARCHAR},
       </if>
       <if test="age != null">
-        AGE = #{age,jdbcType=INTEGER},
+        AGE = #{age,jdbcType=DECIMAL},
       </if>
       <if test="createTime != null">
         CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
@@ -290,14 +290,14 @@
     where ID = #{id,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianjiajia.kitchen.design.domain.Users">
-    update users
+    update USERS
     set USER_NAME = #{userName,jdbcType=VARCHAR},
       PASSWORD = #{password,jdbcType=VARCHAR},
       NICK_NAME = #{nickName,jdbcType=VARCHAR},
       SALT = #{salt,jdbcType=VARCHAR},
-      STATUS = #{status,jdbcType=INTEGER},
+      STATUS = #{status,jdbcType=DECIMAL},
       SEX = #{sex,jdbcType=VARCHAR},
-      AGE = #{age,jdbcType=INTEGER},
+      AGE = #{age,jdbcType=DECIMAL},
       CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
       REMARK = #{remark,jdbcType=VARCHAR},
       CONTACTS = #{contacts,jdbcType=VARCHAR}

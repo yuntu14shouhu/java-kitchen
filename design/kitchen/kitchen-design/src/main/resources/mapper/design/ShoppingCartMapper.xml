@@ -3,10 +3,10 @@
 <mapper namespace="com.qianjiajia.kitchen.design.dao.ShoppingCartMapper">
   <resultMap id="BaseResultMap" type="com.qianjiajia.kitchen.design.domain.ShoppingCart">
     <id column="ID" jdbcType="VARCHAR" property="id" />
-    <result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+    <result column="USER_ID_SHOP" jdbcType="VARCHAR" property="userIdShop" />
     <result column="PRODUCT_ID" jdbcType="VARCHAR" property="productId" />
-    <result column="STATUS" jdbcType="INTEGER" property="status" />
-    <result column="PRODUCT_NUMBER" jdbcType="INTEGER" property="productNumber" />
+    <result column="STATUS" jdbcType="DECIMAL" property="status" />
+    <result column="PRODUCT_NUMBER" jdbcType="DECIMAL" property="productNumber" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -67,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    ID, USER_ID, PRODUCT_ID, STATUS, PRODUCT_NUMBER
+    ID, USER_ID_SHOP, PRODUCT_ID, STATUS, PRODUCT_NUMBER
   </sql>
   <select id="selectByExample" parameterType="com.qianjiajia.kitchen.design.domain.ShoppingCartExample" resultMap="BaseResultMap">
     select
@@ -75,7 +75,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from shoppingcart
+    from SHOPPINGCART
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -86,33 +86,33 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from shoppingcart
+    from SHOPPINGCART
     where ID = #{id,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from shoppingcart
+    delete from SHOPPINGCART
     where ID = #{id,jdbcType=VARCHAR}
   </delete>
   <delete id="deleteByExample" parameterType="com.qianjiajia.kitchen.design.domain.ShoppingCartExample">
-    delete from shoppingcart
+    delete from SHOPPINGCART
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="com.qianjiajia.kitchen.design.domain.ShoppingCart">
-    insert into shoppingcart (ID, USER_ID, PRODUCT_ID, 
+    insert into SHOPPINGCART (ID, USER_ID_SHOP, PRODUCT_ID, 
       STATUS, PRODUCT_NUMBER)
-    values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{productId,jdbcType=VARCHAR}, 
-      #{status,jdbcType=INTEGER}, #{productNumber,jdbcType=INTEGER})
+    values (#{id,jdbcType=VARCHAR}, #{userIdShop,jdbcType=VARCHAR}, #{productId,jdbcType=VARCHAR}, 
+      #{status,jdbcType=DECIMAL}, #{productNumber,jdbcType=DECIMAL})
   </insert>
   <insert id="insertSelective" parameterType="com.qianjiajia.kitchen.design.domain.ShoppingCart">
-    insert into shoppingcart
+    insert into SHOPPINGCART
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         ID,
       </if>
-      <if test="userId != null">
-        USER_ID,
+      <if test="userIdShop != null">
+        USER_ID_SHOP,
       </if>
       <if test="productId != null">
         PRODUCT_ID,
@@ -128,43 +128,43 @@
       <if test="id != null">
         #{id,jdbcType=VARCHAR},
       </if>
-      <if test="userId != null">
-        #{userId,jdbcType=VARCHAR},
+      <if test="userIdShop != null">
+        #{userIdShop,jdbcType=VARCHAR},
       </if>
       <if test="productId != null">
         #{productId,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
-        #{status,jdbcType=INTEGER},
+        #{status,jdbcType=DECIMAL},
       </if>
       <if test="productNumber != null">
-        #{productNumber,jdbcType=INTEGER},
+        #{productNumber,jdbcType=DECIMAL},
       </if>
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.qianjiajia.kitchen.design.domain.ShoppingCartExample" resultType="java.lang.Long">
-    select count(*) from shoppingcart
+    select count(*) from SHOPPINGCART
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update shoppingcart
+    update SHOPPINGCART
     <set>
       <if test="record.id != null">
         ID = #{record.id,jdbcType=VARCHAR},
       </if>
-      <if test="record.userId != null">
-        USER_ID = #{record.userId,jdbcType=VARCHAR},
+      <if test="record.userIdShop != null">
+        USER_ID_SHOP = #{record.userIdShop,jdbcType=VARCHAR},
       </if>
       <if test="record.productId != null">
         PRODUCT_ID = #{record.productId,jdbcType=VARCHAR},
       </if>
       <if test="record.status != null">
-        STATUS = #{record.status,jdbcType=INTEGER},
+        STATUS = #{record.status,jdbcType=DECIMAL},
       </if>
       <if test="record.productNumber != null">
-        PRODUCT_NUMBER = #{record.productNumber,jdbcType=INTEGER},
+        PRODUCT_NUMBER = #{record.productNumber,jdbcType=DECIMAL},
       </if>
     </set>
     <if test="_parameter != null">
@@ -172,42 +172,43 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update shoppingcart
+    update SHOPPINGCART
     set ID = #{record.id,jdbcType=VARCHAR},
-      USER_ID = #{record.userId,jdbcType=VARCHAR},
+      USER_ID_SHOP = #{record.userIdShop,jdbcType=VARCHAR},
       PRODUCT_ID = #{record.productId,jdbcType=VARCHAR},
-      STATUS = #{record.status,jdbcType=INTEGER},
-      PRODUCT_NUMBER = #{record.productNumber,jdbcType=INTEGER}
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      PRODUCT_NUMBER = #{record.productNumber,jdbcType=DECIMAL}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.qianjiajia.kitchen.design.domain.ShoppingCart">
-    update shoppingcart
+    update SHOPPINGCART
     <set>
-      <if test="userId != null">
-        USER_ID = #{userId,jdbcType=VARCHAR},
+      <if test="userIdShop != null">
+        USER_ID_SHOP = #{userIdShop,jdbcType=VARCHAR},
       </if>
       <if test="productId != null">
         PRODUCT_ID = #{productId,jdbcType=VARCHAR},
       </if>
       <if test="status != null">
-        STATUS = #{status,jdbcType=INTEGER},
+        STATUS = #{status,jdbcType=DECIMAL},
       </if>
       <if test="productNumber != null">
-        PRODUCT_NUMBER = #{productNumber,jdbcType=INTEGER},
+        PRODUCT_NUMBER = #{productNumber,jdbcType=DECIMAL},
       </if>
     </set>
     where ID = #{id,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianjiajia.kitchen.design.domain.ShoppingCart">
-    update shoppingcart
-    set USER_ID = #{userId,jdbcType=VARCHAR},
+    update SHOPPINGCART
+    set USER_ID_SHOP = #{userIdShop,jdbcType=VARCHAR},
       PRODUCT_ID = #{productId,jdbcType=VARCHAR},
-      STATUS = #{status,jdbcType=INTEGER},
-      PRODUCT_NUMBER = #{productNumber,jdbcType=INTEGER}
+      STATUS = #{status,jdbcType=DECIMAL},
+      PRODUCT_NUMBER = #{productNumber,jdbcType=DECIMAL}
     where ID = #{id,jdbcType=VARCHAR}
   </update>
+
   <select id="get" parameterType="java.lang.String" resultMap="BaseResultMap">
     SELECT * FROM shoppingcart
     WHERE USER_ID = #{userId,jdbcType=VARCHAR}
@@ -250,7 +251,7 @@
   </update>
 
   <update id="updateNumber" parameterType="java.lang.String">
-     UPDATE shoppingcart
+    UPDATE shoppingcart
     SET STATUS = #{status,jdbcType=INTEGER} and PRODUCT_NUMBER = #{productNumber,jdbcType=INTEGER}
     where ID = #{id,jdbcType=VARCHAR}
   </update>

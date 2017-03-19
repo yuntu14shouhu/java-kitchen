@@ -1,5 +1,6 @@
 package com.qianjiajia.kitchen.design.domain;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class Product {
@@ -13,7 +14,7 @@ public class Product {
 
     private String productImageUrl;
 
-    private Integer status;
+    private Short status;
 
     private String productTypes;
 
@@ -25,25 +26,25 @@ public class Product {
 
     private Date productionDate;
 
-    private Double price;
+    private BigDecimal price;
 
-    private Double discountPrice;
+    private BigDecimal discountPrice;
 
-    private Integer isDiscount;
+    private Short isDiscount;
 
     private Integer limitNumber;
 
-    private Integer kindNumber;
+    private Short kindNumber;
 
     private Date startDate;
 
     private Date endDate;
 
-    private Double carriage;
+    private BigDecimal carriage;
 
-    private Integer isGroupBuy;
+    private Short isGroupBuy;
 
-    private Double groupBuyPrice;
+    private BigDecimal groupBuyPrice;
 
     private Integer groupBuyPersonNumber;
 
@@ -97,11 +98,11 @@ public class Product {
         this.productImageUrl = productImageUrl == null ? null : productImageUrl.trim();
     }
 
-    public Integer getStatus() {
+    public Short getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(Short status) {
         this.status = status;
     }
 
@@ -145,27 +146,27 @@ public class Product {
         this.productionDate = productionDate;
     }
 
-    public Double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
-    public Double getDiscountPrice() {
+    public BigDecimal getDiscountPrice() {
         return discountPrice;
     }
 
-    public void setDiscountPrice(Double discountPrice) {
+    public void setDiscountPrice(BigDecimal discountPrice) {
         this.discountPrice = discountPrice;
     }
 
-    public Integer getIsDiscount() {
+    public Short getIsDiscount() {
         return isDiscount;
     }
 
-    public void setIsDiscount(Integer isDiscount) {
+    public void setIsDiscount(Short isDiscount) {
         this.isDiscount = isDiscount;
     }
 
@@ -177,11 +178,11 @@ public class Product {
         this.limitNumber = limitNumber;
     }
 
-    public Integer getKindNumber() {
+    public Short getKindNumber() {
         return kindNumber;
     }
 
-    public void setKindNumber(Integer kindNumber) {
+    public void setKindNumber(Short kindNumber) {
         this.kindNumber = kindNumber;
     }
 
@@ -201,27 +202,27 @@ public class Product {
         this.endDate = endDate;
     }
 
-    public Double getCarriage() {
+    public BigDecimal getCarriage() {
         return carriage;
     }
 
-    public void setCarriage(Double carriage) {
+    public void setCarriage(BigDecimal carriage) {
         this.carriage = carriage;
     }
 
-    public Integer getIsGroupBuy() {
+    public Short getIsGroupBuy() {
         return isGroupBuy;
     }
 
-    public void setIsGroupBuy(Integer isGroupBuy) {
+    public void setIsGroupBuy(Short isGroupBuy) {
         this.isGroupBuy = isGroupBuy;
     }
 
-    public Double getGroupBuyPrice() {
+    public BigDecimal getGroupBuyPrice() {
         return groupBuyPrice;
     }
 
-    public void setGroupBuyPrice(Double groupBuyPrice) {
+    public void setGroupBuyPrice(BigDecimal groupBuyPrice) {
         this.groupBuyPrice = groupBuyPrice;
     }
 

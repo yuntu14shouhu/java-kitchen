@@ -13,11 +13,11 @@ public class Users {
 
     private String salt;
 
-    private Integer status;
+    private Short status;
 
     private String sex;
 
-    private Integer age;
+    private Short age;
 
     private Date createTime;
 
@@ -71,11 +71,11 @@ public class Users {
         this.salt = salt == null ? null : salt.trim();
     }
 
-    public Integer getStatus() {
+    public Short getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(Short status) {
         this.status = status;
     }
 
@@ -87,11 +87,11 @@ public class Users {
         this.sex = sex == null ? null : sex.trim();
     }
 
-    public Integer getAge() {
+    public Short getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(Short age) {
         this.age = age;
     }
 
