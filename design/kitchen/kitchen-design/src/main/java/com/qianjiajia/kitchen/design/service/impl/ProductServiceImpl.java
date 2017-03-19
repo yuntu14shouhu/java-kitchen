@@ -89,7 +89,7 @@ public class ProductServiceImpl implements IProductService{
     }
 
     @Override
-    public List<SmallClassProduct> queryBySmallClass(String smallClass) {
+    public List<Product> queryBySmallClass(String smallClass) {
         return productMapper.queryBySmallClass(smallClass);
     }
 
@@ -104,7 +104,7 @@ public class ProductServiceImpl implements IProductService{
     }
 
     @Override
-    public List<PageShow> getAllSlide(Product product) {
+    public List<Product> getAllSlide(Product product) {
         return productMapper.getSlide1(product);
     }
 
@@ -114,17 +114,17 @@ public class ProductServiceImpl implements IProductService{
     }
 
     @Override
-    public List<DiscountProduct> getAllDiscount(Product product) {
+    public List<Product> getAllDiscount(Product product) {
         return productMapper.getDiscount(product);
     }
 
     @Override
-    public List<GroupProduct> getAllGroup(Product product) {
+    public List<Product> getAllGroup(Product product) {
         return productMapper.getGroup(product);
     }
 
     @Override
-    public List<RecommendProduct> getAllRecommend(Product product) {
+    public List<Product> getAllRecommend(Product product) {
         return productMapper.getRecommend(product);
     }
 

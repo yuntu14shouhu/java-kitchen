@@ -4,7 +4,6 @@ import com.qianjiajia.kitchen.common.result.MessageResult;
 import com.qianjiajia.kitchen.common.result.PageResult;
 import com.qianjiajia.kitchen.design.domain.CnAndEn;
 import com.qianjiajia.kitchen.design.domain.Product;
-import com.qianjiajia.kitchen.design.domain.SmallClassProduct;
 import com.qianjiajia.kitchen.design.query.ProductQuery;
 import com.qianjiajia.kitchen.design.service.IAddressService;
 import com.qianjiajia.kitchen.design.service.ICnAndEnService;
@@ -120,7 +119,7 @@ public class ProductController {
     @ResponseBody
     @RequestMapping(value = "/queryBySmallClass", method = RequestMethod.GET)
     public MessageResult queryBySmallClass(String smallClass) {
-        List<SmallClassProduct> productList = productService.queryBySmallClass(smallClass);
+        List<Product> productList = productService.queryBySmallClass(smallClass);
         return MessageResult.getSuccessInstance(productList);
     }
 

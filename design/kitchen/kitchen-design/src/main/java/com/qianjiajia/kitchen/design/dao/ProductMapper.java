@@ -41,7 +41,7 @@ public interface ProductMapper {
 
     List<Product> queryByBigClass(@Param("bigKeyClass") String bigClass);
 
-    List<SmallClassProduct> queryBySmallClass(String smallClass);
+    List<Product> queryBySmallClass(String smallClass);
 
     List<Product> getPage(ProductQuery productQuery);
 
@@ -49,13 +49,13 @@ public interface ProductMapper {
 
     List<String> getKeyClass(String bigKeyClass);
 
-    List<PageShow> getSlide1(Product product);
+    List<Product> getSlide1(Product product);
 
     List<String> getSlide();
 
-    List<DiscountProduct> getDiscount(Product product);
+    List<Product> getDiscount(Product product);
 
-    List<GroupProduct> getGroup(Product product);
+    List<Product> getGroup(Product product);
 
-    List<RecommendProduct> getRecommend(Product product);
+    List<Product> getRecommend(Product product);
 }

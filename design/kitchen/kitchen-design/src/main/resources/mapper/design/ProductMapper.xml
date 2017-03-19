@@ -681,7 +681,7 @@
     WHERE
       BIG_KEY_CLASS = #{bigKeyClass} and PRICE = 0
   </select>
-  <select id="queryBySmallClass" parameterType="java.lang.String" resultType="com.qianjiajia.kitchen.design.domain.SmallClassProduct">
+  <select id="queryBySmallClass" parameterType="java.lang.String" resultType="com.qianjiajia.kitchen.design.domain.Product">
     SELECT ID,PRODUCT_NAME,PRODUCT_IMAGE_URL,PRICE
     FROM product
     WHERE KEY_CLASS = #{keyClass,jdbcType=VARCHAR} and PRICE != 0
@@ -703,7 +703,7 @@
     FROM PRODUCT
     WHERE BIG_KEY_CLASS = #{bigKeyClass,jdbcType=VARCHAR} and KEY_CLASS != 'string'
   </select>
-  <select id="getSlide1" resultType="com.qianjiajia.kitchen.design.domain.PageShow">
+  <select id="getSlide1" resultType="com.qianjiajia.kitchen.design.domain.Product">
     SELECT ID,PRODUCT_IMAGE_URL
     FROM PRODUCT
     WHERE KEYWORD = '首页'
@@ -713,18 +713,18 @@
     FROM PRODUCT
     WHERE KEYWORD = '首页'
   </select>
-  <select id="getDiscount" resultType="com.qianjiajia.kitchen.design.domain.DiscountProduct">
+  <select id="getDiscount" resultType="com.qianjiajia.kitchen.design.domain.Product">
     SELECT ID,PRODUCT_NAME,PRODUCT_IMAGE_URL, IS_DISCOUNT,PRICE,DISCOUNT_PRICE,START_DATE,END_DATE
     FROM PRODUCT
     where IS_DISCOUNT = 1
   </select>
-  <select id="getGroup" resultType="com.qianjiajia.kitchen.design.domain.GroupProduct">
+  <select id="getGroup" resultType="com.qianjiajia.kitchen.design.domain.Product">
     SELECT  ID,PRODUCT_NAME,PRODUCT_IMAGE_URL,IS_GROUP_BUY, GROUP_BUY_PRICE,GROUP_BUY_PERSON_NUMBER ,
       START_GROUP_BUY_DATE ,END_GROUP_BUY_DATE
     FROM PRODUCT
     WHERE IS_GROUP_BUY = 1
   </select>
-  <select id="getRecommend" resultType="com.qianjiajia.kitchen.design.domain.RecommendProduct">
+  <select id="getRecommend" resultType="com.qianjiajia.kitchen.design.domain.Product">
     SELECT ID,PRODUCT_NAME,PRODUCT_IMAGE_URL, PRICE
       FROM (select * from PRODUCT order by PUTAWAY_DATE)
       WHERE rownum &lt;=6 and PRODUCT_NAME != 'string'

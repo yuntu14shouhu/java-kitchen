@@ -75,7 +75,7 @@ public interface IProductService {
     /**
      * 根据商品的小类别查询商品
      */
-    List<SmallClassProduct> queryBySmallClass(String smallClass);
+    List<Product> queryBySmallClass(String smallClass);
 
     /**
      *
@@ -85,13 +85,13 @@ public interface IProductService {
 
     List<String> getAllKeyClass(String bigKeyClass);
 
-    List<PageShow> getAllSlide(Product product);
+    List<Product> getAllSlide(Product product);
 
     List<String> getAllSlide();
 
-    List<DiscountProduct> getAllDiscount(Product product);
+    List<Product> getAllDiscount(Product product);
 
-    List<GroupProduct> getAllGroup(Product product);
+    List<Product> getAllGroup(Product product);
 
-    List<RecommendProduct> getAllRecommend(Product product);
+    List<Product> getAllRecommend(Product product);
 }
