@@ -5,10 +5,12 @@ import com.qianjiajia.kitchen.design.domain.ShoppingCart;
 import com.qianjiajia.kitchen.design.service.IShoppingCartService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -74,7 +76,7 @@ public class ShoppingCartController {
     @ApiOperation(value = "购物车添加----该商品已经存在")
     @ResponseBody
     @RequestMapping(value = "/saveById",method = RequestMethod.POST)
-    public MessageResult saveById(String id){
+    public MessageResult saveById(@RequestBody @ApiParam String id){
         shoppingCartService.saveById(id);
         return MessageResult.getSuccessInstance();
     }
@@ -82,7 +84,7 @@ public class ShoppingCartController {
     @ApiOperation(value = "购物车添加----商品不存在")
     @ResponseBody
     @RequestMapping(value = "/save",method = RequestMethod.POST)
-    public MessageResult save(ShoppingCart shoppingCart){
+    public MessageResult save(@RequestBody @ApiParam ShoppingCart shoppingCart){
         shoppingCartService.save(shoppingCart);
         return MessageResult.getSuccessInstance();
     }

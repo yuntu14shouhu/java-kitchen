@@ -7,6 +7,7 @@ import com.qianjiajia.kitchen.design.domain.Product;
 import com.qianjiajia.kitchen.design.service.ICnAndEnService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -33,6 +34,7 @@ public class CnAndEnServiceImpl implements ICnAndEnService{
         return cnAndEnMapper.allEn();
     }
 
+    @Transactional
     @Override
     public void save(CnAndEn cnAndEn) {
         cnAndEn.setCnAndEnId(UUIDUtil.getUUID());

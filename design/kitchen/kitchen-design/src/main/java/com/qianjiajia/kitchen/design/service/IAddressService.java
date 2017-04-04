@@ -20,4 +20,17 @@ public interface IAddressService {
     void delete(String addressId);
 
     List<Address> query();
+
+    /**
+     * 根据收货地址id进行查询：
+     * 查询结果为：
+     * 收货人姓名
+     * 收货人电话
+     * 收货人地址
+     */
+    Address queryTo(String id);
+
+    List<String> queryId();
+
+
 }

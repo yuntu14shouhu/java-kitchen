@@ -261,4 +261,15 @@
     SELECT ID,CONSIGNEE_NAME,CONSIGNEE_PHONE,CONSIGNEE_ADDRESS,ADDRESS_TYPE,IS_DEFAULT
     FROM ADDRESS
   </select>
+
+  <select id="getById" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT CONSIGNEE_NAME,CONSIGNEE_PHONE,CONSIGNEE_ADDRESS
+    FROM ADDRESS
+    WHERE ID = #{id,jdbcType=VARCHAR}
+  </select>
+
+  <select id="queryIdList" resultType="java.lang.String">
+    SELECT ID
+    FROM ADDRESS
+  </select>
 </mapper>

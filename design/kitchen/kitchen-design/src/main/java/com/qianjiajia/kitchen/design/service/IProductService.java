@@ -94,4 +94,18 @@ public interface IProductService {
     List<Product> getAllGroup(Product product);
 
     List<Product> getAllRecommend(Product product);
+
+    /**
+     * 查询全部商品id
+     */
+    List<String> queryProductId();
+
+    /**
+     * 根据商品id进行查询
+     * 查询结果为----------
+     * 商品名称
+     * 商品图片
+     * 商品价格
+     */
+    Product queryToProduct(String productId);
 }

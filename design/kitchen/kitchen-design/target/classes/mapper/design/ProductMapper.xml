@@ -682,7 +682,7 @@
       BIG_KEY_CLASS = #{bigKeyClass} and PRICE = 0
   </select>
   <select id="queryBySmallClass" parameterType="java.lang.String" resultType="com.qianjiajia.kitchen.design.domain.Product">
-    SELECT ID,PRODUCT_NAME,PRODUCT_IMAGE_URL,PRICE
+    SELECT *
     FROM product
     WHERE KEY_CLASS = #{keyClass,jdbcType=VARCHAR} and PRICE != 0
   </select>
@@ -699,12 +699,10 @@
     WHERE PRICE = 0
   </select>
   <select id="getKeyClass" resultType="java.lang.String">
-    SELECT DISTINCT KEY_CLASS
-    FROM PRODUCT
-    WHERE BIG_KEY_CLASS = #{bigKeyClass,jdbcType=VARCHAR} and KEY_CLASS != 'string'
+
   </select>
   <select id="getSlide1" resultType="com.qianjiajia.kitchen.design.domain.Product">
-    SELECT ID,PRODUCT_IMAGE_URL
+    SELECT *
     FROM PRODUCT
     WHERE KEYWORD = '首页'
   </select>
@@ -714,20 +712,35 @@
     WHERE KEYWORD = '首页'
   </select>
   <select id="getDiscount" resultType="com.qianjiajia.kitchen.design.domain.Product">
-    SELECT ID,PRODUCT_NAME,PRODUCT_IMAGE_URL, IS_DISCOUNT,PRICE,DISCOUNT_PRICE,START_DATE,END_DATE
+    SELECT *
     FROM PRODUCT
     where IS_DISCOUNT = 1
   </select>
   <select id="getGroup" resultType="com.qianjiajia.kitchen.design.domain.Product">
-    SELECT  ID,PRODUCT_NAME,PRODUCT_IMAGE_URL,IS_GROUP_BUY, GROUP_BUY_PRICE,GROUP_BUY_PERSON_NUMBER ,
-      START_GROUP_BUY_DATE ,END_GROUP_BUY_DATE
+    SELECT  *
     FROM PRODUCT
     WHERE IS_GROUP_BUY = 1
   </select>
   <select id="getRecommend" resultType="com.qianjiajia.kitchen.design.domain.Product">
-    SELECT ID,PRODUCT_NAME,PRODUCT_IMAGE_URL, PRICE
+    SELECT *
       FROM (select * from PRODUCT order by PUTAWAY_DATE)
       WHERE rownum &lt;=6 and PRODUCT_NAME != 'string'
+  </select>
+
+  <select id="queryProductId" resultType="java.lang.String">
+    SELECT ID
+    FROM PRODUCT
+  </select>
+
+  <select id="queryToProduct" resultType="com.qianjiajia.kitchen.design.domain.Product">
+    SELECT PRODUCT_NAME,PRODUCT_IMAGE_URL,PRICE
+    FROM PRODUCT
+    WHERE ID = #{id,jdbcType=VARCHAR}
+  </select>
+
+  <select id="getProductIdList" resultType="java.lang.String">
+    SELECT ID
+    FROM PRODUCT
   </select>
 
 </mapper>

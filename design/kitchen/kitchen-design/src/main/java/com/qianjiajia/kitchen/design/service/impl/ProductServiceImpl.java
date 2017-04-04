@@ -128,5 +128,15 @@ public class ProductServiceImpl implements IProductService{
         return productMapper.getRecommend(product);
     }
 
+    @Override
+    public List<String> queryProductId() {
+        return productMapper.queryProductId();
+    }
+
+    @Override
+    public Product queryToProduct(String  productId) {
+        return productMapper.queryToProduct(productId);
+    }
+
 
 }

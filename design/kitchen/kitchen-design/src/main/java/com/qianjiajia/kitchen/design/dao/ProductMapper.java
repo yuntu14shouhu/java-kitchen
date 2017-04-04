@@ -58,4 +58,10 @@ public interface ProductMapper {
     List<Product> getGroup(Product product);
 
     List<Product> getRecommend(Product product);
+
+    List<String> queryProductId();
+
+    Product queryToProduct(String productId);
+
+    List<String> getProductIdList();
 }

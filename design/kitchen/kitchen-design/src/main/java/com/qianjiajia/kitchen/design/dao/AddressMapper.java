@@ -30,4 +30,8 @@ public interface AddressMapper {
     int updateByPrimaryKey(Address record);
 
     List<Address> queryList();
+
+    Address getById(String id);
+
+    List<String> queryIdList();
 }
