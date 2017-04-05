@@ -3,7 +3,9 @@ package com.qianjiajia.kitchen.design.service.impl;
 import com.qianjiajia.kitchen.common.utils.UUIDUtil;
 import com.qianjiajia.kitchen.design.dao.AddressMapper;
 import com.qianjiajia.kitchen.design.domain.Address;
+import com.qianjiajia.kitchen.design.domain.Users;
 import com.qianjiajia.kitchen.design.service.IAddressService;
+import com.qianjiajia.kitchen.design.utils.UserLoginUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -44,7 +46,8 @@ public class AddressServiceImpl implements IAddressService {
 
     @Override
     public List<Address> query() {
-        return addressMapper.queryList();
+        Users user = UserLoginUtils.currentUser;
+        return addressMapper.queryList(user.getId());
     }
 
     @Override

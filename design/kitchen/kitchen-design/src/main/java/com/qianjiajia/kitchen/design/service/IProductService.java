@@ -108,4 +108,10 @@ public interface IProductService {
      * 商品价格
      */
     Product queryToProduct(String productId);
+
+
+    /**
+     * 模糊查询
+     */
+    List<ProductQuery> fuzzyQuery(ProductQuery productQuery);
 }

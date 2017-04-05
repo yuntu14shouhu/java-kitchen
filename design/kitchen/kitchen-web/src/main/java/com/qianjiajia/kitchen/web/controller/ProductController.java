@@ -218,13 +218,44 @@ public class ProductController {
             List<String> smKeyList = productService.getAllKeyClass(bigKeyClassList.get(i));
             for (int j = 0; j < smKeyList.size(); j++) {
                 //根据小类别英文查所有商品
-                //String smKey = "";
                 List productList = productService.queryBySmallClass(smKeyList.get(j));
                 smKeyProListMap.put(cnAndEnMap.get(smKeyList.get(j)), productList);
             }
             biKeysmKeyMap.put(cnAndEnMap.get(bigKeyClassList.get(i)), smKeyProListMap);
         }
         return biKeysmKeyMap;
+    }
+
+    @ApiOperation(value = "模糊查询")
+    @ResponseBody
+    @RequestMapping(value = "/fuzzyQuery", method = RequestMethod.GET)
+    public MessageResult fuzzyQuery(ProductQuery productQuery){
+        List<ProductQuery> productList = productService.fuzzyQuery(productQuery);
+        return MessageResult.getSuccessInstance(productList);
+    }
+
+    @ApiOperation(value = "最近搜索")
+    @ResponseBody
+    @RequestMapping(value = "/latelySearch", method = RequestMethod.GET)
+    public MessageResult latelySearch(ProductQuery productQuery){
+        List<ProductQuery> productList = productService.fuzzyQuery(productQuery);
+        return MessageResult.getSuccessInstance(productList);
+    }
+
+    @ApiOperation(value = "人气搜索")
+    @ResponseBody
+    @RequestMapping(value = "/popularitySearch", method = RequestMethod.GET)
+    public MessageResult popularitySearch(ProductQuery productQuery){
+        List<ProductQuery> productList = productService.fuzzyQuery(productQuery);
+        return MessageResult.getSuccessInstance(productList);
+    }
+
+    @ApiOperation(value = "删除搜索")
+    @ResponseBody
+    @RequestMapping(value = "/deleteSearch", method = RequestMethod.GET)
+    public MessageResult deleteSearch(ProductQuery productQuery){
+        List<ProductQuery> productList = productService.fuzzyQuery(productQuery);
+        return MessageResult.getSuccessInstance(productList);
     }
 
 }

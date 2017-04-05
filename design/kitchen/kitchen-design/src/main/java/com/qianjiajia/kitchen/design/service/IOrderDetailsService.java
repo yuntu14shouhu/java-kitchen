@@ -4,6 +4,8 @@ import com.qianjiajia.kitchen.common.result.PageResult;
 import com.qianjiajia.kitchen.design.domain.OrderDetails;
 import com.qianjiajia.kitchen.design.query.OrderDetailsQuery;
 
+import java.util.List;
+
 /**
  * @author qianjiajia
  * @version 1.0
@@ -37,4 +39,7 @@ public interface IOrderDetailsService {
      * 删除订单
      */
     void delete(String ordersDetailsId);
+
+    List<OrderDetails> queryList(String ordersId);
+
 }

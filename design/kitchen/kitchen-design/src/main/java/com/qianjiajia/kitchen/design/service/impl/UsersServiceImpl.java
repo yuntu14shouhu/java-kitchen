@@ -8,6 +8,7 @@ import com.qianjiajia.kitchen.design.dao.UsersMapper;
 import com.qianjiajia.kitchen.design.domain.Users;
 import com.qianjiajia.kitchen.design.domain.UsersExample;
 import com.qianjiajia.kitchen.design.service.IUsersService;
+import com.qianjiajia.kitchen.design.utils.UserLoginUtils;
 import org.apache.shiro.crypto.hash.Sha512Hash;
 import org.apache.shiro.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,8 @@ public class UsersServiceImpl implements IUsersService{
     @Autowired
     private UsersMapper usersMapper;
 
+    private static final String salt = "kitchen";
+
 //    @javax.annotation.Resource(name = "redisTemplate")
 //    private ValueOperations<String,LocalDomain> valueOperations;
 //
@@ -39,12 +42,11 @@ public class UsersServiceImpl implements IUsersService{
     @Override
     public Users save(Users users) {
         users.setId(UUIDUtil.getUUID());
-        String salt = UUIDUtil.getUUID().substring(0,15);
         if(StringUtils.isEmpty(users.getPassword())){
             throw new ApiException(ApiExceptionCode.UNKNOWN_EXCEPTION,"密码不能为空");
         }
-//        String password = new Sha512Hash(users.getPassword(),salt).toHex();
-        users.setPassword(users.getPassword());
+        String password = new Sha512Hash(users.getPassword(),salt).toHex();
+        users.setPassword(password);
         users.setSalt(salt);
         users.setCreateTime(new Date());
         usersMapper.insert(users);
@@ -158,5 +160,21 @@ public class UsersServiceImpl implements IUsersService{
     @Override
     public List<Users> getAll() {
         return usersMapper.selectAll();
+    }
+
+    @Override
+    public String queryUserId(Users users) {
+        return usersMapper.queryUserId(users);
+    }
+
+    @Override
+    public boolean login(Users users) {
+        users.setPassword(new Sha512Hash(users.getPassword(),salt).toHex());
+        Users curUser = usersMapper.login(users);
+        if(curUser != null ){
+            UserLoginUtils.currentUser = curUser;
+            return true;
+        }
+        return false;
     }
 }

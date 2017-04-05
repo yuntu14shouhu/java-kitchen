@@ -57,5 +57,10 @@ public interface IUsersService {
      */
     List<Users> getAll();
 
+    /**
+     * 获取用户id
+     */
+    String queryUserId(Users users);
 
+    boolean login(Users users);
 }

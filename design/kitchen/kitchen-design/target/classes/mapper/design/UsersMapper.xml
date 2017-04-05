@@ -312,4 +312,17 @@
     FROM USERS
     ORDER BY CREATE_TIME DESC
   </select>
+
+  <select id="queryUserId" resultType="java.lang.String">
+    SELECT ID
+    FROM USERS
+  </select>
+
+  <select id="login" parameterType="com.qianjiajia.kitchen.design.domain.Users" resultType="com.qianjiajia.kitchen.design.domain.Users">
+    SELECT *
+    FROM USERS
+    WHERE USER_NAME = #{userName,jdbcType=VARCHAR}
+          and
+      PASSWORD = #{password,jdbcType=VARCHAR}
+  </select>
 </mapper>

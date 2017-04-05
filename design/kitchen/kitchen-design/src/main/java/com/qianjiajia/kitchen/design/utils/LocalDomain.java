@@ -3,6 +3,7 @@ package com.qianjiajia.kitchen.design.utils;
 import com.qianjiajia.kitchen.design.domain.Users;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Map;
@@ -15,12 +16,13 @@ import java.util.Map;
  */
 @AllArgsConstructor
 @Data
+@NoArgsConstructor
 public class LocalDomain implements Serializable {
 
     /**
      * 存放sesion的值
      */
-    private Map<String,Object> session;
+    private  Map<String,Object> session;
 
     /**
      * 存放当前token的值

@@ -31,7 +31,7 @@
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
 
-        <table tableName="ORDERS" domainObjectName="Orders"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>
+        <table tableName="ORDER_DETAILS_MODIFY" domainObjectName="OrderDetailsModify"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>
         <!--<table tableName="ORDER_DETAILS" domainObjectName="OrderDetails"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>-->
 
         <!--<table tableName="USERS" domainObjectName="Users"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>-->

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qianjiajia.kitchen.design.dao.SearchQueryMapper">
+  <resultMap id="BaseResultMap" type="com.qianjiajia.kitchen.design.domain.SearchQuery">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="SEARCH_TYPE" jdbcType="DECIMAL" property="searchType" />
+    <result column="SEARCH_CONTENT" jdbcType="VARCHAR" property="searchContent" />
+    <result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+    <result column="SEARCH_TIME" jdbcType="TIMESTAMP" property="searchTime" />
+    <result column="SEARCH_NUMBER" jdbcType="DECIMAL" property="searchNumber" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, SEARCH_TYPE, SEARCH_CONTENT, USER_ID, SEARCH_TIME, SEARCH_NUMBER
+  </sql>
+  <select id="selectByExample" parameterType="com.qianjiajia.kitchen.design.domain.SearchQueryExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from SEARCH_QUERY
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from SEARCH_QUERY
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from SEARCH_QUERY
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.qianjiajia.kitchen.design.domain.SearchQueryExample">
+    delete from SEARCH_QUERY
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.qianjiajia.kitchen.design.domain.SearchQuery">
+    insert into SEARCH_QUERY (ID, SEARCH_TYPE, SEARCH_CONTENT, 
+      USER_ID, SEARCH_TIME, SEARCH_NUMBER
+      )
+    values (#{id,jdbcType=VARCHAR}, #{searchType,jdbcType=DECIMAL}, #{searchContent,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=VARCHAR}, #{searchTime,jdbcType=TIMESTAMP}, #{searchNumber,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qianjiajia.kitchen.design.domain.SearchQuery">
+    insert into SEARCH_QUERY
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="searchType != null">
+        SEARCH_TYPE,
+      </if>
+      <if test="searchContent != null">
+        SEARCH_CONTENT,
+      </if>
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="searchTime != null">
+        SEARCH_TIME,
+      </if>
+      <if test="searchNumber != null">
+        SEARCH_NUMBER,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="searchType != null">
+        #{searchType,jdbcType=DECIMAL},
+      </if>
+      <if test="searchContent != null">
+        #{searchContent,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="searchTime != null">
+        #{searchTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="searchNumber != null">
+        #{searchNumber,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.qianjiajia.kitchen.design.domain.SearchQueryExample" resultType="java.lang.Long">
+    select count(*) from SEARCH_QUERY
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update SEARCH_QUERY
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.searchType != null">
+        SEARCH_TYPE = #{record.searchType,jdbcType=DECIMAL},
+      </if>
+      <if test="record.searchContent != null">
+        SEARCH_CONTENT = #{record.searchContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null">
+        USER_ID = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.searchTime != null">
+        SEARCH_TIME = #{record.searchTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.searchNumber != null">
+        SEARCH_NUMBER = #{record.searchNumber,jdbcType=DECIMAL},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update SEARCH_QUERY
+    set ID = #{record.id,jdbcType=VARCHAR},
+      SEARCH_TYPE = #{record.searchType,jdbcType=DECIMAL},
+      SEARCH_CONTENT = #{record.searchContent,jdbcType=VARCHAR},
+      USER_ID = #{record.userId,jdbcType=VARCHAR},
+      SEARCH_TIME = #{record.searchTime,jdbcType=TIMESTAMP},
+      SEARCH_NUMBER = #{record.searchNumber,jdbcType=DECIMAL}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianjiajia.kitchen.design.domain.SearchQuery">
+    update SEARCH_QUERY
+    <set>
+      <if test="searchType != null">
+        SEARCH_TYPE = #{searchType,jdbcType=DECIMAL},
+      </if>
+      <if test="searchContent != null">
+        SEARCH_CONTENT = #{searchContent,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        USER_ID = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="searchTime != null">
+        SEARCH_TIME = #{searchTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="searchNumber != null">
+        SEARCH_NUMBER = #{searchNumber,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qianjiajia.kitchen.design.domain.SearchQuery">
+    update SEARCH_QUERY
+    set SEARCH_TYPE = #{searchType,jdbcType=DECIMAL},
+      SEARCH_CONTENT = #{searchContent,jdbcType=VARCHAR},
+      USER_ID = #{userId,jdbcType=VARCHAR},
+      SEARCH_TIME = #{searchTime,jdbcType=TIMESTAMP},
+      SEARCH_NUMBER = #{searchNumber,jdbcType=DECIMAL}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+
+  <select id="queryHistory" parameterType="java.lang.String" resultType="com.qianjiajia.kitchen.design.domain.SearchQuery">
+    SELECT *
+    FROM (SELECT * FROM SEARCH_QUERY order by SEARCH_TIME)
+    WHERE rownum &lt;=6 and SEARCH_TYPE = 1 AND USER_ID = #{userId,jdbcType=VARCHAR}
+  </select>
+
+  <select id="queryHot" parameterType="com.qianjiajia.kitchen.design.domain.SearchQuery" resultType="com.qianjiajia.kitchen.design.domain.SearchQuery">
+    SELECT *
+    FROM (SELECT * FROM SEARCH_QUERY order by SEARCH_TIME)
+    WHERE rownum &lt;=6 AND SEARCH_TYPE = 0
+  </select>
+</mapper>

@@ -257,9 +257,10 @@
     where ID = #{id,jdbcType=VARCHAR}
   </update>
 
-  <select id="queryList" resultType="com.qianjiajia.kitchen.design.domain.Address">
+  <select id="queryList" parameterType="java.lang.String" resultType="com.qianjiajia.kitchen.design.domain.Address">
     SELECT ID,CONSIGNEE_NAME,CONSIGNEE_PHONE,CONSIGNEE_ADDRESS,ADDRESS_TYPE,IS_DEFAULT
     FROM ADDRESS
+    WHERE USER_ID = #{userId,jdbcType=VARCHAR}
   </select>
 
   <select id="getById" parameterType="java.lang.String" resultMap="BaseResultMap">

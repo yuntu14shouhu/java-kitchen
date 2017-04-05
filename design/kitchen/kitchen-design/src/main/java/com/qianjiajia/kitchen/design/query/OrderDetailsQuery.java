@@ -1,5 +1,6 @@
 package com.qianjiajia.kitchen.design.query;
 
+import com.qianjiajia.kitchen.common.query.BaseQuery;
 import com.qianjiajia.kitchen.design.domain.OrderDetailsExample;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -19,7 +20,7 @@ import java.math.BigDecimal;
 @Data
 @ToString
 @ApiModel
-public class OrderDetailsQuery {
+public class OrderDetailsQuery extends BaseQuery{
 
     /**
      * 订单详情id

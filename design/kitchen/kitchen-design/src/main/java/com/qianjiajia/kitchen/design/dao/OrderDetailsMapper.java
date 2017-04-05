@@ -34,4 +34,5 @@ public interface OrderDetailsMapper {
 
     List<OrderDetailsQuery> getAll(OrderDetailsQuery orderDetailsQuery);
 
+    List<OrderDetails> queryList(String ordersId);
 }

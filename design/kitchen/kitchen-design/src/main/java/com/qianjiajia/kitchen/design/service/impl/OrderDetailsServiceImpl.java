@@ -2,11 +2,11 @@ package com.qianjiajia.kitchen.design.service.impl;
 
 import com.qianjiajia.kitchen.common.result.PageResult;
 import com.qianjiajia.kitchen.common.utils.UUIDUtil;
+import com.qianjiajia.kitchen.design.dao.OrderCommonMapper;
 import com.qianjiajia.kitchen.design.dao.OrderDetailsMapper;
-import com.qianjiajia.kitchen.design.dao.OrdersMapper;
 import com.qianjiajia.kitchen.design.dao.ProductMapper;
+import com.qianjiajia.kitchen.design.domain.OrderCommon;
 import com.qianjiajia.kitchen.design.domain.OrderDetails;
-import com.qianjiajia.kitchen.design.domain.Orders;
 import com.qianjiajia.kitchen.design.domain.Product;
 import com.qianjiajia.kitchen.design.query.OrderDetailsQuery;
 import com.qianjiajia.kitchen.design.service.IOrderDetailsService;
@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -35,20 +34,33 @@ public class OrderDetailsServiceImpl implements IOrderDetailsService{
 
     private Product product;
 
+    @Autowired
+    private OrderCommonMapper ordersMapper;
+
+    private OrderCommon orders;
+
     @Transactional
     @Override
     public void save(OrderDetails orderDetails,String productId) {
 
         List<String> productIdList = productMapper.getProductIdList();
 
+        List<String> ordersIdList = ordersMapper.getOrdersIdList();
+
         orderDetails.setId(UUIDUtil.getUUID());
 
         for(int i = 0; i < productIdList.size(); i++){
             if(productId.equals(productIdList.get(i))){
-                product = productMapper.getById(productId);
+                product = productMapper.queryToProduct(productId);
                 orderDetails.setOrderProductName(product.getProductName());
                 orderDetails.setOrderProductImageUrl(product.getProductImageUrl());
                 orderDetails.setOrderPrice(product.getPrice());
+            }
+        }
+        for(int j = 0; j < ordersIdList.size(); j++){
+            if(orderDetails.getOrderId().equals(ordersIdList.get(j))){
+                orders = ordersMapper.queryById(orderDetails.getOrderId());
+                orderDetails.setOrderId(orders.getId());
             }
         }
         orderDetailsMapper.insert(orderDetails);
@@ -70,4 +82,10 @@ public class OrderDetailsServiceImpl implements IOrderDetailsService{
     public void delete(String ordersDetailsId) {
         orderDetailsMapper.deleteByPrimaryKey(ordersDetailsId);
     }
+
+    @Override
+    public List<OrderDetails> queryList(String ordersId) {
+        return orderDetailsMapper.queryList(ordersId);
+    }
+
 }

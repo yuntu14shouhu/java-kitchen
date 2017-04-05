@@ -31,6 +31,16 @@ public class UsersController {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
+    @ApiOperation(value = "登陆")
+    @ResponseBody
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    public MessageResult login(@RequestBody @ApiParam Users users){
+        usersService.login(users);
+        return MessageResult.getSuccessInstance();
+    }
+
+
+
     @ApiOperation(value = "根据用户名查询用户")
     @ResponseBody
     @RequestMapping(value = "/query",method = RequestMethod.GET)

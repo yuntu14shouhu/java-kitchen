@@ -30,4 +30,8 @@ public interface UsersMapper {
     int updateByPrimaryKey(Users record);
 
     List<Users> selectAll();
+
+    String queryUserId(Users users);
+
+    Users login(Users users);
 }

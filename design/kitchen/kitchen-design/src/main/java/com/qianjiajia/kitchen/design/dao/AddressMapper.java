@@ -29,7 +29,7 @@ public interface AddressMapper {
 
     int updateByPrimaryKey(Address record);
 
-    List<Address> queryList();
+    List<Address> queryList(String userId);
 
     Address getById(String id);
 

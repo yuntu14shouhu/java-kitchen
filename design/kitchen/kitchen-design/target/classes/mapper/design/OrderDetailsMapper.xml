@@ -235,4 +235,9 @@
     FROM ORDER_DETAILS
   </select>
 
+  <select id="queryList" parameterType="java.lang.String" resultType="com.qianjiajia.kitchen.design.domain.OrderDetails">
+    SELECT *
+    FROM ORDER_DETAILS
+  </select>
+
 </mapper>
