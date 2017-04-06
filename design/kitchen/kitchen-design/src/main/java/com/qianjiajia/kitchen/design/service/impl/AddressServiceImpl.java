@@ -29,12 +29,14 @@ public class AddressServiceImpl implements IAddressService {
     @Override
     public void save(AddressDetails address) {
         address.setId(UUIDUtil.getUUID());
+        address.setUserId(UserLoginUtils.currentUser.getId());
         addressMapper.insert(address);
     }
 
     @Transactional
     @Override
     public void update(AddressDetails address) {
+        address.setUserId(UserLoginUtils.currentUser.getId());
         addressMapper.updateByPrimaryKey(address);
     }
 
@@ -63,7 +65,8 @@ public class AddressServiceImpl implements IAddressService {
 
     @Override
     public AddressDetails queryDetails(String addressId) {
-        return null;
+
+        return addressMapper.queryAddress(addressId);
     }
 
 }

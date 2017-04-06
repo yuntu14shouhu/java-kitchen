@@ -48,7 +48,7 @@ public class AddressController {
 
     @ApiOperation(value = "查询收货地址")
     @ResponseBody
-    @RequestMapping(value = "/quertAll",method = RequestMethod.GET)
+    @RequestMapping(value = "/queryAll",method = RequestMethod.GET)
     public MessageResult queryAll(){
         List<AddressDetails> addresses = addressService.query();
         return MessageResult.getSuccessInstance(addresses);

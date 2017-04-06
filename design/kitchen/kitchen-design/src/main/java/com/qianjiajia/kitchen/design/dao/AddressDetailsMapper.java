@@ -35,4 +35,6 @@ public interface AddressDetailsMapper {
     AddressDetails getById(String id);
 
     List<String> queryIdList(String id);
+
+    AddressDetails queryAddress(String addressId);
 }

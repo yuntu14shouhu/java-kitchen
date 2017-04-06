@@ -277,7 +277,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianjiajia.kitchen.design.domain.AddressDetails">
     update ADDRESS
-    set USER_ID = #{userId,jdbcType=VARCHAR},
+    set
       CONSIGNEE_NAME = #{consigneeName,jdbcType=VARCHAR},
       CONSIGNEE_PHONE = #{consigneePhone,jdbcType=VARCHAR},
       CONSIGNEE_ADDRESS = #{consigneeAddress,jdbcType=VARCHAR},
@@ -286,7 +286,7 @@
       DEFAULT_ADDRESS = #{defaultAddress,jdbcType=VARCHAR},
       IS_DEFAULT = #{isDefault,jdbcType=DECIMAL},
       ADDRESS_TYPE = #{addressType,jdbcType=VARCHAR}
-    where ID = #{id,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR} and USER_ID = #{userId,jdbcType=VARCHAR}
   </update>
 
   <select id="queryList" parameterType="java.lang.String"
@@ -305,5 +305,11 @@
   <select id="queryIdList" resultType="java.lang.String">
     SELECT ID
     FROM ADDRESS
+  </select>
+
+  <select id="queryAddress" parameterType="java.lang.String" resultType="com.qianjiajia.kitchen.design.domain.AddressDetails">
+    SELECT *
+    FROM ADDRESS
+    WHERE ID = #{id,jdbcType=VARCHAR}
   </select>
 </mapper>
