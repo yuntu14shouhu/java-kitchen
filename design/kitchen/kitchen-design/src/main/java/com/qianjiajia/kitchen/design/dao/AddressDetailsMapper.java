@@ -30,11 +30,13 @@ public interface AddressDetailsMapper {
     int updateByPrimaryKey(AddressDetails record);
 
 
-    List<AddressDetails> queryList(String id);
+    List<AddressDetails> queryList();
 
     AddressDetails getById(String id);
 
     List<String> queryIdList(String id);
 
     AddressDetails queryAddress(String addressId);
+
+    List<AddressDetails> queryAll(String userId);
 }

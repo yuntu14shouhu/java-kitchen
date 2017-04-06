@@ -26,7 +26,7 @@ public interface ISearchQueryService {
     /**
      * 最近搜索
      */
-    List<SearchQuery> queryHistory();
+    List<SearchQuery> queryHistory(String userId);
 
     /**
      * 人气搜索

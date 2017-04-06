@@ -55,8 +55,8 @@ public class SearchController {
     @ApiOperation(value = "最近搜索")
     @ResponseBody
     @RequestMapping(value = "/queryHistory", method = RequestMethod.GET)
-    public MessageResult queryHistory() {
-        List<SearchQuery> searchQueryList = searchQueryService.queryHistory();
+    public MessageResult queryHistory(String userId) {
+        List<SearchQuery> searchQueryList = searchQueryService.queryHistory(userId);
         return MessageResult.getSuccessInstance(searchQueryList);
     }
 
@@ -71,9 +71,9 @@ public class SearchController {
     @ApiOperation(value = "最近搜索+热门搜索")
     @ResponseBody
     @RequestMapping(value = "/queryHistoryAndHot", method = RequestMethod.GET)
-    public Map query(){
+    public Map query(String userId){
         Map resultMap = new HashMap();
-        List<SearchQuery> searchHistoryList = searchQueryService.queryHistory();
+        List<SearchQuery> searchHistoryList = searchQueryService.queryHistory(userId);
         List<SearchQuery> searchHotList = searchQueryService.queryHot();
         resultMap.put("searchHistoryList",searchHistoryList);
         resultMap.put("searchHotList",searchHotList);

@@ -289,11 +289,10 @@
     where ID = #{id,jdbcType=VARCHAR} and USER_ID = #{userId,jdbcType=VARCHAR}
   </update>
 
-  <select id="queryList" parameterType="java.lang.String"
+  <select id="queryList"
           resultType="com.qianjiajia.kitchen.design.domain.AddressDetails">
     SELECT *
     FROM ADDRESS
-    WHERE USER_ID = #{userId,jdbcType=VARCHAR}
   </select>
 
   <select id="getById" parameterType="java.lang.String" resultMap="BaseResultMap">
@@ -311,5 +310,11 @@
     SELECT *
     FROM ADDRESS
     WHERE ID = #{id,jdbcType=VARCHAR}
+  </select>
+
+  <select id="queryAll" parameterType="java.lang.String" resultType="com.qianjiajia.kitchen.design.domain.AddressDetails">
+    SELECT *
+    FROM ADDRESS
+    WHERE USER_ID = #{userId,jdbcType=VARCHAR}
   </select>
 </mapper>

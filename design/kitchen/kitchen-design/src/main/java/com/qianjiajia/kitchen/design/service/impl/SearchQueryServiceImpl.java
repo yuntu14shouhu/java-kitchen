@@ -41,7 +41,7 @@ public class SearchQueryServiceImpl implements ISearchQueryService{
     }
 
     @Override
-    public List<SearchQuery> queryHistory() {
+    public List<SearchQuery> queryHistory(String userId) {
         Users users = UserLoginUtils.currentUser;//加入到缓存中
 //        searchQuery.setUserId(users.getId());//获取到当前用户
         List<SearchQuery> searchQueryList = searchQueryMapper.queryHistory(users.getId());

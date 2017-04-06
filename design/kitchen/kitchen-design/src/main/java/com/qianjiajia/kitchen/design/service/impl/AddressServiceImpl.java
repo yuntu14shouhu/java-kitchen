@@ -48,8 +48,15 @@ public class AddressServiceImpl implements IAddressService {
 
     @Override
     public List<AddressDetails> query() {
+
+        return addressMapper.queryList();
+    }
+
+    @Override
+    public List<AddressDetails> queryAll(String userId) {
         Users user = UserLoginUtils.currentUser;
-        return addressMapper.queryList(user.getId());
+        userId = user.getId();
+        return addressMapper.queryAll(userId);
     }
 
     @Override

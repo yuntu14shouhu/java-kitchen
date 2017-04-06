@@ -21,6 +21,8 @@ public interface IAddressService {
 
     List<AddressDetails> query();
 
+    List<AddressDetails> queryAll(String UserId);
+
     /**
      * 根据收货地址id进行查询：
      * 查询结果为：
