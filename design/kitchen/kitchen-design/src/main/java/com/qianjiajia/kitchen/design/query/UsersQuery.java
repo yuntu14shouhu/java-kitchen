@@ -1,10 +1,12 @@
 package com.qianjiajia.kitchen.design.query;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.qianjiajia.kitchen.common.query.BaseQuery;
 import com.qianjiajia.kitchen.design.domain.UsersExample;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.util.StringUtils;
 
 import java.util.Date;
@@ -53,7 +55,7 @@ public class UsersQuery extends BaseQuery {
      * 用户状态
      */
     @ApiModelProperty("用户状态")
-    private Short status;
+    private Integer status;
 
     /**
      * 用户性别
@@ -65,11 +67,13 @@ public class UsersQuery extends BaseQuery {
      * 用户年龄
      */
     @ApiModelProperty("用户年龄")
-    private Short age;
+    private Integer age;
 
     /**
      * 创建时间
      */
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     @ApiModelProperty("创建时间")
     private Date createTime;
 
@@ -80,10 +84,22 @@ public class UsersQuery extends BaseQuery {
     private String remark;
 
     /**
-     * 联系方式
+     * email
      */
-    @ApiModelProperty("联系方式")
-    private String contacts;
+    @ApiModelProperty("email")
+    private String email;
+
+    /**
+     * phone_number
+     */
+    @ApiModelProperty("phone_number")
+    private String phone;
+
+    /**
+     * qq_number
+     */
+    @ApiModelProperty("qq_number")
+    private String qqnumber;
 
     public UsersExample bulid(){
         UsersExample usersExample = new UsersExample();
@@ -118,8 +134,14 @@ public class UsersQuery extends BaseQuery {
         if(!StringUtils.isEmpty(remark)){
             criteria.andRemarkEqualTo(remark);
         }
-        if(!StringUtils.isEmpty(contacts)){
-            criteria.andContactsEqualTo(contacts);
+        if(!StringUtils.isEmpty(email)){
+            criteria.andEmailEqualTo(email);
+        }
+        if(!StringUtils.isEmpty(phone)){
+            criteria.andPhoneEqualTo(phone);
+        }
+        if(!StringUtils.isEmpty(qqnumber)){
+            criteria.andQqnumberEqualTo(qqnumber);
         }
         return usersExample;
     }

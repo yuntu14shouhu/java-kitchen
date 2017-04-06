@@ -13,8 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Date;
 import java.util.List;
 
-import static com.qianjiajia.kitchen.design.utils.UserLoginUtils.currentUser;
-
 /**
  * @author qianjiajia
  * @version 1.0

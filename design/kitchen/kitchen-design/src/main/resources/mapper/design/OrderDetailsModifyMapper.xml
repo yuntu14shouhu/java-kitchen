@@ -3,6 +3,7 @@
 <mapper namespace="com.qianjiajia.kitchen.design.dao.OrderDetailsModifyMapper">
   <resultMap id="BaseResultMap" type="com.qianjiajia.kitchen.design.domain.OrderDetailsModify">
     <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="USER_ID" jdbcType="VARCHAR" property="userId" />
     <result column="ORDER_CONSIGNEE_NAME" jdbcType="VARCHAR" property="orderConsigneeName" />
     <result column="ORDER_CONSIGNEE_PHONE" jdbcType="VARCHAR" property="orderConsigneePhone" />
     <result column="ORDER_CONSIGNEE_ADDRESS" jdbcType="VARCHAR" property="orderConsigneeAddress" />
@@ -12,6 +13,7 @@
     <result column="ORDER_REF" jdbcType="VARCHAR" property="orderRef" />
     <result column="ORDER_ACTUAL_PAYMENT" jdbcType="DECIMAL" property="orderActualPayment" />
     <result column="ORDER_TOTAL_PAYMENT" jdbcType="DECIMAL" property="orderTotalPayment" />
+    <result column="ORDER_PRODUCT_NUMBER" jdbcType="DECIMAL" property="orderProductNumber" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.qianjiajia.kitchen.design.domain.OrderDetailsModify">
     <result column="ORDER_PRODUCT_ID" jdbcType="CLOB" property="orderProductId" />
@@ -75,8 +77,9 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    ID, ORDER_CONSIGNEE_NAME, ORDER_CONSIGNEE_PHONE, ORDER_CONSIGNEE_ADDRESS, ORDER_CARRIAGE, 
-    ORDER_STATUS, ORDER_CREATE_DATE, ORDER_REF, ORDER_ACTUAL_PAYMENT, ORDER_TOTAL_PAYMENT
+    ID, USER_ID, ORDER_CONSIGNEE_NAME, ORDER_CONSIGNEE_PHONE, ORDER_CONSIGNEE_ADDRESS, 
+    ORDER_CARRIAGE, ORDER_STATUS, ORDER_CREATE_DATE, ORDER_REF, ORDER_ACTUAL_PAYMENT, 
+    ORDER_TOTAL_PAYMENT, ORDER_PRODUCT_NUMBER
   </sql>
   <sql id="Blob_Column_List">
     ORDER_PRODUCT_ID
@@ -130,20 +133,25 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.qianjiajia.kitchen.design.domain.OrderDetailsModify">
-    insert into ORDER_DETAILS_MODIFY (ID, ORDER_CONSIGNEE_NAME, ORDER_CONSIGNEE_PHONE, 
-      ORDER_CONSIGNEE_ADDRESS, ORDER_CARRIAGE, ORDER_STATUS, 
-      ORDER_CREATE_DATE, ORDER_REF, ORDER_ACTUAL_PAYMENT, 
-      ORDER_TOTAL_PAYMENT, ORDER_PRODUCT_ID)
-    values (#{id,jdbcType=VARCHAR}, #{orderConsigneeName,jdbcType=VARCHAR}, #{orderConsigneePhone,jdbcType=VARCHAR}, 
-      #{orderConsigneeAddress,jdbcType=VARCHAR}, #{orderCarriage,jdbcType=DECIMAL}, #{orderStatus,jdbcType=VARCHAR}, 
-      #{orderCreateDate,jdbcType=TIMESTAMP}, #{orderRef,jdbcType=VARCHAR}, #{orderActualPayment,jdbcType=DECIMAL}, 
-      #{orderTotalPayment,jdbcType=DECIMAL}, #{orderProductId,jdbcType=CLOB})
+    insert into ORDER_DETAILS_MODIFY (ID, USER_ID, ORDER_CONSIGNEE_NAME, 
+      ORDER_CONSIGNEE_PHONE, ORDER_CONSIGNEE_ADDRESS, 
+      ORDER_CARRIAGE, ORDER_STATUS, ORDER_CREATE_DATE, 
+      ORDER_REF, ORDER_ACTUAL_PAYMENT, ORDER_TOTAL_PAYMENT, 
+      ORDER_PRODUCT_NUMBER, ORDER_PRODUCT_ID)
+    values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{orderConsigneeName,jdbcType=VARCHAR}, 
+      #{orderConsigneePhone,jdbcType=VARCHAR}, #{orderConsigneeAddress,jdbcType=VARCHAR}, 
+      #{orderCarriage,jdbcType=DECIMAL}, #{orderStatus,jdbcType=VARCHAR}, #{orderCreateDate,jdbcType=TIMESTAMP}, 
+      #{orderRef,jdbcType=VARCHAR}, #{orderActualPayment,jdbcType=DECIMAL}, #{orderTotalPayment,jdbcType=DECIMAL}, 
+      #{orderProductNumber,jdbcType=DECIMAL}, #{orderProductId,jdbcType=CLOB})
   </insert>
   <insert id="insertSelective" parameterType="com.qianjiajia.kitchen.design.domain.OrderDetailsModify">
     insert into ORDER_DETAILS_MODIFY
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         ID,
+      </if>
+      <if test="userId != null">
+        USER_ID,
       </if>
       <if test="orderConsigneeName != null">
         ORDER_CONSIGNEE_NAME,
@@ -172,6 +180,9 @@
       <if test="orderTotalPayment != null">
         ORDER_TOTAL_PAYMENT,
       </if>
+      <if test="orderProductNumber != null">
+        ORDER_PRODUCT_NUMBER,
+      </if>
       <if test="orderProductId != null">
         ORDER_PRODUCT_ID,
       </if>
@@ -179,6 +190,9 @@
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
         #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
       </if>
       <if test="orderConsigneeName != null">
         #{orderConsigneeName,jdbcType=VARCHAR},
@@ -207,6 +221,9 @@
       <if test="orderTotalPayment != null">
         #{orderTotalPayment,jdbcType=DECIMAL},
       </if>
+      <if test="orderProductNumber != null">
+        #{orderProductNumber,jdbcType=DECIMAL},
+      </if>
       <if test="orderProductId != null">
         #{orderProductId,jdbcType=CLOB},
       </if>
@@ -223,6 +240,9 @@
     <set>
       <if test="record.id != null">
         ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null">
+        USER_ID = #{record.userId,jdbcType=VARCHAR},
       </if>
       <if test="record.orderConsigneeName != null">
         ORDER_CONSIGNEE_NAME = #{record.orderConsigneeName,jdbcType=VARCHAR},
@@ -251,6 +271,9 @@
       <if test="record.orderTotalPayment != null">
         ORDER_TOTAL_PAYMENT = #{record.orderTotalPayment,jdbcType=DECIMAL},
       </if>
+      <if test="record.orderProductNumber != null">
+        ORDER_PRODUCT_NUMBER = #{record.orderProductNumber,jdbcType=DECIMAL},
+      </if>
       <if test="record.orderProductId != null">
         ORDER_PRODUCT_ID = #{record.orderProductId,jdbcType=CLOB},
       </if>
@@ -262,6 +285,7 @@
   <update id="updateByExampleWithBLOBs" parameterType="map">
     update ORDER_DETAILS_MODIFY
     set ID = #{record.id,jdbcType=VARCHAR},
+      USER_ID = #{record.userId,jdbcType=VARCHAR},
       ORDER_CONSIGNEE_NAME = #{record.orderConsigneeName,jdbcType=VARCHAR},
       ORDER_CONSIGNEE_PHONE = #{record.orderConsigneePhone,jdbcType=VARCHAR},
       ORDER_CONSIGNEE_ADDRESS = #{record.orderConsigneeAddress,jdbcType=VARCHAR},
@@ -271,6 +295,7 @@
       ORDER_REF = #{record.orderRef,jdbcType=VARCHAR},
       ORDER_ACTUAL_PAYMENT = #{record.orderActualPayment,jdbcType=DECIMAL},
       ORDER_TOTAL_PAYMENT = #{record.orderTotalPayment,jdbcType=DECIMAL},
+      ORDER_PRODUCT_NUMBER = #{record.orderProductNumber,jdbcType=DECIMAL},
       ORDER_PRODUCT_ID = #{record.orderProductId,jdbcType=CLOB}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -279,6 +304,7 @@
   <update id="updateByExample" parameterType="map">
     update ORDER_DETAILS_MODIFY
     set ID = #{record.id,jdbcType=VARCHAR},
+      USER_ID = #{record.userId,jdbcType=VARCHAR},
       ORDER_CONSIGNEE_NAME = #{record.orderConsigneeName,jdbcType=VARCHAR},
       ORDER_CONSIGNEE_PHONE = #{record.orderConsigneePhone,jdbcType=VARCHAR},
       ORDER_CONSIGNEE_ADDRESS = #{record.orderConsigneeAddress,jdbcType=VARCHAR},
@@ -287,7 +313,8 @@
       ORDER_CREATE_DATE = #{record.orderCreateDate,jdbcType=TIMESTAMP},
       ORDER_REF = #{record.orderRef,jdbcType=VARCHAR},
       ORDER_ACTUAL_PAYMENT = #{record.orderActualPayment,jdbcType=DECIMAL},
-      ORDER_TOTAL_PAYMENT = #{record.orderTotalPayment,jdbcType=DECIMAL}
+      ORDER_TOTAL_PAYMENT = #{record.orderTotalPayment,jdbcType=DECIMAL},
+      ORDER_PRODUCT_NUMBER = #{record.orderProductNumber,jdbcType=DECIMAL}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -295,6 +322,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.qianjiajia.kitchen.design.domain.OrderDetailsModify">
     update ORDER_DETAILS_MODIFY
     <set>
+      <if test="userId != null">
+        USER_ID = #{userId,jdbcType=VARCHAR},
+      </if>
       <if test="orderConsigneeName != null">
         ORDER_CONSIGNEE_NAME = #{orderConsigneeName,jdbcType=VARCHAR},
       </if>
@@ -322,6 +352,9 @@
       <if test="orderTotalPayment != null">
         ORDER_TOTAL_PAYMENT = #{orderTotalPayment,jdbcType=DECIMAL},
       </if>
+      <if test="orderProductNumber != null">
+        ORDER_PRODUCT_NUMBER = #{orderProductNumber,jdbcType=DECIMAL},
+      </if>
       <if test="orderProductId != null">
         ORDER_PRODUCT_ID = #{orderProductId,jdbcType=CLOB},
       </if>
@@ -330,7 +363,8 @@
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.qianjiajia.kitchen.design.domain.OrderDetailsModify">
     update ORDER_DETAILS_MODIFY
-    set ORDER_CONSIGNEE_NAME = #{orderConsigneeName,jdbcType=VARCHAR},
+    set USER_ID = #{userId,jdbcType=VARCHAR},
+      ORDER_CONSIGNEE_NAME = #{orderConsigneeName,jdbcType=VARCHAR},
       ORDER_CONSIGNEE_PHONE = #{orderConsigneePhone,jdbcType=VARCHAR},
       ORDER_CONSIGNEE_ADDRESS = #{orderConsigneeAddress,jdbcType=VARCHAR},
       ORDER_CARRIAGE = #{orderCarriage,jdbcType=DECIMAL},
@@ -339,12 +373,14 @@
       ORDER_REF = #{orderRef,jdbcType=VARCHAR},
       ORDER_ACTUAL_PAYMENT = #{orderActualPayment,jdbcType=DECIMAL},
       ORDER_TOTAL_PAYMENT = #{orderTotalPayment,jdbcType=DECIMAL},
+      ORDER_PRODUCT_NUMBER = #{orderProductNumber,jdbcType=DECIMAL},
       ORDER_PRODUCT_ID = #{orderProductId,jdbcType=CLOB}
     where ID = #{id,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianjiajia.kitchen.design.domain.OrderDetailsModify">
     update ORDER_DETAILS_MODIFY
-    set ORDER_CONSIGNEE_NAME = #{orderConsigneeName,jdbcType=VARCHAR},
+    set USER_ID = #{userId,jdbcType=VARCHAR},
+      ORDER_CONSIGNEE_NAME = #{orderConsigneeName,jdbcType=VARCHAR},
       ORDER_CONSIGNEE_PHONE = #{orderConsigneePhone,jdbcType=VARCHAR},
       ORDER_CONSIGNEE_ADDRESS = #{orderConsigneeAddress,jdbcType=VARCHAR},
       ORDER_CARRIAGE = #{orderCarriage,jdbcType=DECIMAL},
@@ -352,12 +388,26 @@
       ORDER_CREATE_DATE = #{orderCreateDate,jdbcType=TIMESTAMP},
       ORDER_REF = #{orderRef,jdbcType=VARCHAR},
       ORDER_ACTUAL_PAYMENT = #{orderActualPayment,jdbcType=DECIMAL},
-      ORDER_TOTAL_PAYMENT = #{orderTotalPayment,jdbcType=DECIMAL}
+      ORDER_TOTAL_PAYMENT = #{orderTotalPayment,jdbcType=DECIMAL},
+      ORDER_PRODUCT_NUMBER = #{orderProductNumber,jdbcType=DECIMAL}
     where ID = #{id,jdbcType=VARCHAR}
   </update>
 
   <select id="getById" parameterType="java.lang.String" resultType="com.qianjiajia.kitchen.design.domain.OrderDetailsModify">
     SELECT *
+    FROM ORDER_DETAILS_MODIFY
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+
+  <select id="queryOrders" resultType="java.lang.String">
+    SELECT *
+    FROM ORDER_DETAILS_MODIFY
+    WHERE USER_ID = #{userId,jdbcType=VARCHAR}
+    ORDER BY ORDER_CREATE_DATE DESC
+  </select>
+
+  <select id="getProductId" parameterType="java.lang.String" resultType="java.lang.String">
+    SELECT ORDER_PRODUCT_ID
     FROM ORDER_DETAILS_MODIFY
     where ID = #{id,jdbcType=VARCHAR}
   </select>

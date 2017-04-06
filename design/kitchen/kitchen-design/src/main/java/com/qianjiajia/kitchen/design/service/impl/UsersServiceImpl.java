@@ -97,16 +97,28 @@ public class UsersServiceImpl implements IUsersService{
     @Override
     @Transactional
     public void update(Users users) {
-        users.setUserName(null);
-        users.setStatus(null);
-        users.setSalt(null);
-        users.setPassword(null);
-        if(usersMapper.updateByPrimaryKeySelective(users) != 1){
-            throw new ApiException(ApiExceptionCode.USER_NOT_EXIST,"用户不存在");
-        }
-//        this.updateLoginUserInfo(this.get(users.getId()));//更新用户在redis中的缓存
-        usersMapper.updateByPrimaryKey(users);//此处更新用户没有更新注册时间
+
+        Users users1 = UserLoginUtils.currentUser;
+
+        users.setUserName(users1.getUserName());//不允许修改
+        users.setStatus(users1.getStatus());//不允许修改
+        users.setSalt(users1.getSalt());//不允许修改
+        users.setPassword(users1.getPassword());//不允许修改
+        users.setCreateTime(users1.getCreateTime());//不允许修改
+        users.setId(users1.getId());//不允许修改
+        usersMapper.update(users);
     }
+
+
+
+
+
+//        if(usersMapper.updateByPrimaryKeySelective(users) != 1){
+//            throw new ApiException(ApiExceptionCode.USER_NOT_EXIST,"用户不存在");
+//        }
+//        this.updateLoginUserInfo(this.get(users.getId()));//更新用户在redis中的缓存
+
+
 
     /**
      * 更新正在登录用户的状态
@@ -162,10 +174,6 @@ public class UsersServiceImpl implements IUsersService{
         return usersMapper.selectAll();
     }
 
-    @Override
-    public String queryUserId(Users users) {
-        return usersMapper.queryUserId(users);
-    }
 
     @Override
     public boolean login(Users users) {
@@ -177,4 +185,12 @@ public class UsersServiceImpl implements IUsersService{
         }
         return false;
     }
+
+    @Override
+    public Users queryByUserId() {
+        Users users = UserLoginUtils.currentUser;
+        return usersMapper.queryByUserId(users.getId());
+    }
+
+
 }

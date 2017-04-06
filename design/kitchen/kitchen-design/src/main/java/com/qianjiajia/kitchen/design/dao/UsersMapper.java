@@ -31,7 +31,9 @@ public interface UsersMapper {
 
     List<Users> selectAll();
 
-    String queryUserId(Users users);
-
     Users login(Users users);
+
+    Users queryByUserId(String id);
+
+    int update(Users users);
 }

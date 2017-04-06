@@ -38,12 +38,36 @@ public class OrderDetailsModifyController {
         return MessageResult.getSuccessInstance();
     }
 
-    @ApiOperation(value = "查询详情")
+    @ApiOperation(value = "查询详情详情")
     @ResponseBody
     @RequestMapping(value = "/query",method = RequestMethod.GET)
     public Map queryList(String orderId){
-        return orderDetailsModifyService.queryList(orderId);
+        return orderDetailsModifyService.queryOrderDetails(orderId);
     }
+
+    @ApiOperation(value = "下单")
+    @ResponseBody
+    @RequestMapping(value = "/plus",method = RequestMethod.POST)
+    public MessageResult plus(@RequestBody @ApiParam List<String> productIds){
+        orderDetailsModifyService.plus(productIds);
+        return MessageResult.getSuccessInstance();
+    }
+
+    @ApiOperation(value = "下单")
+    @ResponseBody
+    @RequestMapping(value = "/minus",method = RequestMethod.POST)
+    public MessageResult minus(@RequestBody @ApiParam List<String> productIds){
+        orderDetailsModifyService.minus(productIds);
+        return MessageResult.getSuccessInstance();
+    }
+
+    @ApiOperation(value = "查询全部订单")
+    @ResponseBody
+    @RequestMapping(value = "/queryOrders",method = RequestMethod.GET)
+    public Map queryOrders(){
+        return orderDetailsModifyService.queryOrders();
+    }
+
 
 
 }

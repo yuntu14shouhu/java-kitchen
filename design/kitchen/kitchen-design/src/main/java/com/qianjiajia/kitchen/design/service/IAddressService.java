@@ -1,6 +1,6 @@
 package com.qianjiajia.kitchen.design.service;
 
-import com.qianjiajia.kitchen.design.domain.Address;
+import com.qianjiajia.kitchen.design.domain.AddressDetails;
 
 import java.util.List;
 
@@ -13,13 +13,13 @@ import java.util.List;
  */
 public interface IAddressService {
 
-    void save(Address address);
+    void save(AddressDetails address);
 
-    void update(Address address);
+    void update(AddressDetails address);
 
     void delete(String addressId);
 
-    List<Address> query();
+    List<AddressDetails> query();
 
     /**
      * 根据收货地址id进行查询：
@@ -28,9 +28,12 @@ public interface IAddressService {
      * 收货人电话
      * 收货人地址
      */
-    Address queryTo(String id);
+    AddressDetails queryTo(String id);
 
     List<String> queryId();
 
-
+    /**
+     * 查询地址详情
+     */
+    AddressDetails queryDetails(String addressId);
 }

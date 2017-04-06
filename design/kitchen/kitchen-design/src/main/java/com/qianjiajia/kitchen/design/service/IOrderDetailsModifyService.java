@@ -18,7 +18,30 @@ public interface IOrderDetailsModifyService {
     void  save(List<String> productId, String addressId);
 
     /**
-     * 订单查询
+     * 订单详情查询
      */
-    Map queryList(String orderId);
+    Map queryOrderDetails(String orderId);
+
+    /**
+     * 点击+号，商品数量发生改变，重新计算价格
+     */
+    void plus(List<String> productIds);
+
+    /**
+     * 点击-号，商品数量发生改变，重新计算价格
+     */
+    void minus(List<String> productIds);
+
+    /**
+     * 查询全部订单对象
+     * 只显示-----
+     * 下单时间，订单全部商品图片，订单合计
+     */
+    Map queryOrders();
+
+    /**
+     * 查询全部订单
+     * 只显示-----
+     * 下单时间，订单全部商品图片，订单合计
+     */
 }

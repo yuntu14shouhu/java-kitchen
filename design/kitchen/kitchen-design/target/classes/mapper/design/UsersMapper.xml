@@ -12,7 +12,9 @@
     <result column="AGE" jdbcType="DECIMAL" property="age" />
     <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
     <result column="REMARK" jdbcType="VARCHAR" property="remark" />
-    <result column="CONTACTS" jdbcType="VARCHAR" property="contacts" />
+    <result column="EMAIL" jdbcType="VARCHAR" property="email" />
+    <result column="PHONE" jdbcType="VARCHAR" property="phone" />
+    <result column="QQNUMBER" jdbcType="VARCHAR" property="qqnumber" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -74,7 +76,7 @@
   </sql>
   <sql id="Base_Column_List">
     ID, USER_NAME, PASSWORD, NICK_NAME, SALT, STATUS, SEX, AGE, CREATE_TIME, REMARK, 
-    CONTACTS
+    EMAIL, PHONE, QQNUMBER
   </sql>
   <select id="selectByExample" parameterType="com.qianjiajia.kitchen.design.domain.UsersExample" resultMap="BaseResultMap">
     select
@@ -110,11 +112,13 @@
     insert into USERS (ID, USER_NAME, PASSWORD, 
       NICK_NAME, SALT, STATUS, 
       SEX, AGE, CREATE_TIME, 
-      REMARK, CONTACTS)
+      REMARK, EMAIL, PHONE, 
+      QQNUMBER)
     values (#{id,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{nickName,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR}, #{status,jdbcType=DECIMAL}, 
       #{sex,jdbcType=VARCHAR}, #{age,jdbcType=DECIMAL}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{remark,jdbcType=VARCHAR}, #{contacts,jdbcType=VARCHAR})
+      #{remark,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{qqnumber,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.qianjiajia.kitchen.design.domain.Users">
     insert into USERS
@@ -149,8 +153,14 @@
       <if test="remark != null">
         REMARK,
       </if>
-      <if test="contacts != null">
-        CONTACTS,
+      <if test="email != null">
+        EMAIL,
+      </if>
+      <if test="phone != null">
+        PHONE,
+      </if>
+      <if test="qqnumber != null">
+        QQNUMBER,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -184,8 +194,14 @@
       <if test="remark != null">
         #{remark,jdbcType=VARCHAR},
       </if>
-      <if test="contacts != null">
-        #{contacts,jdbcType=VARCHAR},
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="qqnumber != null">
+        #{qqnumber,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -228,8 +244,14 @@
       <if test="record.remark != null">
         REMARK = #{record.remark,jdbcType=VARCHAR},
       </if>
-      <if test="record.contacts != null">
-        CONTACTS = #{record.contacts,jdbcType=VARCHAR},
+      <if test="record.email != null">
+        EMAIL = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.phone != null">
+        PHONE = #{record.phone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qqnumber != null">
+        QQNUMBER = #{record.qqnumber,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -248,7 +270,9 @@
       AGE = #{record.age,jdbcType=DECIMAL},
       CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
       REMARK = #{record.remark,jdbcType=VARCHAR},
-      CONTACTS = #{record.contacts,jdbcType=VARCHAR}
+      EMAIL = #{record.email,jdbcType=VARCHAR},
+      PHONE = #{record.phone,jdbcType=VARCHAR},
+      QQNUMBER = #{record.qqnumber,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -283,8 +307,14 @@
       <if test="remark != null">
         REMARK = #{remark,jdbcType=VARCHAR},
       </if>
-      <if test="contacts != null">
-        CONTACTS = #{contacts,jdbcType=VARCHAR},
+      <if test="email != null">
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        PHONE = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="qqnumber != null">
+        QQNUMBER = #{qqnumber,jdbcType=VARCHAR},
       </if>
     </set>
     where ID = #{id,jdbcType=VARCHAR}
@@ -300,29 +330,52 @@
       AGE = #{age,jdbcType=DECIMAL},
       CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
       REMARK = #{remark,jdbcType=VARCHAR},
-      CONTACTS = #{contacts,jdbcType=VARCHAR}
+      EMAIL = #{email,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      QQNUMBER = #{qqnumber,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=VARCHAR}
   </update>
 
+
   <select id="selectAll" resultType="com.qianjiajia.kitchen.design.domain.Users">
-    SELECT ID, USER_NAME, PASSWORD,
-      NICK_NAME, SALT, STATUS,
-      SEX, AGE, REMARK, CREATE_TIME,
-      CONTACTS
+    SELECT ID, USER_NAME,
+    NICK_NAME, SALT, STATUS,
+    SEX, AGE, REMARK, CREATE_TIME,
+    CONTACTS
     FROM USERS
     ORDER BY CREATE_TIME DESC
-  </select>
-
-  <select id="queryUserId" resultType="java.lang.String">
-    SELECT ID
-    FROM USERS
   </select>
 
   <select id="login" parameterType="com.qianjiajia.kitchen.design.domain.Users" resultType="com.qianjiajia.kitchen.design.domain.Users">
     SELECT *
     FROM USERS
-    WHERE USER_NAME = #{userName,jdbcType=VARCHAR}
-          and
-      PASSWORD = #{password,jdbcType=VARCHAR}
+    WHERE
+          USER_NAME = #{userName,jdbcType=VARCHAR}
+            and
+          PASSWORD = #{password,jdbcType=VARCHAR}
   </select>
+
+  <select id="queryByUserId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT USER_NAME,NICK_NAME,SEX,AGE,EMAIL,PHONE,QQNUMBER
+    FROM USERS
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+
+  <update id="update" parameterType="com.qianjiajia.kitchen.design.domain.Users">
+    update USERS
+    set
+      USER_NAME = #{userName,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      NICK_NAME = #{nickName,jdbcType=VARCHAR},
+      SALT = #{salt,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=DECIMAL},
+      SEX = #{sex,jdbcType=VARCHAR},
+      AGE = #{age,jdbcType=DECIMAL},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      QQNUMBER = #{qqnumber,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
 </mapper>

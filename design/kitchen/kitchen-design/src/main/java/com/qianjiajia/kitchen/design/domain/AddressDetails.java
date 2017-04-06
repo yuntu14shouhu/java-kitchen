@@ -1,6 +1,6 @@
 package com.qianjiajia.kitchen.design.domain;
 
-public class Address {
+public class AddressDetails {
     private String id;
 
     private String userId;
@@ -11,11 +11,15 @@ public class Address {
 
     private String consigneeAddress;
 
+    private String city;
+
+    private String houseNumber;
+
     private String defaultAddress;
 
     private Short isDefault;
 
-    private Short addressType;
+    private String addressType;
 
     public String getId() {
         return id;
@@ -57,6 +61,22 @@ public class Address {
         this.consigneeAddress = consigneeAddress == null ? null : consigneeAddress.trim();
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city == null ? null : city.trim();
+    }
+
+    public String getHouseNumber() {
+        return houseNumber;
+    }
+
+    public void setHouseNumber(String houseNumber) {
+        this.houseNumber = houseNumber == null ? null : houseNumber.trim();
+    }
+
     public String getDefaultAddress() {
         return defaultAddress;
     }
@@ -73,11 +93,11 @@ public class Address {
         this.isDefault = isDefault;
     }
 
-    public Short getAddressType() {
+    public String getAddressType() {
         return addressType;
     }
 
-    public void setAddressType(Short addressType) {
-        this.addressType = addressType;
+    public void setAddressType(String addressType) {
+        this.addressType = addressType == null ? null : addressType.trim();
     }
 }

@@ -1,8 +1,8 @@
 package com.qianjiajia.kitchen.design.service.impl;
 
 import com.qianjiajia.kitchen.common.utils.UUIDUtil;
-import com.qianjiajia.kitchen.design.dao.AddressMapper;
-import com.qianjiajia.kitchen.design.domain.Address;
+import com.qianjiajia.kitchen.design.dao.AddressDetailsMapper;
+import com.qianjiajia.kitchen.design.domain.AddressDetails;
 import com.qianjiajia.kitchen.design.domain.Users;
 import com.qianjiajia.kitchen.design.service.IAddressService;
 import com.qianjiajia.kitchen.design.utils.UserLoginUtils;
@@ -23,18 +23,18 @@ import java.util.List;
 public class AddressServiceImpl implements IAddressService {
 
     @Autowired
-    private AddressMapper addressMapper;
+    private AddressDetailsMapper addressMapper;
 
     @Transactional
     @Override
-    public void save(Address address) {
+    public void save(AddressDetails address) {
         address.setId(UUIDUtil.getUUID());
         addressMapper.insert(address);
     }
 
     @Transactional
     @Override
-    public void update(Address address) {
+    public void update(AddressDetails address) {
         addressMapper.updateByPrimaryKey(address);
     }
 
@@ -45,19 +45,25 @@ public class AddressServiceImpl implements IAddressService {
     }
 
     @Override
-    public List<Address> query() {
+    public List<AddressDetails> query() {
         Users user = UserLoginUtils.currentUser;
         return addressMapper.queryList(user.getId());
     }
 
     @Override
-    public Address queryTo(String id) {
+    public AddressDetails queryTo(String id) {
         return addressMapper.getById(id);
     }
 
     @Override
     public List<String> queryId() {
-        return addressMapper.queryIdList();
+        Users users = UserLoginUtils.currentUser;
+        return addressMapper.queryIdList(users.getId());
+    }
+
+    @Override
+    public AddressDetails queryDetails(String addressId) {
+        return null;
     }
 
 }

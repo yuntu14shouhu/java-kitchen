@@ -1,7 +1,7 @@
 package com.qianjiajia.kitchen.web.controller;
 
 import com.qianjiajia.kitchen.common.result.MessageResult;
-import com.qianjiajia.kitchen.design.domain.Address;
+import com.qianjiajia.kitchen.design.domain.AddressDetails;
 import com.qianjiajia.kitchen.design.service.IAddressService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -33,7 +33,7 @@ public class AddressController {
     @ApiOperation(value = "保存收货地址")
     @ResponseBody
     @RequestMapping(value = "/save",method = RequestMethod.POST)
-    public MessageResult save (@RequestBody @ApiParam Address address){
+    public MessageResult save (@RequestBody @ApiParam AddressDetails address){
         addressService.save(address);
         return MessageResult.getSuccessInstance();
     }
@@ -50,14 +50,22 @@ public class AddressController {
     @ResponseBody
     @RequestMapping(value = "/quertAll",method = RequestMethod.GET)
     public MessageResult queryAll(){
-        List<Address> addresses = addressService.query();
+        List<AddressDetails> addresses = addressService.query();
+        return MessageResult.getSuccessInstance(addresses);
+    }
+
+    @ApiOperation(value = "查询收货地址详情")
+    @ResponseBody
+    @RequestMapping(value = "/queryDetails",method = RequestMethod.GET)
+    public MessageResult queryDetails(String addressId){
+        AddressDetails addresses = addressService.queryDetails(addressId);
         return MessageResult.getSuccessInstance(addresses);
     }
 
     @ApiOperation(value = "修改收货地址")
     @ResponseBody
     @RequestMapping(value = "update",method = RequestMethod.POST)
-    public MessageResult update(@RequestBody @ApiParam Address address){
+    public MessageResult update(@RequestBody @ApiParam AddressDetails address){
         addressService.update(address);
         return MessageResult.getSuccessInstance();
     }

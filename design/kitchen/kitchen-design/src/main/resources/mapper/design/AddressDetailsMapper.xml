@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.qianjiajia.kitchen.design.dao.AddressMapper">
-  <resultMap id="BaseResultMap" type="com.qianjiajia.kitchen.design.domain.Address">
+<mapper namespace="com.qianjiajia.kitchen.design.dao.AddressDetailsMapper">
+  <resultMap id="BaseResultMap" type="com.qianjiajia.kitchen.design.domain.AddressDetails">
     <id column="ID" jdbcType="VARCHAR" property="id" />
     <result column="USER_ID" jdbcType="VARCHAR" property="userId" />
     <result column="CONSIGNEE_NAME" jdbcType="VARCHAR" property="consigneeName" />
     <result column="CONSIGNEE_PHONE" jdbcType="VARCHAR" property="consigneePhone" />
     <result column="CONSIGNEE_ADDRESS" jdbcType="VARCHAR" property="consigneeAddress" />
+    <result column="CITY" jdbcType="VARCHAR" property="city" />
+    <result column="HOUSE_NUMBER" jdbcType="VARCHAR" property="houseNumber" />
     <result column="DEFAULT_ADDRESS" jdbcType="VARCHAR" property="defaultAddress" />
     <result column="IS_DEFAULT" jdbcType="DECIMAL" property="isDefault" />
-    <result column="ADDRESS_TYPE" jdbcType="DECIMAL" property="addressType" />
+    <result column="ADDRESS_TYPE" jdbcType="VARCHAR" property="addressType" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -70,10 +72,10 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    ID, USER_ID, CONSIGNEE_NAME, CONSIGNEE_PHONE, CONSIGNEE_ADDRESS, DEFAULT_ADDRESS, 
-    IS_DEFAULT, ADDRESS_TYPE
+    ID, USER_ID, CONSIGNEE_NAME, CONSIGNEE_PHONE, CONSIGNEE_ADDRESS, CITY, HOUSE_NUMBER, 
+    DEFAULT_ADDRESS, IS_DEFAULT, ADDRESS_TYPE
   </sql>
-  <select id="selectByExample" parameterType="com.qianjiajia.kitchen.design.domain.AddressExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.qianjiajia.kitchen.design.domain.AddressDetailsExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -97,21 +99,23 @@
     delete from ADDRESS
     where ID = #{id,jdbcType=VARCHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="com.qianjiajia.kitchen.design.domain.AddressExample">
+  <delete id="deleteByExample" parameterType="com.qianjiajia.kitchen.design.domain.AddressDetailsExample">
     delete from ADDRESS
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.qianjiajia.kitchen.design.domain.Address">
+  <insert id="insert" parameterType="com.qianjiajia.kitchen.design.domain.AddressDetails">
     insert into ADDRESS (ID, USER_ID, CONSIGNEE_NAME, 
-      CONSIGNEE_PHONE, CONSIGNEE_ADDRESS, DEFAULT_ADDRESS, 
-      IS_DEFAULT, ADDRESS_TYPE)
+      CONSIGNEE_PHONE, CONSIGNEE_ADDRESS, CITY, 
+      HOUSE_NUMBER, DEFAULT_ADDRESS, IS_DEFAULT, 
+      ADDRESS_TYPE)
     values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{consigneeName,jdbcType=VARCHAR}, 
-      #{consigneePhone,jdbcType=VARCHAR}, #{consigneeAddress,jdbcType=VARCHAR}, #{defaultAddress,jdbcType=VARCHAR}, 
-      #{isDefault,jdbcType=DECIMAL}, #{addressType,jdbcType=DECIMAL})
+      #{consigneePhone,jdbcType=VARCHAR}, #{consigneeAddress,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
+      #{houseNumber,jdbcType=VARCHAR}, #{defaultAddress,jdbcType=VARCHAR}, #{isDefault,jdbcType=DECIMAL}, 
+      #{addressType,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.qianjiajia.kitchen.design.domain.Address">
+  <insert id="insertSelective" parameterType="com.qianjiajia.kitchen.design.domain.AddressDetails">
     insert into ADDRESS
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -128,6 +132,12 @@
       </if>
       <if test="consigneeAddress != null">
         CONSIGNEE_ADDRESS,
+      </if>
+      <if test="city != null">
+        CITY,
+      </if>
+      <if test="houseNumber != null">
+        HOUSE_NUMBER,
       </if>
       <if test="defaultAddress != null">
         DEFAULT_ADDRESS,
@@ -155,6 +165,12 @@
       <if test="consigneeAddress != null">
         #{consigneeAddress,jdbcType=VARCHAR},
       </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="houseNumber != null">
+        #{houseNumber,jdbcType=VARCHAR},
+      </if>
       <if test="defaultAddress != null">
         #{defaultAddress,jdbcType=VARCHAR},
       </if>
@@ -162,11 +178,11 @@
         #{isDefault,jdbcType=DECIMAL},
       </if>
       <if test="addressType != null">
-        #{addressType,jdbcType=DECIMAL},
+        #{addressType,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.qianjiajia.kitchen.design.domain.AddressExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.qianjiajia.kitchen.design.domain.AddressDetailsExample" resultType="java.lang.Long">
     select count(*) from ADDRESS
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -190,6 +206,12 @@
       <if test="record.consigneeAddress != null">
         CONSIGNEE_ADDRESS = #{record.consigneeAddress,jdbcType=VARCHAR},
       </if>
+      <if test="record.city != null">
+        CITY = #{record.city,jdbcType=VARCHAR},
+      </if>
+      <if test="record.houseNumber != null">
+        HOUSE_NUMBER = #{record.houseNumber,jdbcType=VARCHAR},
+      </if>
       <if test="record.defaultAddress != null">
         DEFAULT_ADDRESS = #{record.defaultAddress,jdbcType=VARCHAR},
       </if>
@@ -197,7 +219,7 @@
         IS_DEFAULT = #{record.isDefault,jdbcType=DECIMAL},
       </if>
       <if test="record.addressType != null">
-        ADDRESS_TYPE = #{record.addressType,jdbcType=DECIMAL},
+        ADDRESS_TYPE = #{record.addressType,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -211,14 +233,16 @@
       CONSIGNEE_NAME = #{record.consigneeName,jdbcType=VARCHAR},
       CONSIGNEE_PHONE = #{record.consigneePhone,jdbcType=VARCHAR},
       CONSIGNEE_ADDRESS = #{record.consigneeAddress,jdbcType=VARCHAR},
+      CITY = #{record.city,jdbcType=VARCHAR},
+      HOUSE_NUMBER = #{record.houseNumber,jdbcType=VARCHAR},
       DEFAULT_ADDRESS = #{record.defaultAddress,jdbcType=VARCHAR},
       IS_DEFAULT = #{record.isDefault,jdbcType=DECIMAL},
-      ADDRESS_TYPE = #{record.addressType,jdbcType=DECIMAL}
+      ADDRESS_TYPE = #{record.addressType,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.qianjiajia.kitchen.design.domain.Address">
+  <update id="updateByPrimaryKeySelective" parameterType="com.qianjiajia.kitchen.design.domain.AddressDetails">
     update ADDRESS
     <set>
       <if test="userId != null">
@@ -233,6 +257,12 @@
       <if test="consigneeAddress != null">
         CONSIGNEE_ADDRESS = #{consigneeAddress,jdbcType=VARCHAR},
       </if>
+      <if test="city != null">
+        CITY = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="houseNumber != null">
+        HOUSE_NUMBER = #{houseNumber,jdbcType=VARCHAR},
+      </if>
       <if test="defaultAddress != null">
         DEFAULT_ADDRESS = #{defaultAddress,jdbcType=VARCHAR},
       </if>
@@ -240,25 +270,28 @@
         IS_DEFAULT = #{isDefault,jdbcType=DECIMAL},
       </if>
       <if test="addressType != null">
-        ADDRESS_TYPE = #{addressType,jdbcType=DECIMAL},
+        ADDRESS_TYPE = #{addressType,jdbcType=VARCHAR},
       </if>
     </set>
     where ID = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.qianjiajia.kitchen.design.domain.Address">
+  <update id="updateByPrimaryKey" parameterType="com.qianjiajia.kitchen.design.domain.AddressDetails">
     update ADDRESS
     set USER_ID = #{userId,jdbcType=VARCHAR},
       CONSIGNEE_NAME = #{consigneeName,jdbcType=VARCHAR},
       CONSIGNEE_PHONE = #{consigneePhone,jdbcType=VARCHAR},
       CONSIGNEE_ADDRESS = #{consigneeAddress,jdbcType=VARCHAR},
+      CITY = #{city,jdbcType=VARCHAR},
+      HOUSE_NUMBER = #{houseNumber,jdbcType=VARCHAR},
       DEFAULT_ADDRESS = #{defaultAddress,jdbcType=VARCHAR},
       IS_DEFAULT = #{isDefault,jdbcType=DECIMAL},
-      ADDRESS_TYPE = #{addressType,jdbcType=DECIMAL}
+      ADDRESS_TYPE = #{addressType,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=VARCHAR}
   </update>
 
-  <select id="queryList" parameterType="java.lang.String" resultType="com.qianjiajia.kitchen.design.domain.Address">
-    SELECT ID,CONSIGNEE_NAME,CONSIGNEE_PHONE,CONSIGNEE_ADDRESS,ADDRESS_TYPE,IS_DEFAULT
+  <select id="queryList" parameterType="java.lang.String"
+          resultType="com.qianjiajia.kitchen.design.domain.AddressDetails">
+    SELECT *
     FROM ADDRESS
     WHERE USER_ID = #{userId,jdbcType=VARCHAR}
   </select>

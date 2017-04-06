@@ -13,17 +13,21 @@ public class Users {
 
     private String salt;
 
-    private Short status;
+    private Integer status;
 
     private String sex;
 
-    private Short age;
+    private Integer age;
 
     private Date createTime;
 
     private String remark;
 
-    private String contacts;
+    private String email;
+
+    private String phone;
+
+    private String qqnumber;
 
     public Users removePassword(){
         this.setPassword("");
@@ -71,11 +75,11 @@ public class Users {
         this.salt = salt == null ? null : salt.trim();
     }
 
-    public Short getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Short status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -87,11 +91,11 @@ public class Users {
         this.sex = sex == null ? null : sex.trim();
     }
 
-    public Short getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(Short age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
@@ -111,11 +115,27 @@ public class Users {
         this.remark = remark == null ? null : remark.trim();
     }
 
-    public String getContacts() {
-        return contacts;
+    public String getEmail() {
+        return email;
     }
 
-    public void setContacts(String contacts) {
-        this.contacts = contacts == null ? null : contacts.trim();
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
+    }
+
+    public String getQqnumber() {
+        return qqnumber;
+    }
+
+    public void setQqnumber(String qqnumber) {
+        this.qqnumber = qqnumber == null ? null : qqnumber.trim();
     }
 }

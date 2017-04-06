@@ -6,6 +6,8 @@ import java.util.Date;
 public class OrderDetailsModify {
     private String id;
 
+    private String userId;
+
     private String orderConsigneeName;
 
     private String orderConsigneePhone;
@@ -24,6 +26,8 @@ public class OrderDetailsModify {
 
     private BigDecimal orderTotalPayment;
 
+    private Integer orderProductNumber;
+
     private String orderProductId;
 
     public String getId() {
@@ -32,6 +36,14 @@ public class OrderDetailsModify {
 
     public void setId(String id) {
         this.id = id == null ? null : id.trim();
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId == null ? null : userId.trim();
     }
 
     public String getOrderConsigneeName() {
@@ -104,6 +116,14 @@ public class OrderDetailsModify {
 
     public void setOrderTotalPayment(BigDecimal orderTotalPayment) {
         this.orderTotalPayment = orderTotalPayment;
+    }
+
+    public Integer getOrderProductNumber() {
+        return orderProductNumber;
+    }
+
+    public void setOrderProductNumber(Integer orderProductNumber) {
+        this.orderProductNumber = orderProductNumber;
     }
 
     public String getOrderProductId() {

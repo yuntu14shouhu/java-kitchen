@@ -39,8 +39,6 @@ public class UsersController {
         return MessageResult.getSuccessInstance();
     }
 
-
-
     @ApiOperation(value = "根据用户名查询用户")
     @ResponseBody
     @RequestMapping(value = "/query",method = RequestMethod.GET)
@@ -76,5 +74,14 @@ public class UsersController {
         usersService.delete(id);
         return MessageResult.getSuccessInstance();
     }
+
+    @ApiOperation(value = "根据用户id查询用户信息")
+    @ResponseBody
+    @RequestMapping(value = "/queryByUserId",method = RequestMethod.GET)
+    public MessageResult queryByUserId(){
+
+        return MessageResult.getSuccessInstance(usersService.queryByUserId());
+    }
+
 
 }

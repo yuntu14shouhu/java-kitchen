@@ -57,10 +57,23 @@ public interface IUsersService {
      */
     List<Users> getAll();
 
-    /**
-     * 获取用户id
-     */
-    String queryUserId(Users users);
+
 
     boolean login(Users users);
+
+    /**
+     * 根据当前用户id查看用户信息
+     * 用户名
+     * 昵称
+     * 性别
+     * 年龄
+     * 邮箱
+     * 手机号码
+     * qq号码
+     */
+    Users queryByUserId();
+
+    /**
+     *
+     */
 }

@@ -35,5 +35,9 @@ public interface OrderDetailsModifyMapper {
 
     int updateByPrimaryKey(OrderDetailsModify record);
 
+    List<String> queryOrders(String userId);
+
     OrderDetailsModify getById(String orderId);
+
+    String getProductId(String s);
 }
