@@ -59,7 +59,7 @@ public interface IUsersService {
 
 
 
-    boolean login(Users users);
+    Users login(Users users);
 
     /**
      * 根据当前用户id查看用户信息

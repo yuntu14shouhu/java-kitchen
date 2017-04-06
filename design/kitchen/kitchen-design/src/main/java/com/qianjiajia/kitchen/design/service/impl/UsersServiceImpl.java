@@ -9,12 +9,14 @@ import com.qianjiajia.kitchen.design.domain.Users;
 import com.qianjiajia.kitchen.design.domain.UsersExample;
 import com.qianjiajia.kitchen.design.service.IUsersService;
 import com.qianjiajia.kitchen.design.utils.UserLoginUtils;
+import io.swagger.annotations.ApiParam;
 import org.apache.shiro.crypto.hash.Sha512Hash;
 import org.apache.shiro.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.Date;
 import java.util.List;
@@ -176,14 +178,17 @@ public class UsersServiceImpl implements IUsersService{
 
 
     @Override
-    public boolean login(Users users) {
+    public Users login(Users users) {
+//        password = new Sha512Hash(password,salt).toHex();
         users.setPassword(new Sha512Hash(users.getPassword(),salt).toHex());
         Users curUser = usersMapper.login(users);
         if(curUser != null ){
             UserLoginUtils.currentUser = curUser;
-            return true;
+            return curUser;
+        }else {
+            throw new ApiException(ApiExceptionCode.LOGIN_FAILURE,"登陆失败");
         }
-        return false;
+
     }
 
     @Override

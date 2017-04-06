@@ -35,8 +35,7 @@ public class UsersController {
     @ResponseBody
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public MessageResult login(@RequestBody @ApiParam Users users){
-        usersService.login(users);
-        return MessageResult.getSuccessInstance();
+        return MessageResult.getSuccessInstance(usersService.login(users));
     }
 
     @ApiOperation(value = "根据用户名查询用户")

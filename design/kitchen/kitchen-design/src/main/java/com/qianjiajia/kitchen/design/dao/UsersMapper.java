@@ -32,6 +32,7 @@ public interface UsersMapper {
     List<Users> selectAll();
 
     Users login(Users users);
+//    @Param("userName") String userName,@Param("password") String password
 
     Users queryByUserId(String id);
 
