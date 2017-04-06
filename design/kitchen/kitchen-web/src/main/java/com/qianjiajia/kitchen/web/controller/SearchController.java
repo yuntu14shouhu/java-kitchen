@@ -52,6 +52,14 @@ public class SearchController {
         return MessageResult.getSuccessInstance();
     }
 
+    @ApiOperation(value = "删除历史搜索记录")
+    @ResponseBody
+    @RequestMapping(value = "/deleteAll", method = RequestMethod.GET)
+    public MessageResult deleteAll(String userId) {
+        searchQueryService.deleteAll(userId);
+        return MessageResult.getSuccessInstance();
+    }
+
     @ApiOperation(value = "最近搜索")
     @ResponseBody
     @RequestMapping(value = "/queryHistory", method = RequestMethod.GET)
@@ -79,6 +87,8 @@ public class SearchController {
         resultMap.put("searchHotList",searchHotList);
         return resultMap;
     }
+
+
 
 
 }

@@ -32,4 +32,6 @@ public interface ISearchQueryService {
      * 人气搜索
      */
     List<SearchQuery> queryHot();
+
+    void deleteAll(String userId);
 }

@@ -40,6 +40,14 @@ public class SearchQueryServiceImpl implements ISearchQueryService{
         searchQueryMapper.deleteByPrimaryKey(id);
     }
 
+    @Transactional
+    @Override
+    public void deleteAll(String userId) {
+        Users users = UserLoginUtils.currentUser;
+        userId = users.getId();
+        searchQueryMapper.deleteAll(userId);
+    }
+
     @Override
     public List<SearchQuery> queryHistory(String userId) {
         Users users = UserLoginUtils.currentUser;//加入到缓存中

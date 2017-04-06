@@ -32,4 +32,6 @@ public interface SearchQueryMapper {
     List<SearchQuery> queryHistory(String usersId);
 
     List<SearchQuery> queryHot();
+
+    void deleteAll(String userId);
 }

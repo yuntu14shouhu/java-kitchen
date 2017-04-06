@@ -46,71 +46,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AddressController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kitchen-web/src/main/java/com/qianjiajia/kitchen/web/controller/AddressController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IProductService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/service/IProductService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="115" column="23" selection-start-line="115" selection-start-column="23" selection-end-line="115" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IAddressService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/service/IAddressService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kitchen-web/src/main/java/com/qianjiajia/kitchen/web/controller/SearchController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="75" column="73" selection-start-line="75" selection-start-column="73" selection-end-line="75" selection-end-column="73" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddressServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/service/impl/AddressServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ISearchQueryService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/service/ISearchQueryService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SearchQueryServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/service/impl/SearchQueryServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
+            <state relative-caret-position="249">
+              <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
               <folding>
                 <element signature="e#1197#1198#0" expanded="true" />
                 <element signature="e#1253#1254#0" expanded="true" />
@@ -119,8 +59,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QJJ.ADDRESS" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/7287a4ab/d24713ae-9c84-413f-b4b2-f097bb6fcc92/QJJ.ADDRESS">
+      <file leaf-file-name="SearchQueryMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/dao/SearchQueryMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="382">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchQueryMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kitchen-design/src/main/resources/mapper/design/SearchQueryMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="240" column="57" selection-start-line="240" selection-start-column="57" selection-end-line="240" selection-end-column="57" />
+              <folding>
+                <marker date="1491496418631" expanded="true" signature="3713:3821" ph="select from SEARCH_QUERY" />
+                <marker date="1491496418631" expanded="true" signature="3906:3968" ph="delete from " />
+                <marker date="1491496418631" expanded="true" signature="4089:4113" ph="delete from " />
+                <marker date="1491496418631" expanded="true" signature="4310:4632" ph="insert into SEARCH_QUERY... " />
+                <marker date="1491496418631" expanded="true" signature="5982:6015" ph="select count... SEARCH_QUERY" />
+                <marker date="1491496418631" expanded="true" signature="7078:7439" ph="update SEARC... " />
+                <marker date="1491496418631" expanded="true" signature="7667:8265" ph="update SEARC... " />
+                <marker date="1491496418631" expanded="true" signature="8382:8704" ph="update SEARC... " />
+                <marker date="1491496418631" expanded="true" signature="8846:8998" ph="SELECT * FRO... *" />
+                <marker date="1491496418631" expanded="true" signature="8865:8912" ph="SELECT * FRO... SEARCH_QUERY" />
+                <marker date="1491496418631" expanded="true" signature="9168:9279" ph="SELECT * FRO... *" />
+                <marker date="1491496418631" expanded="true" signature="9187:9234" ph="SELECT * FRO... SEARCH_QUERY" />
+                <marker date="1491496418631" expanded="true" signature="9356:9427" ph="delete from " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QJJ.USERS" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/7287a4ab/d24713ae-9c84-413f-b4b2-f097bb6fcc92/QJJ.USERS">
           <provider editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -149,17 +123,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QJJ.ORDER_DETAILS_MODIFY" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/7287a4ab/d24713ae-9c84-413f-b4b2-f097bb6fcc92/QJJ.ORDER_DETAILS_MODIFY">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+      <file leaf-file-name="SearchController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kitchen-web/src/main/java/com/qianjiajia/kitchen/web/controller/SearchController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
               <folding />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
+        </entry>
+      </file>
+      <file leaf-file-name="ISearchQueryService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/service/ISearchQueryService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -200,8 +179,6 @@
         <option value="$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/dao/AddressMapper.java" />
         <option value="$PROJECT_DIR$/kitchen-design/src/main/resources/mapper/design/AddressMapper.xml" />
         <option value="dbtable:/7287a4ab/d24713ae-9c84-413f-b4b2-f097bb6fcc92/QJJ.SEARCH_QUERY" />
-        <option value="$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/dao/SearchQueryMapper.java" />
-        <option value="$PROJECT_DIR$/kitchen-design/src/main/resources/mapper/design/SearchQueryMapper.xml" />
         <option value="dbtable:/7287a4ab/d24713ae-9c84-413f-b4b2-f097bb6fcc92/QJJ.ORDER_DETAILS_MODIFY" />
         <option value="dbtable:/7287a4ab/d24713ae-9c84-413f-b4b2-f097bb6fcc92/QJJ.PRODUCT" />
         <option value="$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/domain/OrderDetailsModify.java" />
@@ -234,9 +211,11 @@
         <option value="$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/dao/AddressDetailsMapper.java" />
         <option value="$PROJECT_DIR$/kitchen-design/src/main/resources/mapper/design/AddressDetailsMapper.xml" />
         <option value="$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/service/impl/ProductServiceImpl.java" />
-        <option value="$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/service/ISearchQueryService.java" />
-        <option value="$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/service/impl/SearchQueryServiceImpl.java" />
         <option value="$PROJECT_DIR$/kitchen-web/src/main/java/com/qianjiajia/kitchen/web/controller/SearchController.java" />
+        <option value="$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/service/ISearchQueryService.java" />
+        <option value="$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/dao/SearchQueryMapper.java" />
+        <option value="$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/service/impl/SearchQueryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/kitchen-design/src/main/resources/mapper/design/SearchQueryMapper.xml" />
       </list>
     </option>
   </component>
@@ -1700,7 +1679,7 @@
       <workItem from="1491440018463" duration="963000" />
       <workItem from="1491445679178" duration="24256000" />
       <workItem from="1491482994448" duration="1759000" />
-      <workItem from="1491484899860" duration="5343000" />
+      <workItem from="1491484899860" duration="6114000" />
     </task>
     <task id="LOCAL-00001" summary="[kitchen-java]基本接口实现">
       <created>1488468141090</created>
@@ -1745,7 +1724,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="415921000" />
+    <option name="totallyTimeSpent" value="416692000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -1861,66 +1840,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="dbDummy://dbtable:/7287a4ab/d24713ae-9c84-413f-b4b2-f097bb6fcc92/QJJ.USERS">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/7287a4ab/d24713ae-9c84-413f-b4b2-f097bb6fcc92/QJJ.USERS">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/7287a4ab/d24713ae-9c84-413f-b4b2-f097bb6fcc92/QJJ.USERS">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/7287a4ab/d24713ae-9c84-413f-b4b2-f097bb6fcc92/QJJ.USERS">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/7287a4ab/d24713ae-9c84-413f-b4b2-f097bb6fcc92/QJJ.USERS">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/service/IUsersService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
@@ -2103,6 +2022,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2307,6 +2227,100 @@
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbtable:/7287a4ab/d24713ae-9c84-413f-b4b2-f097bb6fcc92/QJJ.USERS">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/7287a4ab/d24713ae-9c84-413f-b4b2-f097bb6fcc92/QJJ.USERS">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/7287a4ab/d24713ae-9c84-413f-b4b2-f097bb6fcc92/QJJ.USERS">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/7287a4ab/d24713ae-9c84-413f-b4b2-f097bb6fcc92/QJJ.USERS">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/7287a4ab/d24713ae-9c84-413f-b4b2-f097bb6fcc92/QJJ.ORDER_DETAILS_MODIFY">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/7287a4ab/d24713ae-9c84-413f-b4b2-f097bb6fcc92/QJJ.ADDRESS">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/service/impl/AddressServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/service/IAddressService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/service/IProductService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -2315,29 +2329,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/kitchen-web/src/main/java/com/qianjiajia/kitchen/web/controller/AddressController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/kitchen-web/src/main/java/com/qianjiajia/kitchen/web/controller/SearchController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="75" column="73" selection-start-line="75" selection-start-column="73" selection-end-line="75" selection-end-column="73" />
+        <state relative-caret-position="281">
+          <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/service/ISearchQueryService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="374">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/service/impl/SearchQueryServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
+        <state relative-caret-position="249">
+          <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
           <folding>
             <element signature="e#1197#1198#0" expanded="true" />
             <element signature="e#1253#1254#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/dao/SearchQueryMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kitchen-design/src/main/resources/mapper/design/SearchQueryMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="240" column="57" selection-start-line="240" selection-start-column="57" selection-end-line="240" selection-end-column="57" />
+          <folding>
+            <marker date="1491496418631" expanded="true" signature="3713:3821" ph="select from SEARCH_QUERY" />
+            <marker date="1491496418631" expanded="true" signature="3906:3968" ph="delete from " />
+            <marker date="1491496418631" expanded="true" signature="4089:4113" ph="delete from " />
+            <marker date="1491496418631" expanded="true" signature="4310:4632" ph="insert into SEARCH_QUERY... " />
+            <marker date="1491496418631" expanded="true" signature="5982:6015" ph="select count... SEARCH_QUERY" />
+            <marker date="1491496418631" expanded="true" signature="7078:7439" ph="update SEARC... " />
+            <marker date="1491496418631" expanded="true" signature="7667:8265" ph="update SEARC... " />
+            <marker date="1491496418631" expanded="true" signature="8382:8704" ph="update SEARC... " />
+            <marker date="1491496418631" expanded="true" signature="8846:8998" ph="SELECT * FRO... *" />
+            <marker date="1491496418631" expanded="true" signature="8865:8912" ph="SELECT * FRO... SEARCH_QUERY" />
+            <marker date="1491496418631" expanded="true" signature="9168:9279" ph="SELECT * FRO... *" />
+            <marker date="1491496418631" expanded="true" signature="9187:9234" ph="SELECT * FRO... SEARCH_QUERY" />
+            <marker date="1491496418631" expanded="true" signature="9356:9427" ph="delete from " />
           </folding>
         </state>
       </provider>
@@ -2369,69 +2421,6 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/7287a4ab/d24713ae-9c84-413f-b4b2-f097bb6fcc92/QJJ.USERS">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/7287a4ab/d24713ae-9c84-413f-b4b2-f097bb6fcc92/QJJ.USERS">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kitchen-web/src/main/java/com/qianjiajia/kitchen/web/controller/AddressController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/service/IAddressService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kitchen-design/src/main/java/com/qianjiajia/kitchen/design/service/impl/AddressServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/7287a4ab/d24713ae-9c84-413f-b4b2-f097bb6fcc92/QJJ.ORDER_DETAILS_MODIFY">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/7287a4ab/d24713ae-9c84-413f-b4b2-f097bb6fcc92/QJJ.ADDRESS">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />

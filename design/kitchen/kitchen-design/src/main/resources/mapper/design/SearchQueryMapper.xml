@@ -237,4 +237,9 @@
     FROM (SELECT * FROM SEARCH_QUERY order by SEARCH_TIME)
     WHERE rownum &lt;=6 AND SEARCH_TYPE = 0
   </select>
+
+  <select id="deleteAll" parameterType="java.lang.String">
+    delete from SEARCH_QUERY
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </select>
 </mapper>
