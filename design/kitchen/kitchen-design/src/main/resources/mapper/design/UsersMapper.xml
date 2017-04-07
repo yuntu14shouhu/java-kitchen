@@ -356,7 +356,7 @@
   </select>
 
   <select id="queryByUserId" parameterType="java.lang.String" resultMap="BaseResultMap">
-    SELECT USER_NAME,NICK_NAME,SEX,AGE,EMAIL,PHONE,QQNUMBER
+    SELECT *
     FROM USERS
     where ID = #{id,jdbcType=VARCHAR}
   </select>

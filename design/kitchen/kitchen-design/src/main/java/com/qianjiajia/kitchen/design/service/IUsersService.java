@@ -71,7 +71,7 @@ public interface IUsersService {
      * 手机号码
      * qq号码
      */
-    Users queryByUserId();
+    Users queryByUserId(String userId);
 
     /**
      *

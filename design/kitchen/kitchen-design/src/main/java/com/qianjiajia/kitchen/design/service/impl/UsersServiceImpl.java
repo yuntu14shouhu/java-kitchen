@@ -192,9 +192,10 @@ public class UsersServiceImpl implements IUsersService{
     }
 
     @Override
-    public Users queryByUserId() {
+    public Users queryByUserId(String userId) {
         Users users = UserLoginUtils.currentUser;
-        return usersMapper.queryByUserId(users.getId());
+        userId = users.getId();
+        return usersMapper.queryByUserId(userId);
     }
 
 

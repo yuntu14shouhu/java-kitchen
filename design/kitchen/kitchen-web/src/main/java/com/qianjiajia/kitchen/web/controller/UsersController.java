@@ -77,9 +77,9 @@ public class UsersController {
     @ApiOperation(value = "根据用户id查询用户信息")
     @ResponseBody
     @RequestMapping(value = "/queryByUserId",method = RequestMethod.GET)
-    public MessageResult queryByUserId(){
+    public MessageResult queryByUserId(String userId){
 
-        return MessageResult.getSuccessInstance(usersService.queryByUserId());
+        return MessageResult.getSuccessInstance(usersService.queryByUserId(userId));
     }
 
 

@@ -199,11 +199,12 @@ public class OrderDetailsModifyServiceImpl implements IOrderDetailsModifyService
     }
 
     @Override
-    public Map queryOrders() {
+    public Map queryOrders(String userId) {
 
         //根据用户id获取全部订单id
         Users users = UserLoginUtils.currentUser;//加入到缓存中
-        List<String> orderDetailsModifies = orderDetailsModifyMapper.queryOrders(users.getId());
+        userId = users.getId();
+        List<String> orderDetailsModifies = orderDetailsModifyMapper.queryOrders(userId);
 
         Map resultMap = new HashMap();
 

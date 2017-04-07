@@ -64,8 +64,8 @@ public class OrderDetailsModifyController {
     @ApiOperation(value = "查询全部订单")
     @ResponseBody
     @RequestMapping(value = "/queryOrders",method = RequestMethod.GET)
-    public Map queryOrders(){
-        return orderDetailsModifyService.queryOrders();
+    public Map queryOrders(String userId){
+        return orderDetailsModifyService.queryOrders(userId);
     }
 
 
