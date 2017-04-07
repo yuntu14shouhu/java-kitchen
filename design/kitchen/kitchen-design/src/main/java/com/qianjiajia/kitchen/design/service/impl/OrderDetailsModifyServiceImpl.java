@@ -199,7 +199,7 @@ public class OrderDetailsModifyServiceImpl implements IOrderDetailsModifyService
     }
 
     @Override
-    public Map queryOrders(String userId) {
+    public List queryOrders(String userId) {
 
         //根据用户id获取全部订单id
         Users users = UserLoginUtils.currentUser;//加入到缓存中
@@ -207,17 +207,13 @@ public class OrderDetailsModifyServiceImpl implements IOrderDetailsModifyService
         List<String> orderDetailsModifies = orderDetailsModifyMapper.queryOrders(userId);
 
         Map resultMap = new HashMap();
-
-//        List resultList = new ArrayList();
+        List<Map<String,Object>> resultList = new ArrayList<>();
 
         for(int i = 0; i < orderDetailsModifies.size();i++){
 
             OrderDetailsModify orderDetailsModifyList = orderDetailsModifyMapper.getById(orderDetailsModifies.get(i));
             //根据订单id获取商品id
             String ids = orderDetailsModifyMapper.getProductId(orderDetailsModifies.get(i));
-
-//            String ids = orderDetailsModifies.get(i).getOrderProductId();
-
             //对商品ids进行拆分
             String[] idArr = ids.split(",");
 
@@ -225,43 +221,16 @@ public class OrderDetailsModifyServiceImpl implements IOrderDetailsModifyService
             List<String> imgList = new ArrayList<>();
             for(int k = 0; k < idArr.length; k++){
                 //根据商品id查询到对应的商品
-
                 String img = productMapper.queryToProduct(idArr[k]).getProductImageUrl();
                 imgList.add(img);
-                imgMap.put("imgList",imgList);
-                imgMap.put("date",orderDetailsModifyList.getOrderCreateDate());
-                imgMap.put("total",orderDetailsModifyList.getOrderTotalPayment());
             }
-            resultMap.put(orderDetailsModifies.get(i),imgMap);
-//            Map productMap = new HashMap();
-//            List<String> imgList = new ArrayList<>();
-//            for (int j = 0; j < productList.size(); j++){
-//                String img = product.getProductImageUrl();
-//                imgList.add(img);
-//                productMap.put("imgList",imgList);
-//                productMap.put("date",orderDetailsModifyList.getOrderCreateDate());
-//                productMap.put("total",orderDetailsModifyList.getOrderTotalPayment());
-//            }
-//            resultMap.put("",productMap);
-//            resultList.add(resultMap);
-//            resultList.add(imgList);
+            imgMap.put("imgList",imgList);
+            imgMap.put("id",orderDetailsModifies.get(i));
+            imgMap.put("date",orderDetailsModifyList.getOrderCreateDate());
+            imgMap.put("total",orderDetailsModifyList.getOrderTotalPayment());
+            resultList.add(imgMap);
+            //resultMap.put(orderDetailsModifies.get(i),imgMap);
         }
-
-        return resultMap;
+        return resultList;
     }
-
-//    public static void main(String[] args) {
-//        BigDecimal bigDecimal1 = new BigDecimal(3);//单价
-//        BigDecimal bigDecimal2 = new BigDecimal(4);//个数
-//        BigDecimal bigDecimal3 = new BigDecimal(0);
-//        int i = 3;//运费
-//        bigDecimal3 = bigDecimal1.multiply(bigDecimal2);
-//
-//        if(bigDecimal3.doubleValue() > 20) {
-//
-//            bigDecimal3 = bigDecimal3.add(BigDecimal.valueOf(i));
-//        }
-//        System.out.println(bigDecimal3);
-//    }
-
 }

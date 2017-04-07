@@ -37,7 +37,7 @@ public interface IOrderDetailsModifyService {
      * 只显示-----
      * 下单时间，订单全部商品图片，订单合计
      */
-    Map queryOrders(String userId);
+    List queryOrders(String userId);
 
     /**
      * 查询全部订单
