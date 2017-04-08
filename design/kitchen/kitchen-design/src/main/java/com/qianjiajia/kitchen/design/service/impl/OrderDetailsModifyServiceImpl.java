@@ -206,7 +206,6 @@ public class OrderDetailsModifyServiceImpl implements IOrderDetailsModifyService
         userId = users.getId();
         List<String> orderDetailsModifies = orderDetailsModifyMapper.queryOrders(userId);
 
-        Map resultMap = new HashMap();
         List<Map<String,Object>> resultList = new ArrayList<>();
 
         for(int i = 0; i < orderDetailsModifies.size();i++){

@@ -114,4 +114,6 @@ public interface IProductService {
      * 模糊查询
      */
     List<ProductQuery> fuzzyQuery(ProductQuery productQuery);
+
+    List<ProductQuery> fuzzyQueryProductName(String s);
 }

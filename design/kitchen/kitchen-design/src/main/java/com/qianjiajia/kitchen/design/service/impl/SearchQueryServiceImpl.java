@@ -2,6 +2,7 @@ package com.qianjiajia.kitchen.design.service.impl;
 
 import com.qianjiajia.kitchen.common.utils.UUIDUtil;
 import com.qianjiajia.kitchen.design.dao.SearchQueryMapper;
+import com.qianjiajia.kitchen.design.domain.Product;
 import com.qianjiajia.kitchen.design.domain.SearchQuery;
 import com.qianjiajia.kitchen.design.domain.Users;
 import com.qianjiajia.kitchen.design.service.ISearchQueryService;
@@ -46,6 +47,32 @@ public class SearchQueryServiceImpl implements ISearchQueryService{
         Users users = UserLoginUtils.currentUser;
         userId = users.getId();
         searchQueryMapper.deleteAll(userId);
+    }
+
+    @Override
+    public SearchQuery queryHistoryN(String userId) {
+        Users users = UserLoginUtils.currentUser;
+        userId = users.getId();
+        SearchQuery searchQuery = searchQueryMapper.queryHistoryN(userId);
+        return searchQuery;
+    }
+
+    @Override
+    public SearchQuery queryHotH() {
+        SearchQuery searchQuery = searchQueryMapper.queryHotN();
+        return searchQuery;
+    }
+
+    @Override
+    public List<String> queryHotContentList() {
+        return searchQueryMapper.queryContentList();
+    }
+
+    @Override
+    public List<String> queryHistoryContentList(String userId) {
+        Users users = UserLoginUtils.currentUser;
+        userId = users.getId();
+        return searchQueryMapper.queryHistoryContentList(userId);
     }
 
     @Override

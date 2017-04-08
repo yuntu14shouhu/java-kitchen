@@ -66,4 +66,6 @@ public interface ProductMapper {
     List<String> getProductIdList();
 
     List<ProductQuery> fuzzyQuery(ProductQuery productQuery);
+
+    List<ProductQuery> fuzzyQueryProductName(String s);
 }

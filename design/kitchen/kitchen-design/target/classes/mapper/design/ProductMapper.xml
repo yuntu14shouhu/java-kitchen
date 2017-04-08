@@ -772,4 +772,15 @@
   </select>
 
 
+  <select id="fuzzyQueryProductName" parameterType="java.lang.String" resultType="com.qianjiajia.kitchen.design.domain.SearchQuery">
+    SELECT *
+    FROM product
+    <where>
+      <if test="productName != null and productName != ''">
+        <bind name="productNamePattern" value="'%'+_parameter.getProductName()+'%'"/>
+        AND PRODUCT_NAME LIKE #{productNamePattern}
+      </if>
+    </where>
+  </select>
+
 </mapper>

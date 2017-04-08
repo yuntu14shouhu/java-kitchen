@@ -34,4 +34,12 @@ public interface ISearchQueryService {
     List<SearchQuery> queryHot();
 
     void deleteAll(String userId);
+
+    SearchQuery queryHistoryN(String userId);
+
+    SearchQuery queryHotH();
+
+    List<String> queryHotContentList();
+
+    List<String> queryHistoryContentList(String userId);
 }

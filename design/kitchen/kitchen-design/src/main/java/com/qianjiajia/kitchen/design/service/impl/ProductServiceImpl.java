@@ -144,4 +144,9 @@ public class ProductServiceImpl implements IProductService{
         return productMapper.fuzzyQuery(productQuery);
     }
 
+    @Override
+    public List<ProductQuery> fuzzyQueryProductName(String s) {
+        return productMapper.fuzzyQueryProductName(s);
+    }
+
 }
