@@ -109,6 +109,10 @@ public interface IProductService {
      */
     Product queryToProduct(String productId);
 
+    /**
+     * 根据id查询到商品名称
+     */
+    String queryProductNameById(String productId);
 
     /**
      * 模糊查询

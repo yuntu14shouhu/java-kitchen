@@ -32,7 +32,7 @@ public class SearchQueryQuery extends BaseQuery {
      * 搜索类型
      */
     @ApiModelProperty("搜索类型")
-    private Short searchType;
+    private Integer searchType;
 
     /**
      * 搜索内容
@@ -56,7 +56,7 @@ public class SearchQueryQuery extends BaseQuery {
      * 搜索次数
      */
     @ApiModelProperty("搜索次数")
-    private Short searchNumber;
+    private Integer searchNumber;
 
     public SearchQueryExample build(){
         SearchQueryExample searchQueryExample = new SearchQueryExample();

@@ -1,5 +1,6 @@
 package com.qianjiajia.kitchen.design.utils;
 
+import com.qianjiajia.kitchen.design.domain.ShoppingCart;
 import com.qianjiajia.kitchen.design.domain.Users;
 
 /**
@@ -11,4 +12,6 @@ import com.qianjiajia.kitchen.design.domain.Users;
 public class UserLoginUtils {
 
     public static Users currentUser = null;
+
+    public static ShoppingCart currentShop = null;
 }

@@ -2,7 +2,6 @@ package com.qianjiajia.kitchen.design.service.impl;
 
 import com.qianjiajia.kitchen.common.utils.UUIDUtil;
 import com.qianjiajia.kitchen.design.dao.SearchQueryMapper;
-import com.qianjiajia.kitchen.design.domain.Product;
 import com.qianjiajia.kitchen.design.domain.SearchQuery;
 import com.qianjiajia.kitchen.design.domain.Users;
 import com.qianjiajia.kitchen.design.service.ISearchQueryService;
@@ -30,9 +29,18 @@ public class SearchQueryServiceImpl implements ISearchQueryService{
     @Transactional
     @Override
     public void save(SearchQuery searchQuery) {
-        searchQuery.setId(UUIDUtil.getUUID());
-        searchQuery.setSearchTime(new Date());
-        searchQueryMapper.insert(searchQuery);
+//        if(UserLoginUtils.currentUser.getId().isEmpty() || UserLoginUtils.currentUser.getId() == null){
+//            searchQuery.setId(UUIDUtil.getUUID());
+//            searchQuery.setSearchTime(new Date());
+//            searchQuery.setSearchType(0);
+//            searchQueryMapper.insert(searchQuery);
+//        }else{
+            searchQuery.setId(UUIDUtil.getUUID());
+            searchQuery.setSearchTime(new Date());
+            searchQuery.setSearchType(1);
+            searchQuery.setUserId(UserLoginUtils.currentUser.getId());
+            searchQueryMapper.insert(searchQuery);
+//        }
     }
 
     @Transactional

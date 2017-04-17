@@ -120,8 +120,8 @@ public class OrderDetailsModifyServiceImpl implements IOrderDetailsModifyService
             product = productMapper.queryToProduct(id);
             productList.add(product);
         }
-        resultMap.put("products", productList);
-        resultMap.put("orderDetails", orderDetailsModify);
+        resultMap.put("product", productList);
+        resultMap.put("details", orderDetailsModify);
         return resultMap;
     }
 
@@ -199,7 +199,7 @@ public class OrderDetailsModifyServiceImpl implements IOrderDetailsModifyService
     }
 
     @Override
-    public List queryOrders(String userId) {
+    public Map queryOrders(String userId) {
 
         //根据用户id获取全部订单id
         Users users = UserLoginUtils.currentUser;//加入到缓存中
@@ -207,6 +207,8 @@ public class OrderDetailsModifyServiceImpl implements IOrderDetailsModifyService
         List<String> orderDetailsModifies = orderDetailsModifyMapper.queryOrders(userId);
 
         List<Map<String,Object>> resultList = new ArrayList<>();
+
+        Map resultMap = new HashMap();
 
         for(int i = 0; i < orderDetailsModifies.size();i++){
 
@@ -217,19 +219,21 @@ public class OrderDetailsModifyServiceImpl implements IOrderDetailsModifyService
             String[] idArr = ids.split(",");
 
             Map imgMap = new HashMap();
-            List<String> imgList = new ArrayList<>();
+            List imgList = new ArrayList<>();
             for(int k = 0; k < idArr.length; k++){
                 //根据商品id查询到对应的商品
-                String img = productMapper.queryToProduct(idArr[k]).getProductImageUrl();
-                imgList.add(img);
+                Product product = productMapper.queryToProduct(idArr[k]);
+                imgList.add(product);
             }
-            imgMap.put("imgList",imgList);
+
             imgMap.put("id",orderDetailsModifies.get(i));
             imgMap.put("date",orderDetailsModifyList.getOrderCreateDate());
             imgMap.put("total",orderDetailsModifyList.getOrderTotalPayment());
+            imgMap.put("product",imgList);
             resultList.add(imgMap);
+            resultMap.put("order",resultList);
             //resultMap.put(orderDetailsModifies.get(i),imgMap);
         }
-        return resultList;
+        return resultMap;
     }
 }

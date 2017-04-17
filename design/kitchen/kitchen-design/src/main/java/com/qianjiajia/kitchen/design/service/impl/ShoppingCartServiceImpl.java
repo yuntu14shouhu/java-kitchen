@@ -1,7 +1,9 @@
 package com.qianjiajia.kitchen.design.service.impl;
 
 import com.qianjiajia.kitchen.common.utils.UUIDUtil;
+import com.qianjiajia.kitchen.design.dao.ProductMapper;
 import com.qianjiajia.kitchen.design.dao.ShoppingCartMapper;
+import com.qianjiajia.kitchen.design.domain.Product;
 import com.qianjiajia.kitchen.design.domain.ShoppingCart;
 import com.qianjiajia.kitchen.design.service.IShoppingCartService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,55 +24,32 @@ public class ShoppingCartServiceImpl implements IShoppingCartService {
     @Autowired
     private ShoppingCartMapper shoppingCartMapper;
 
-    @Override
-    public List<ShoppingCart> getAppointedProduct(int status, String usersId) {
-        return shoppingCartMapper.query(status,usersId);
-    }
-
-    @Override
-    public List<ShoppingCart> getByUsersIdAllProduct(String usersId) {
-        return shoppingCartMapper.queryByUserId(usersId);
-    }
-
-    @Override
-    public ShoppingCart queryByProductId(int status, String productId, String usersId) {
-        return shoppingCartMapper.queryByProductId(status,productId,usersId);
-    }
-
-    @Override
     @Transactional
-    public void delete(int status, String productId, String usersId) {
-         shoppingCartMapper.deleteByStatusAndProduct(status,productId,usersId);
-    }
-
     @Override
-    @Transactional
-    public void deleteAll(String usersId, int status) {
-         shoppingCartMapper.deleteByStatus(usersId,status);
-    }
-
-    @Override
-    @Transactional
-    public void saveById(String id) {
-        shoppingCartMapper.updateNumber(id);
-    }
-
-    @Override
-    @Transactional
     public void save(ShoppingCart shoppingCart) {
         shoppingCart.setId(UUIDUtil.getUUID());
-       shoppingCartMapper.insert(shoppingCart);
+        shoppingCartMapper.save(shoppingCart);
+    }
+
+    @Transactional
+    @Override
+    public void delete(String shopId) {
+        shoppingCartMapper.deleteByPrimaryKey(shopId);
+    }
+
+    @Transactional
+    @Override
+    public void update(ShoppingCart shoppingCart) {
+        shoppingCartMapper.updateByPrimaryKey(shoppingCart);
     }
 
     @Override
-    @Transactional
-    public void updateStatus(String id) {
-        shoppingCartMapper.updateStatus(id);
+    public List<String> query() {
+        return shoppingCartMapper.query();
     }
 
     @Override
-    @Transactional
-    public void updateNumber(String id) {
-        shoppingCartMapper.updateNumber(id);
+    public String queryId(ShoppingCart shoppingCart) {
+        return shoppingCartMapper.queryId(shoppingCart);
     }
 }

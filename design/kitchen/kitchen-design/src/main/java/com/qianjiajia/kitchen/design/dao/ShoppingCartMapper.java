@@ -2,11 +2,9 @@ package com.qianjiajia.kitchen.design.dao;
 
 import com.qianjiajia.kitchen.design.domain.ShoppingCart;
 import com.qianjiajia.kitchen.design.domain.ShoppingCartExample;
-import com.qianjiajia.kitchen.design.query.ShoppingCartQuery;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
 public interface ShoppingCartMapper {
     long countByExample(ShoppingCartExample example);
@@ -31,21 +29,9 @@ public interface ShoppingCartMapper {
 
     int updateByPrimaryKey(ShoppingCart record);
 
-    List<ShoppingCart> get(String usersId);
+    void save(ShoppingCart shoppingCart);
 
-    List<ShoppingCart> getByStatus(ShoppingCartQuery shoppingCartQuery);
+    List<String> query();
 
-    List<ShoppingCart> query(@Param("status") int status, @Param("userId") String usersId);
-
-    List<ShoppingCart> queryByUserId(String usersId);
-
-    ShoppingCart queryByProductId(@Param("status") int status,@Param("productId") String productId,@Param("userId") String usersId);
-
-    int deleteByStatusAndProduct(@Param("status") int status, @Param("productId") String productId,@Param("userId") String usersId);
-
-    int deleteByStatus(@Param("userId") String usersId,@Param("status") int status);
-
-    void updateStatus(String id);
-
-    void updateNumber(String id);
+    String queryId(ShoppingCart shoppingCart);
 }

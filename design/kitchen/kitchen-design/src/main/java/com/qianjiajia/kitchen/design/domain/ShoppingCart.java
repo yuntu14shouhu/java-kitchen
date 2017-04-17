@@ -3,13 +3,9 @@ package com.qianjiajia.kitchen.design.domain;
 public class ShoppingCart {
     private String id;
 
-    private String userIdShop;
+    private String userId;
 
-    private String productId;
-
-    private Short status;
-
-    private Short productNumber;
+    private Integer status;
 
     public String getId() {
         return id;
@@ -19,35 +15,19 @@ public class ShoppingCart {
         this.id = id == null ? null : id.trim();
     }
 
-    public String getUserIdShop() {
-        return userIdShop;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUserIdShop(String userIdShop) {
-        this.userIdShop = userIdShop == null ? null : userIdShop.trim();
+    public void setUserId(String userId) {
+        this.userId = userId == null ? null : userId.trim();
     }
 
-    public String getProductId() {
-        return productId;
-    }
-
-    public void setProductId(String productId) {
-        this.productId = productId == null ? null : productId.trim();
-    }
-
-    public Short getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Short status) {
+    public void setStatus(Integer status) {
         this.status = status;
-    }
-
-    public Short getProductNumber() {
-        return productNumber;
-    }
-
-    public void setProductNumber(Short productNumber) {
-        this.productNumber = productNumber;
     }
 }

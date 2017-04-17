@@ -35,11 +35,13 @@
         <!--<table tableName="ORDER_DETAILS" domainObjectName="OrderDetails"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>-->
 
         <!--<table tableName="USERS" domainObjectName="Users"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>-->
+        <table tableName="SEARCH_QUERY" domainObjectName="SearchQuery"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>
         <!--<table tableName="PRODUCT" domainObjectName="Product"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>-->
         <!--<table tableName="SHOPPINGCART" domainObjectName="ShoppingCart"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>-->
-        <table tableName="ADDRESS" domainObjectName="AddressDetails"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>
-        <!--<table tableName="SHOPPINGCART" domainObjectName="ShoppingCart"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>-->
+        <!--<table tableName="ADDRESS" domainObjectName="AddressDetails"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>-->
+        <!--<table tableName="SHOPPING_CART" domainObjectName="ShoppingCart"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>-->
 
+        <!--<table tableName="PRO_AND_SHOP" domainObjectName="ProAndShop"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>-->
         <!--<table tableName="CN_AND_EN" domainObjectName="CnAndEn"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>-->
     </context>
 </generatorConfiguration>

@@ -734,7 +734,7 @@
   </select>
 
   <select id="queryToProduct" resultType="com.qianjiajia.kitchen.design.domain.Product">
-    SELECT PRODUCT_NAME,PRODUCT_IMAGE_URL,PRICE
+    SELECT *
     FROM PRODUCT
     WHERE ID = #{id,jdbcType=VARCHAR} and PRODUCT_NAME != 'string'
   </select>
@@ -772,7 +772,7 @@
   </select>
 
 
-  <select id="fuzzyQueryProductName" parameterType="java.lang.String" resultType="com.qianjiajia.kitchen.design.domain.SearchQuery">
+  <select id="fuzzyQueryProductName" parameterType="java.lang.String" resultType="com.qianjiajia.kitchen.design.query.ProductQuery">
     SELECT *
     FROM product
     <where>
@@ -781,6 +781,12 @@
         AND PRODUCT_NAME LIKE #{productNamePattern}
       </if>
     </where>
+  </select>
+
+  <select id="queryProductNameById" parameterType="java.lang.String" resultType="java.lang.String">
+    SELECT PRODUCT_NAME
+    FROM PRODUCT
+    WHERE ID = #{id,jdbcType=VARCHAR}
   </select>
 
 </mapper>

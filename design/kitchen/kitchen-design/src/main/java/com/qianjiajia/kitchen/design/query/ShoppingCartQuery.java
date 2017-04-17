@@ -39,13 +39,13 @@ public class ShoppingCartQuery extends BaseQuery {
      * 购物车状态
      */
     @ApiModelProperty("购物车状态")
-    private Short status;
+    private Integer status;
 
     /**
      * 商品数量
      */
     @ApiModelProperty("商品数量")
-    private Short productNumber;
+    private Integer productNumber;
 
     public ShoppingCartExample build(){
         ShoppingCartExample shoppingCartExample = new ShoppingCartExample();
@@ -54,16 +54,10 @@ public class ShoppingCartQuery extends BaseQuery {
             criteria.andIdEqualTo(id);
         }
         if(!StringUtils.isEmpty(userId)){
-            criteria.andUserIdShopEqualTo(userId);
-        }
-        if(!StringUtils.isEmpty(productId)){
-            criteria.andProductIdEqualTo(productId);
+            criteria.andUserIdEqualTo(userId);
         }
         if(!StringUtils.isEmpty(status)){
             criteria.andStatusEqualTo(status);
-        }
-        if(!StringUtils.isEmpty(productNumber)){
-            criteria.andProductNumberEqualTo(productNumber);
         }
         return shoppingCartExample;
     }

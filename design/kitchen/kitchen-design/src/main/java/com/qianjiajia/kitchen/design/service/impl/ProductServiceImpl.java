@@ -139,6 +139,11 @@ public class ProductServiceImpl implements IProductService{
     }
 
     @Override
+    public String queryProductNameById(String productId) {
+        return productMapper.queryProductNameById(productId);
+    }
+
+    @Override
     public List<ProductQuery> fuzzyQuery(ProductQuery productQuery) {
 
         return productMapper.fuzzyQuery(productQuery);

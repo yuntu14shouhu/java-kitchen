@@ -185,52 +185,52 @@ public class SearchQueryExample {
             return (Criteria) this;
         }
 
-        public Criteria andSearchTypeEqualTo(Short value) {
+        public Criteria andSearchTypeEqualTo(Integer value) {
             addCriterion("SEARCH_TYPE =", value, "searchType");
             return (Criteria) this;
         }
 
-        public Criteria andSearchTypeNotEqualTo(Short value) {
+        public Criteria andSearchTypeNotEqualTo(Integer value) {
             addCriterion("SEARCH_TYPE <>", value, "searchType");
             return (Criteria) this;
         }
 
-        public Criteria andSearchTypeGreaterThan(Short value) {
+        public Criteria andSearchTypeGreaterThan(Integer value) {
             addCriterion("SEARCH_TYPE >", value, "searchType");
             return (Criteria) this;
         }
 
-        public Criteria andSearchTypeGreaterThanOrEqualTo(Short value) {
+        public Criteria andSearchTypeGreaterThanOrEqualTo(Integer value) {
             addCriterion("SEARCH_TYPE >=", value, "searchType");
             return (Criteria) this;
         }
 
-        public Criteria andSearchTypeLessThan(Short value) {
+        public Criteria andSearchTypeLessThan(Integer value) {
             addCriterion("SEARCH_TYPE <", value, "searchType");
             return (Criteria) this;
         }
 
-        public Criteria andSearchTypeLessThanOrEqualTo(Short value) {
+        public Criteria andSearchTypeLessThanOrEqualTo(Integer value) {
             addCriterion("SEARCH_TYPE <=", value, "searchType");
             return (Criteria) this;
         }
 
-        public Criteria andSearchTypeIn(List<Short> values) {
+        public Criteria andSearchTypeIn(List<Integer> values) {
             addCriterion("SEARCH_TYPE in", values, "searchType");
             return (Criteria) this;
         }
 
-        public Criteria andSearchTypeNotIn(List<Short> values) {
+        public Criteria andSearchTypeNotIn(List<Integer> values) {
             addCriterion("SEARCH_TYPE not in", values, "searchType");
             return (Criteria) this;
         }
 
-        public Criteria andSearchTypeBetween(Short value1, Short value2) {
+        public Criteria andSearchTypeBetween(Integer value1, Integer value2) {
             addCriterion("SEARCH_TYPE between", value1, value2, "searchType");
             return (Criteria) this;
         }
 
-        public Criteria andSearchTypeNotBetween(Short value1, Short value2) {
+        public Criteria andSearchTypeNotBetween(Integer value1, Integer value2) {
             addCriterion("SEARCH_TYPE not between", value1, value2, "searchType");
             return (Criteria) this;
         }
@@ -445,52 +445,52 @@ public class SearchQueryExample {
             return (Criteria) this;
         }
 
-        public Criteria andSearchNumberEqualTo(Short value) {
+        public Criteria andSearchNumberEqualTo(Integer value) {
             addCriterion("SEARCH_NUMBER =", value, "searchNumber");
             return (Criteria) this;
         }
 
-        public Criteria andSearchNumberNotEqualTo(Short value) {
+        public Criteria andSearchNumberNotEqualTo(Integer value) {
             addCriterion("SEARCH_NUMBER <>", value, "searchNumber");
             return (Criteria) this;
         }
 
-        public Criteria andSearchNumberGreaterThan(Short value) {
+        public Criteria andSearchNumberGreaterThan(Integer value) {
             addCriterion("SEARCH_NUMBER >", value, "searchNumber");
             return (Criteria) this;
         }
 
-        public Criteria andSearchNumberGreaterThanOrEqualTo(Short value) {
+        public Criteria andSearchNumberGreaterThanOrEqualTo(Integer value) {
             addCriterion("SEARCH_NUMBER >=", value, "searchNumber");
             return (Criteria) this;
         }
 
-        public Criteria andSearchNumberLessThan(Short value) {
+        public Criteria andSearchNumberLessThan(Integer value) {
             addCriterion("SEARCH_NUMBER <", value, "searchNumber");
             return (Criteria) this;
         }
 
-        public Criteria andSearchNumberLessThanOrEqualTo(Short value) {
+        public Criteria andSearchNumberLessThanOrEqualTo(Integer value) {
             addCriterion("SEARCH_NUMBER <=", value, "searchNumber");
             return (Criteria) this;
         }
 
-        public Criteria andSearchNumberIn(List<Short> values) {
+        public Criteria andSearchNumberIn(List<Integer> values) {
             addCriterion("SEARCH_NUMBER in", values, "searchNumber");
             return (Criteria) this;
         }
 
-        public Criteria andSearchNumberNotIn(List<Short> values) {
+        public Criteria andSearchNumberNotIn(List<Integer> values) {
             addCriterion("SEARCH_NUMBER not in", values, "searchNumber");
             return (Criteria) this;
         }
 
-        public Criteria andSearchNumberBetween(Short value1, Short value2) {
+        public Criteria andSearchNumberBetween(Integer value1, Integer value2) {
             addCriterion("SEARCH_NUMBER between", value1, value2, "searchNumber");
             return (Criteria) this;
         }
 
-        public Criteria andSearchNumberNotBetween(Short value1, Short value2) {
+        public Criteria andSearchNumberNotBetween(Integer value1, Integer value2) {
             addCriterion("SEARCH_NUMBER not between", value1, value2, "searchNumber");
             return (Criteria) this;
         }

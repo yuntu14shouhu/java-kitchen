@@ -67,6 +67,25 @@ public class SearchController {
         return MessageResult.getSuccessInstance();
     }
 
+
+    @ApiOperation(value = "aa最近搜索")
+    @ResponseBody
+    @RequestMapping(value = "/aaqueryHistory", method = RequestMethod.GET)
+    public MessageResult queryHistory(String userId) {
+        List<SearchQuery> searchContentList = searchQueryService.queryHistory(userId);
+
+        return MessageResult.getSuccessInstance(searchContentList);
+    }
+
+    @ApiOperation(value = "aa热门搜索")
+    @ResponseBody
+    @RequestMapping(value = "/aaqueryHot", method = RequestMethod.GET)
+    public MessageResult queryHot() {
+        List<SearchQuery> searchContentList = searchQueryService.queryHot();
+        return MessageResult.getSuccessInstance(searchContentList);
+    }
+
+
     @ApiOperation(value = "最近搜索---------searchType=1")
     @ResponseBody
     @RequestMapping(value = "/aQueryHistory", method = RequestMethod.GET)

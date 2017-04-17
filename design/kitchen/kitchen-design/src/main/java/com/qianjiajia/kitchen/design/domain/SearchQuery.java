@@ -5,7 +5,7 @@ import java.util.Date;
 public class SearchQuery {
     private String id;
 
-    private Short searchType;
+    private Integer searchType;
 
     private String searchContent;
 
@@ -13,7 +13,7 @@ public class SearchQuery {
 
     private Date searchTime;
 
-    private Short searchNumber;
+    private Integer searchNumber;
 
     public String getId() {
         return id;
@@ -23,11 +23,11 @@ public class SearchQuery {
         this.id = id == null ? null : id.trim();
     }
 
-    public Short getSearchType() {
+    public Integer getSearchType() {
         return searchType;
     }
 
-    public void setSearchType(Short searchType) {
+    public void setSearchType(Integer searchType) {
         this.searchType = searchType;
     }
 
@@ -55,11 +55,11 @@ public class SearchQuery {
         this.searchTime = searchTime;
     }
 
-    public Short getSearchNumber() {
+    public Integer getSearchNumber() {
         return searchNumber;
     }
 
-    public void setSearchNumber(Short searchNumber) {
+    public void setSearchNumber(Integer searchNumber) {
         this.searchNumber = searchNumber;
     }
 }
