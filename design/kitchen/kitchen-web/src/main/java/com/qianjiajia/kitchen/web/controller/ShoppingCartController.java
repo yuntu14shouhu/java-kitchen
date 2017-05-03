@@ -1,12 +1,16 @@
 package com.qianjiajia.kitchen.web.controller;
 
+import com.qianjiajia.kitchen.common.result.MessageResult;
 import com.qianjiajia.kitchen.design.service.IShoppingCartService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author qianjiajia
@@ -24,22 +28,22 @@ public class ShoppingCartController {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
-//    @ApiOperation(value = "删除购物车里面的某一种类的商品")
-//    @ResponseBody
-//    @RequestMapping(value = "/deleteByProductId",method = RequestMethod.GET)
-//    public MessageResult deleteByProductId(String productId){
-//        shoppingCartService.deleteByProductId(productId);
-//        return MessageResult.getSuccessInstance();
-//    }
-//
-//    @ApiOperation(value = "当购物车不存在的时候--新建购物车对象--并且把商品id一并添加到购物车")
-//    @ResponseBody
-//    @RequestMapping(value = "/saveShop",method = RequestMethod.POST)
-//    public MessageResult saveShop(@RequestBody @ApiParam ShoppingCart shoppingCart){
-//        shoppingCartService.saveShop(shoppingCart);
-//        return MessageResult.getSuccessInstance();
-//    }
-//
+    @ApiOperation(value = "删除购物车里面的某一种类的商品")
+    @ResponseBody
+    @RequestMapping(value = "/deleteByProductId",method = RequestMethod.GET)
+    public MessageResult deleteByProductId(String productId){
+        shoppingCartService.deleteProduct(productId);
+        return MessageResult.getSuccessInstance();
+    }
+
+    @ApiOperation(value = "当购物车不存在某一商品的时候-把商品id一并添加到购物车")
+    @ResponseBody
+    @RequestMapping(value = "/saveShop",method = RequestMethod.POST)
+    public MessageResult saveShop(String productId){
+        shoppingCartService.saveProductToShop(productId);
+        return MessageResult.getSuccessInstance();
+    }
+
 //    @ApiOperation(value = "购物车查询----根据购物车id查询购物车")
 //    @ResponseBody
 //    @RequestMapping(value = "/queryShopById",method = RequestMethod.GET)
@@ -50,7 +54,7 @@ public class ShoppingCartController {
 //    @ApiOperation(value = "购物车更新")
 //    @ResponseBody
 //    @RequestMapping(value = "/updateShop",method = RequestMethod.POST)
-//    public MessageResult updateShop(@RequestBody @ApiParam ShoppingCart shoppingCart,String productId){
+//    public MessageResult updateShop(@RequestBody @ApiParam ShoppingCart shoppingCart, String productId){
 //        shoppingCartService.updateShop(shoppingCart,productId);
 //        return MessageResult.getSuccessInstance();
 //    }

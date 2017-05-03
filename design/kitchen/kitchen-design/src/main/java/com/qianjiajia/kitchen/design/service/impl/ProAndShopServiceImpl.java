@@ -6,9 +6,7 @@ import com.qianjiajia.kitchen.design.dao.ProductMapper;
 import com.qianjiajia.kitchen.design.dao.ShoppingCartMapper;
 import com.qianjiajia.kitchen.design.domain.ProAndShop;
 import com.qianjiajia.kitchen.design.domain.ShoppingCart;
-import com.qianjiajia.kitchen.design.domain.Users;
 import com.qianjiajia.kitchen.design.service.IProAndShopService;
-import com.qianjiajia.kitchen.design.utils.UserLoginUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,8 +15,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static com.sun.tools.doclint.Entity.nu;
 
 /**
  * @author qianjiajia

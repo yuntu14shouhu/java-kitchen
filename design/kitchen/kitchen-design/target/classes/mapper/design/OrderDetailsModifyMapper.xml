@@ -229,6 +229,7 @@
       </if>
     </trim>
   </insert>
+
   <select id="countByExample" parameterType="com.qianjiajia.kitchen.design.domain.OrderDetailsModifyExample" resultType="java.lang.Long">
     select count(*) from ORDER_DETAILS_MODIFY
     <if test="_parameter != null">
@@ -410,5 +411,24 @@
     SELECT ORDER_PRODUCT_ID
     FROM ORDER_DETAILS_MODIFY
     where ID = #{id,jdbcType=VARCHAR}
+  </select>
+
+  <insert id="save">
+    insert into ORDER_DETAILS_MODIFY (ID, USER_ID, ORDER_CONSIGNEE_NAME,
+      ORDER_CONSIGNEE_PHONE, ORDER_CONSIGNEE_ADDRESS,
+      ORDER_CARRIAGE, ORDER_STATUS, ORDER_CREATE_DATE,
+      ORDER_REF, ORDER_ACTUAL_PAYMENT, ORDER_TOTAL_PAYMENT,
+      ORDER_PRODUCT_NUMBER, ORDER_PRODUCT_ID)
+    values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{orderConsigneeName,jdbcType=VARCHAR},
+      #{orderConsigneePhone,jdbcType=VARCHAR}, #{orderConsigneeAddress,jdbcType=VARCHAR},
+      #{orderCarriage,jdbcType=DECIMAL}, #{orderStatus,jdbcType=VARCHAR}, #{orderCreateDate,jdbcType=TIMESTAMP},
+      #{orderRef,jdbcType=VARCHAR}, #{orderActualPayment,jdbcType=DECIMAL}, #{orderTotalPayment,jdbcType=DECIMAL},
+      #{orderProductNumber,jdbcType=DECIMAL}, #{orderProductId,jdbcType=CLOB})
+  </insert>
+
+  <select id="queryStatusZero" resultType="com.qianjiajia.kitchen.design.domain.OrderDetailsModify">
+    SELECT *
+    FROM ORDER_DETAILS_MODIFY
+    WHERE ORDER_STATUS = '0'
   </select>
 </mapper>

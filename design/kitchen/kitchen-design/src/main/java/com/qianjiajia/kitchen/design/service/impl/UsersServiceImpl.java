@@ -4,9 +4,12 @@ import com.qianjiajia.kitchen.common.exception.ApiException;
 import com.qianjiajia.kitchen.common.exception.ApiExceptionCode;
 import com.qianjiajia.kitchen.common.utils.PasswordUtil;
 import com.qianjiajia.kitchen.common.utils.UUIDUtil;
+import com.qianjiajia.kitchen.design.dao.ShoppingCartMapper;
 import com.qianjiajia.kitchen.design.dao.UsersMapper;
+import com.qianjiajia.kitchen.design.domain.ShoppingCart;
 import com.qianjiajia.kitchen.design.domain.Users;
 import com.qianjiajia.kitchen.design.domain.UsersExample;
+import com.qianjiajia.kitchen.design.service.IShoppingCartService;
 import com.qianjiajia.kitchen.design.service.IUsersService;
 import com.qianjiajia.kitchen.design.utils.UserLoginUtils;
 import io.swagger.annotations.ApiParam;
@@ -35,15 +38,20 @@ public class UsersServiceImpl implements IUsersService{
 
     private static final String salt = "kitchen";
 
+    @Autowired
+    private ShoppingCartMapper shoppingCartMapper;
+
 //    @javax.annotation.Resource(name = "redisTemplate")
 //    private ValueOperations<String,LocalDomain> valueOperations;
 //
 //    @javax.annotation.Resource(name = "redisTemplate")
 //    private SetOperations<String,String> setOperations;
 
+    @Transactional
     @Override
     public Users save(Users users) {
         users.setId(UUIDUtil.getUUID());
+
         if(StringUtils.isEmpty(users.getPassword())){
             throw new ApiException(ApiExceptionCode.UNKNOWN_EXCEPTION,"密码不能为空");
         }
@@ -51,7 +59,26 @@ public class UsersServiceImpl implements IUsersService{
         users.setPassword(password);
         users.setSalt(salt);
         users.setCreateTime(new Date());
+        UsersExample usersExample = new UsersExample();
+        UsersExample.Criteria criteria = usersExample.createCriteria();
+
+        criteria.andUserNameEqualTo(users.getUserName());
+        List<Users> usersList = usersMapper.selectByExample(usersExample);
+        if(usersList == null || usersList.size() == 0){
+
+        }else {
+            //TO DO
+
+            //用户名已经存在
+            return null;
+        }
         usersMapper.insert(users);
+
+        //用户注册时，自动生成购物车。并且添加到购物车表中
+        ShoppingCart shoppsingCart = new ShoppingCart();
+        shoppsingCart.setId(UUIDUtil.getUUID());
+        shoppsingCart.setUserId(users.getId());
+        shoppingCartMapper.insert(shoppsingCart);
         return users;
     }
 

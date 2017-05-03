@@ -56,9 +56,9 @@ public class ShoppingCartQuery extends BaseQuery {
         if(!StringUtils.isEmpty(userId)){
             criteria.andUserIdEqualTo(userId);
         }
-        if(!StringUtils.isEmpty(status)){
-            criteria.andStatusEqualTo(status);
-        }
+//        if(!StringUtils.isEmpty(status)){
+//            criteria.ando(status);
+//        }
         return shoppingCartExample;
     }
 }

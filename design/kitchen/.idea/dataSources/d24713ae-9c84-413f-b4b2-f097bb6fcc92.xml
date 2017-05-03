@@ -4,9 +4,9 @@
     <schema id="1" name="QJJ">
       <object-id>95</object-id>
       <created-timestamp>2017-03-12.17:03:39</created-timestamp>
-      <modified-timestamp>2017-04-13.16:56:39</modified-timestamp>
+      <modified-timestamp>2017-04-24.10:18:08</modified-timestamp>
       <visible>1</visible>
-      <introspection-timestamp>2017-04-13.16:56:39</introspection-timestamp>
+      <introspection-timestamp>2017-04-24.23:09:00</introspection-timestamp>
     </schema>
     <schema id="2" name="PUBLIC">
       <object-id>1</object-id>
@@ -135,74 +135,86 @@
       <modified-timestamp>2017-03-18.14:05:56</modified-timestamp>
       <organization>HEAP</organization>
     </table>
-    <table id="43" parent="1" name="ORDER_DETAILS_MODIFY">
+    <table id="43" parent="1" name="O">
+      <object-id>78493</object-id>
+      <created-timestamp>2017-04-24.10:12:34</created-timestamp>
+      <modified-timestamp>2017-04-24.10:18:08</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <table id="44" parent="1" name="ORDER_DETAILS_MODIFY">
       <object-id>77732</object-id>
       <created-timestamp>2017-04-06.16:24:14</created-timestamp>
       <modified-timestamp>2017-04-06.16:24:14</modified-timestamp>
       <organization>HEAP</organization>
     </table>
-    <table id="44" parent="1" name="PRO_AND_SHOP">
+    <table id="45" parent="1" name="ORDER_ITEM">
+      <object-id>78489</object-id>
+      <created-timestamp>2017-04-22.16:13:17</created-timestamp>
+      <modified-timestamp>2017-04-22.16:13:17</modified-timestamp>
+      <organization>HEAP</organization>
+    </table>
+    <table id="46" parent="1" name="PRO_AND_SHOP">
       <object-id>78079</object-id>
       <created-timestamp>2017-04-12.10:24:10</created-timestamp>
       <modified-timestamp>2017-04-12.10:24:10</modified-timestamp>
       <organization>HEAP</organization>
     </table>
-    <table id="45" parent="1" name="PRODUCT">
+    <table id="47" parent="1" name="PRODUCT">
       <object-id>76809</object-id>
       <created-timestamp>2017-03-12.17:03:39</created-timestamp>
       <modified-timestamp>2017-03-12.17:03:39</modified-timestamp>
       <organization>HEAP</organization>
     </table>
-    <table id="46" parent="1" name="SEARCH_QUERY">
+    <table id="48" parent="1" name="SEARCH_QUERY">
       <object-id>78084</object-id>
       <created-timestamp>2017-04-13.16:56:39</created-timestamp>
       <modified-timestamp>2017-04-13.16:56:39</modified-timestamp>
       <organization>HEAP</organization>
     </table>
-    <table id="47" parent="1" name="SHOPPING_CART">
-      <object-id>78077</object-id>
-      <created-timestamp>2017-04-12.10:22:15</created-timestamp>
-      <modified-timestamp>2017-04-12.10:22:15</modified-timestamp>
+    <table id="49" parent="1" name="SHOPPING_CART">
+      <object-id>78244</object-id>
+      <created-timestamp>2017-04-18.00:07:14</created-timestamp>
+      <modified-timestamp>2017-04-18.00:07:14</modified-timestamp>
       <organization>HEAP</organization>
     </table>
-    <table id="48" parent="1" name="USERS">
+    <table id="50" parent="1" name="USERS">
       <object-id>77818</object-id>
       <created-timestamp>2017-04-06.17:34:17</created-timestamp>
       <modified-timestamp>2017-04-06.17:34:17</modified-timestamp>
       <organization>HEAP</organization>
     </table>
-    <column id="49" parent="41" name="ID">
+    <column id="51" parent="41" name="ID">
       <mandatory>1</mandatory>
       <data-type>VARCHAR2(32)|0</data-type>
     </column>
-    <column id="50" parent="41" name="USER_ID">
+    <column id="52" parent="41" name="USER_ID">
       <data-type>VARCHAR2(32)|0</data-type>
     </column>
-    <column id="51" parent="41" name="CONSIGNEE_NAME">
+    <column id="53" parent="41" name="CONSIGNEE_NAME">
       <data-type>VARCHAR2(200)|0</data-type>
     </column>
-    <column id="52" parent="41" name="CONSIGNEE_PHONE">
+    <column id="54" parent="41" name="CONSIGNEE_PHONE">
       <data-type>VARCHAR2(200)|0</data-type>
     </column>
-    <column id="53" parent="41" name="CONSIGNEE_ADDRESS">
+    <column id="55" parent="41" name="CONSIGNEE_ADDRESS">
       <data-type>VARCHAR2(300)|0</data-type>
     </column>
-    <column id="54" parent="41" name="CITY">
+    <column id="56" parent="41" name="CITY">
       <data-type>VARCHAR2(300)|0</data-type>
     </column>
-    <column id="55" parent="41" name="HOUSE_NUMBER">
+    <column id="57" parent="41" name="HOUSE_NUMBER">
       <data-type>VARCHAR2(300)|0</data-type>
     </column>
-    <column id="56" parent="41" name="DEFAULT_ADDRESS">
+    <column id="58" parent="41" name="DEFAULT_ADDRESS">
       <data-type>VARCHAR2(300)|0</data-type>
     </column>
-    <column id="57" parent="41" name="IS_DEFAULT">
+    <column id="59" parent="41" name="IS_DEFAULT">
       <data-type>NUMBER(3)|0</data-type>
     </column>
-    <column id="58" parent="41" name="ADDRESS_TYPE">
+    <column id="60" parent="41" name="ADDRESS_TYPE">
       <data-type>VARCHAR2(300)|0</data-type>
     </column>
-    <index id="59" parent="41" name="SYS_C0012361">
+    <index id="61" parent="41" name="SYS_C0012361">
       <name-surrogate>1</name-surrogate>
       <object-id>77821</object-id>
       <created-timestamp>2017-04-06.18:14:01</created-timestamp>
@@ -212,7 +224,7 @@
       <unique>1</unique>
       <tablespace-name>USERS</tablespace-name>
     </index>
-    <key id="60" parent="41" name="SYS_C0012361">
+    <key id="62" parent="41" name="SYS_C0012361">
       <name-surrogate>1</name-surrogate>
       <modified-timestamp>2017-04-06.18:14:01</modified-timestamp>
       <columns>ID</columns>
@@ -220,17 +232,17 @@
       <underlying-index>SYS_C0012361</underlying-index>
       <primary>1</primary>
     </key>
-    <column id="61" parent="42" name="CN_AND_EN_ID">
+    <column id="63" parent="42" name="CN_AND_EN_ID">
       <mandatory>1</mandatory>
       <data-type>VARCHAR2(32)|0</data-type>
     </column>
-    <column id="62" parent="42" name="BIG_KEY_CLASS_EN">
+    <column id="64" parent="42" name="BIG_KEY_CLASS_EN">
       <data-type>VARCHAR2(40)|0</data-type>
     </column>
-    <column id="63" parent="42" name="BIG_KEY_CLASS_CN">
+    <column id="65" parent="42" name="BIG_KEY_CLASS_CN">
       <data-type>VARCHAR2(40)|0</data-type>
     </column>
-    <index id="64" parent="42" name="SYS_C0012312">
+    <index id="66" parent="42" name="SYS_C0012312">
       <name-surrogate>1</name-surrogate>
       <object-id>77055</object-id>
       <created-timestamp>2017-03-18.14:05:56</created-timestamp>
@@ -240,7 +252,7 @@
       <unique>1</unique>
       <tablespace-name>USERS</tablespace-name>
     </index>
-    <key id="65" parent="42" name="SYS_C0012312">
+    <key id="67" parent="42" name="SYS_C0012312">
       <name-surrogate>1</name-surrogate>
       <modified-timestamp>2017-03-18.14:05:56</modified-timestamp>
       <columns>CN_AND_EN_ID</columns>
@@ -248,47 +260,72 @@
       <underlying-index>SYS_C0012312</underlying-index>
       <primary>1</primary>
     </key>
-    <column id="66" parent="43" name="ID">
+    <column id="68" parent="43" name="ID">
       <mandatory>1</mandatory>
       <data-type>VARCHAR2(32)|0</data-type>
     </column>
-    <column id="67" parent="43" name="USER_ID">
+    <column id="69" parent="43" name="PRODUCT_COUNT">
+      <data-type>VARCHAR2(255)|0</data-type>
+    </column>
+    <index id="70" parent="43" name="SYS_C0012387">
+      <name-surrogate>1</name-surrogate>
+      <object-id>78494</object-id>
+      <created-timestamp>2017-04-24.10:12:34</created-timestamp>
+      <modified-timestamp>2017-04-24.10:12:34</modified-timestamp>
+      <columns>ID</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+      <tablespace-name>USERS</tablespace-name>
+    </index>
+    <key id="71" parent="43" name="SYS_C0012387">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-04-24.10:12:34</modified-timestamp>
+      <columns>ID</columns>
+      <initially-deferred>1</initially-deferred>
+      <underlying-index>SYS_C0012387</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="72" parent="44" name="ID">
+      <mandatory>1</mandatory>
       <data-type>VARCHAR2(32)|0</data-type>
     </column>
-    <column id="68" parent="43" name="ORDER_CONSIGNEE_NAME">
+    <column id="73" parent="44" name="USER_ID">
+      <data-type>VARCHAR2(32)|0</data-type>
+    </column>
+    <column id="74" parent="44" name="ORDER_CONSIGNEE_NAME">
       <data-type>VARCHAR2(20)|0</data-type>
     </column>
-    <column id="69" parent="43" name="ORDER_CONSIGNEE_PHONE">
+    <column id="75" parent="44" name="ORDER_CONSIGNEE_PHONE">
       <data-type>VARCHAR2(20)|0</data-type>
     </column>
-    <column id="70" parent="43" name="ORDER_CONSIGNEE_ADDRESS">
+    <column id="76" parent="44" name="ORDER_CONSIGNEE_ADDRESS">
       <data-type>VARCHAR2(300)|0</data-type>
     </column>
-    <column id="71" parent="43" name="ORDER_CARRIAGE">
+    <column id="77" parent="44" name="ORDER_CARRIAGE">
       <data-type>NUMBER(10,2)|0</data-type>
     </column>
-    <column id="72" parent="43" name="ORDER_STATUS">
+    <column id="78" parent="44" name="ORDER_STATUS">
       <data-type>VARCHAR2(20)|0</data-type>
     </column>
-    <column id="73" parent="43" name="ORDER_CREATE_DATE">
+    <column id="79" parent="44" name="ORDER_CREATE_DATE">
       <data-type>TIMESTAMP(6)|0</data-type>
     </column>
-    <column id="74" parent="43" name="ORDER_REF">
+    <column id="80" parent="44" name="ORDER_REF">
       <data-type>VARCHAR2(32)|0</data-type>
     </column>
-    <column id="75" parent="43" name="ORDER_ACTUAL_PAYMENT">
+    <column id="81" parent="44" name="ORDER_ACTUAL_PAYMENT">
       <data-type>NUMBER(10,2)|0</data-type>
     </column>
-    <column id="76" parent="43" name="ORDER_TOTAL_PAYMENT">
+    <column id="82" parent="44" name="ORDER_TOTAL_PAYMENT">
       <data-type>NUMBER(10,2)|0</data-type>
     </column>
-    <column id="77" parent="43" name="ORDER_PRODUCT_NUMBER">
+    <column id="83" parent="44" name="ORDER_PRODUCT_NUMBER">
       <data-type>NUMBER(6)|0</data-type>
     </column>
-    <column id="78" parent="43" name="ORDER_PRODUCT_ID">
+    <column id="84" parent="44" name="ORDER_PRODUCT_ID">
       <data-type>CLOB|0</data-type>
     </column>
-    <index id="79" parent="43" name="SYS_C0012353">
+    <index id="85" parent="44" name="SYS_C0012353">
       <name-surrogate>1</name-surrogate>
       <object-id>77735</object-id>
       <created-timestamp>2017-04-06.16:24:14</created-timestamp>
@@ -298,7 +335,7 @@
       <unique>1</unique>
       <tablespace-name>USERS</tablespace-name>
     </index>
-    <key id="80" parent="43" name="SYS_C0012353">
+    <key id="86" parent="44" name="SYS_C0012353">
       <name-surrogate>1</name-surrogate>
       <modified-timestamp>2017-04-06.16:24:14</modified-timestamp>
       <columns>ID</columns>
@@ -306,20 +343,54 @@
       <underlying-index>SYS_C0012353</underlying-index>
       <primary>1</primary>
     </key>
-    <column id="81" parent="44" name="ID">
+    <column id="87" parent="45" name="ID">
       <mandatory>1</mandatory>
       <data-type>VARCHAR2(32)|0</data-type>
     </column>
-    <column id="82" parent="44" name="PRODUCT_ID">
-      <data-type>VARCHAR2(32)|0</data-type>
-    </column>
-    <column id="83" parent="44" name="SHOPPING_CART_ID">
-      <data-type>VARCHAR2(32)|0</data-type>
-    </column>
-    <column id="84" parent="44" name="PRODUCT_NUMBER">
+    <column id="88" parent="45" name="PRODUCT_COUNT">
       <data-type>NUMBER(6)|0</data-type>
     </column>
-    <index id="85" parent="44" name="SYS_C0012375">
+    <column id="89" parent="45" name="SUB_TOTAL">
+      <data-type>NUMBER(10,2)|0</data-type>
+    </column>
+    <column id="90" parent="45" name="PRODUCT_ID">
+      <data-type>VARCHAR2(32)|0</data-type>
+    </column>
+    <column id="91" parent="45" name="ORDER_ID">
+      <data-type>VARCHAR2(32)|0</data-type>
+    </column>
+    <index id="92" parent="45" name="SYS_C0012383">
+      <name-surrogate>1</name-surrogate>
+      <object-id>78490</object-id>
+      <created-timestamp>2017-04-22.16:13:17</created-timestamp>
+      <modified-timestamp>2017-04-22.16:13:17</modified-timestamp>
+      <columns>ID</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+      <tablespace-name>USERS</tablespace-name>
+    </index>
+    <key id="93" parent="45" name="SYS_C0012383">
+      <name-surrogate>1</name-surrogate>
+      <modified-timestamp>2017-04-22.16:13:17</modified-timestamp>
+      <columns>ID</columns>
+      <initially-deferred>1</initially-deferred>
+      <underlying-index>SYS_C0012383</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="94" parent="46" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>VARCHAR2(32)|0</data-type>
+    </column>
+    <column id="95" parent="46" name="PRODUCT_ID">
+      <data-type>VARCHAR2(32)|0</data-type>
+    </column>
+    <column id="96" parent="46" name="SHOPPING_CART_ID">
+      <data-type>VARCHAR2(32)|0</data-type>
+    </column>
+    <column id="97" parent="46" name="PRODUCT_NUMBER">
+      <data-type>NUMBER(6)|0</data-type>
+    </column>
+    <index id="98" parent="46" name="SYS_C0012375">
       <name-surrogate>1</name-surrogate>
       <object-id>78080</object-id>
       <created-timestamp>2017-04-12.10:24:10</created-timestamp>
@@ -329,7 +400,7 @@
       <unique>1</unique>
       <tablespace-name>USERS</tablespace-name>
     </index>
-    <key id="86" parent="44" name="SYS_C0012375">
+    <key id="99" parent="46" name="SYS_C0012375">
       <name-surrogate>1</name-surrogate>
       <modified-timestamp>2017-04-12.10:24:10</modified-timestamp>
       <columns>ID</columns>
@@ -337,90 +408,90 @@
       <underlying-index>SYS_C0012375</underlying-index>
       <primary>1</primary>
     </key>
-    <column id="87" parent="45" name="ID">
+    <column id="100" parent="47" name="ID">
       <mandatory>1</mandatory>
       <data-type>VARCHAR2(32)|0</data-type>
     </column>
-    <column id="88" parent="45" name="PUTAWAY_DATE">
+    <column id="101" parent="47" name="PUTAWAY_DATE">
       <data-type>TIMESTAMP(6)|0</data-type>
     </column>
-    <column id="89" parent="45" name="KINDS">
+    <column id="102" parent="47" name="KINDS">
       <data-type>VARCHAR2(50)|0</data-type>
     </column>
-    <column id="90" parent="45" name="PRODUCT_NAME">
+    <column id="103" parent="47" name="PRODUCT_NAME">
       <data-type>VARCHAR2(50)|0</data-type>
     </column>
-    <column id="91" parent="45" name="PRODUCT_IMAGE_URL">
+    <column id="104" parent="47" name="PRODUCT_IMAGE_URL">
       <data-type>VARCHAR2(1000)|0</data-type>
     </column>
-    <column id="92" parent="45" name="STATUS">
+    <column id="105" parent="47" name="STATUS">
       <data-type>NUMBER(3)|0</data-type>
     </column>
-    <column id="93" parent="45" name="PRODUCT_TYPES">
+    <column id="106" parent="47" name="PRODUCT_TYPES">
       <data-type>VARCHAR2(100)|0</data-type>
     </column>
-    <column id="94" parent="45" name="PRODUCER">
+    <column id="107" parent="47" name="PRODUCER">
       <data-type>VARCHAR2(50)|0</data-type>
     </column>
-    <column id="95" parent="45" name="ADDRESS">
+    <column id="108" parent="47" name="ADDRESS">
       <data-type>VARCHAR2(200)|0</data-type>
     </column>
-    <column id="96" parent="45" name="DESCRIBED">
+    <column id="109" parent="47" name="DESCRIBED">
       <data-type>VARCHAR2(255)|0</data-type>
     </column>
-    <column id="97" parent="45" name="PRODUCTION_DATE">
+    <column id="110" parent="47" name="PRODUCTION_DATE">
       <data-type>TIMESTAMP(6)|0</data-type>
     </column>
-    <column id="98" parent="45" name="PRICE">
+    <column id="111" parent="47" name="PRICE">
       <data-type>NUMBER(10,2)|0</data-type>
     </column>
-    <column id="99" parent="45" name="DISCOUNT_PRICE">
+    <column id="112" parent="47" name="DISCOUNT_PRICE">
       <data-type>NUMBER(10,2)|0</data-type>
     </column>
-    <column id="100" parent="45" name="IS_DISCOUNT">
+    <column id="113" parent="47" name="IS_DISCOUNT">
       <data-type>NUMBER(3)|0</data-type>
     </column>
-    <column id="101" parent="45" name="LIMIT_NUMBER">
+    <column id="114" parent="47" name="LIMIT_NUMBER">
       <data-type>NUMBER(8)|0</data-type>
     </column>
-    <column id="102" parent="45" name="KIND_NUMBER">
+    <column id="115" parent="47" name="KIND_NUMBER">
       <data-type>NUMBER(4)|0</data-type>
       <default-expression>1</default-expression>
     </column>
-    <column id="103" parent="45" name="START_DATE">
+    <column id="116" parent="47" name="START_DATE">
       <data-type>TIMESTAMP(6)|0</data-type>
     </column>
-    <column id="104" parent="45" name="END_DATE">
+    <column id="117" parent="47" name="END_DATE">
       <data-type>TIMESTAMP(6)|0</data-type>
     </column>
-    <column id="105" parent="45" name="CARRIAGE">
+    <column id="118" parent="47" name="CARRIAGE">
       <data-type>NUMBER(10,2)|0</data-type>
     </column>
-    <column id="106" parent="45" name="IS_GROUP_BUY">
+    <column id="119" parent="47" name="IS_GROUP_BUY">
       <data-type>NUMBER(3)|0</data-type>
     </column>
-    <column id="107" parent="45" name="GROUP_BUY_PRICE">
+    <column id="120" parent="47" name="GROUP_BUY_PRICE">
       <data-type>NUMBER(10,2)|0</data-type>
     </column>
-    <column id="108" parent="45" name="GROUP_BUY_PERSON_NUMBER">
+    <column id="121" parent="47" name="GROUP_BUY_PERSON_NUMBER">
       <data-type>NUMBER(5)|0</data-type>
     </column>
-    <column id="109" parent="45" name="START_GROUP_BUY_DATE">
+    <column id="122" parent="47" name="START_GROUP_BUY_DATE">
       <data-type>TIMESTAMP(6)|0</data-type>
     </column>
-    <column id="110" parent="45" name="END_GROUP_BUY_DATE">
+    <column id="123" parent="47" name="END_GROUP_BUY_DATE">
       <data-type>TIMESTAMP(6)|0</data-type>
     </column>
-    <column id="111" parent="45" name="KEY_CLASS">
+    <column id="124" parent="47" name="KEY_CLASS">
       <data-type>VARCHAR2(40)|0</data-type>
     </column>
-    <column id="112" parent="45" name="BIG_KEY_CLASS">
+    <column id="125" parent="47" name="BIG_KEY_CLASS">
       <data-type>VARCHAR2(40)|0</data-type>
     </column>
-    <column id="113" parent="45" name="KEYWORD">
+    <column id="126" parent="47" name="KEYWORD">
       <data-type>VARCHAR2(32)|0</data-type>
     </column>
-    <index id="114" parent="45" name="SYS_C0012305">
+    <index id="127" parent="47" name="SYS_C0012305">
       <name-surrogate>1</name-surrogate>
       <object-id>76810</object-id>
       <created-timestamp>2017-03-12.17:03:39</created-timestamp>
@@ -430,7 +501,7 @@
       <unique>1</unique>
       <tablespace-name>USERS</tablespace-name>
     </index>
-    <key id="115" parent="45" name="SYS_C0012305">
+    <key id="128" parent="47" name="SYS_C0012305">
       <name-surrogate>1</name-surrogate>
       <modified-timestamp>2017-03-12.17:03:39</modified-timestamp>
       <columns>ID</columns>
@@ -438,26 +509,26 @@
       <underlying-index>SYS_C0012305</underlying-index>
       <primary>1</primary>
     </key>
-    <column id="116" parent="46" name="ID">
+    <column id="129" parent="48" name="ID">
       <mandatory>1</mandatory>
       <data-type>VARCHAR2(32)|0</data-type>
     </column>
-    <column id="117" parent="46" name="SEARCH_TYPE">
+    <column id="130" parent="48" name="SEARCH_TYPE">
       <data-type>NUMBER(6)|0</data-type>
     </column>
-    <column id="118" parent="46" name="SEARCH_CONTENT">
+    <column id="131" parent="48" name="SEARCH_CONTENT">
       <data-type>VARCHAR2(1000)|0</data-type>
     </column>
-    <column id="119" parent="46" name="USER_ID">
+    <column id="132" parent="48" name="USER_ID">
       <data-type>VARCHAR2(32)|0</data-type>
     </column>
-    <column id="120" parent="46" name="SEARCH_TIME">
+    <column id="133" parent="48" name="SEARCH_TIME">
       <data-type>TIMESTAMP(6)|0</data-type>
     </column>
-    <column id="121" parent="46" name="SEARCH_NUMBER">
+    <column id="134" parent="48" name="SEARCH_NUMBER">
       <data-type>NUMBER(6)|0</data-type>
     </column>
-    <index id="122" parent="46" name="SYS_C0012377">
+    <index id="135" parent="48" name="SYS_C0012377">
       <name-surrogate>1</name-surrogate>
       <object-id>78085</object-id>
       <created-timestamp>2017-04-13.16:56:39</created-timestamp>
@@ -467,7 +538,7 @@
       <unique>1</unique>
       <tablespace-name>USERS</tablespace-name>
     </index>
-    <key id="123" parent="46" name="SYS_C0012377">
+    <key id="136" parent="48" name="SYS_C0012377">
       <name-surrogate>1</name-surrogate>
       <modified-timestamp>2017-04-13.16:56:39</modified-timestamp>
       <columns>ID</columns>
@@ -475,75 +546,75 @@
       <underlying-index>SYS_C0012377</underlying-index>
       <primary>1</primary>
     </key>
-    <column id="124" parent="47" name="ID">
+    <column id="137" parent="49" name="ID">
       <mandatory>1</mandatory>
       <data-type>VARCHAR2(32)|0</data-type>
     </column>
-    <column id="125" parent="47" name="USER_ID">
+    <column id="138" parent="49" name="USER_ID">
       <data-type>VARCHAR2(32)|0</data-type>
     </column>
-    <column id="126" parent="47" name="STATUS">
-      <data-type>NUMBER(6)|0</data-type>
+    <column id="139" parent="49" name="ORDER_ID_LIST">
+      <data-type>CLOB|0</data-type>
     </column>
-    <index id="127" parent="47" name="SYS_C0012373">
+    <index id="140" parent="49" name="SYS_C0012381">
       <name-surrogate>1</name-surrogate>
-      <object-id>78078</object-id>
-      <created-timestamp>2017-04-12.10:22:15</created-timestamp>
-      <modified-timestamp>2017-04-12.10:22:15</modified-timestamp>
+      <object-id>78247</object-id>
+      <created-timestamp>2017-04-18.00:07:14</created-timestamp>
+      <modified-timestamp>2017-04-18.00:07:14</modified-timestamp>
       <columns>ID</columns>
       <desc-columns></desc-columns>
       <unique>1</unique>
       <tablespace-name>USERS</tablespace-name>
     </index>
-    <key id="128" parent="47" name="SYS_C0012373">
+    <key id="141" parent="49" name="SYS_C0012381">
       <name-surrogate>1</name-surrogate>
-      <modified-timestamp>2017-04-12.10:22:15</modified-timestamp>
+      <modified-timestamp>2017-04-18.00:07:14</modified-timestamp>
       <columns>ID</columns>
       <initially-deferred>1</initially-deferred>
-      <underlying-index>SYS_C0012373</underlying-index>
+      <underlying-index>SYS_C0012381</underlying-index>
       <primary>1</primary>
     </key>
-    <column id="129" parent="48" name="ID">
+    <column id="142" parent="50" name="ID">
       <mandatory>1</mandatory>
       <data-type>VARCHAR2(32)|0</data-type>
     </column>
-    <column id="130" parent="48" name="USER_NAME">
+    <column id="143" parent="50" name="USER_NAME">
       <data-type>VARCHAR2(200)|0</data-type>
     </column>
-    <column id="131" parent="48" name="PASSWORD">
+    <column id="144" parent="50" name="PASSWORD">
       <data-type>VARCHAR2(1000)|0</data-type>
     </column>
-    <column id="132" parent="48" name="NICK_NAME">
+    <column id="145" parent="50" name="NICK_NAME">
       <data-type>VARCHAR2(200)|0</data-type>
     </column>
-    <column id="133" parent="48" name="SALT">
+    <column id="146" parent="50" name="SALT">
       <data-type>VARCHAR2(100)|0</data-type>
     </column>
-    <column id="134" parent="48" name="STATUS">
+    <column id="147" parent="50" name="STATUS">
       <data-type>NUMBER(6)|0</data-type>
     </column>
-    <column id="135" parent="48" name="SEX">
+    <column id="148" parent="50" name="SEX">
       <data-type>VARCHAR2(100)|0</data-type>
     </column>
-    <column id="136" parent="48" name="AGE">
+    <column id="149" parent="50" name="AGE">
       <data-type>NUMBER(6)|0</data-type>
     </column>
-    <column id="137" parent="48" name="CREATE_TIME">
+    <column id="150" parent="50" name="CREATE_TIME">
       <data-type>TIMESTAMP(6)|0</data-type>
     </column>
-    <column id="138" parent="48" name="REMARK">
+    <column id="151" parent="50" name="REMARK">
       <data-type>VARCHAR2(300)|0</data-type>
     </column>
-    <column id="139" parent="48" name="EMAIL">
+    <column id="152" parent="50" name="EMAIL">
       <data-type>VARCHAR2(400)|0</data-type>
     </column>
-    <column id="140" parent="48" name="PHONE">
+    <column id="153" parent="50" name="PHONE">
       <data-type>VARCHAR2(300)|0</data-type>
     </column>
-    <column id="141" parent="48" name="QQNUMBER">
+    <column id="154" parent="50" name="QQNUMBER">
       <data-type>VARCHAR2(400)|0</data-type>
     </column>
-    <index id="142" parent="48" name="SYS_C0012359">
+    <index id="155" parent="50" name="SYS_C0012359">
       <name-surrogate>1</name-surrogate>
       <object-id>77819</object-id>
       <created-timestamp>2017-04-06.17:34:17</created-timestamp>
@@ -553,7 +624,7 @@
       <unique>1</unique>
       <tablespace-name>USERS</tablespace-name>
     </index>
-    <key id="143" parent="48" name="SYS_C0012359">
+    <key id="156" parent="50" name="SYS_C0012359">
       <name-surrogate>1</name-surrogate>
       <modified-timestamp>2017-04-06.17:34:17</modified-timestamp>
       <columns>ID</columns>

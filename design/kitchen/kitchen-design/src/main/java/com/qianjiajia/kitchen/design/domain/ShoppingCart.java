@@ -5,7 +5,7 @@ public class ShoppingCart {
 
     private String userId;
 
-    private Integer status;
+    private String orderIdList;
 
     public String getId() {
         return id;
@@ -23,11 +23,11 @@ public class ShoppingCart {
         this.userId = userId == null ? null : userId.trim();
     }
 
-    public Integer getStatus() {
-        return status;
+    public String getOrderIdList() {
+        return orderIdList;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setOrderIdList(String orderIdList) {
+        this.orderIdList = orderIdList == null ? null : orderIdList.trim();
     }
 }

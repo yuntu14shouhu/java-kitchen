@@ -40,4 +40,9 @@ public interface OrderDetailsModifyMapper {
     OrderDetailsModify getById(String orderId);
 
     String getProductId(String s);
+
+    void save(OrderDetailsModify orderDetailsModify);
+
+
+    OrderDetailsModify queryStatusZero();
 }

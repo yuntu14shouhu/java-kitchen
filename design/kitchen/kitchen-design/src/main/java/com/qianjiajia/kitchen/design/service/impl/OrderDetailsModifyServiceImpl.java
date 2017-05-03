@@ -70,7 +70,10 @@ public class OrderDetailsModifyServiceImpl implements IOrderDetailsModifyService
         }
         BigDecimal bigDecimal = new BigDecimal(0);//总和
          //单价*个数
+        Map<String,Integer> numMap = new HashMap();
         for (String id : productIds) {
+//            numMap.put(id,);
+
             product = productMapper.getById(id);
             List productList = new ArrayList();
             productList.add(product);
@@ -100,6 +103,31 @@ public class OrderDetailsModifyServiceImpl implements IOrderDetailsModifyService
 
 //        String[] idArr = productIdStr.split(",");
         orderDetailsModifyMapper.insert(orderDetailsModify);
+    }
+
+    @Override
+    public void saveOrder(Map<String, Integer> productIdAndNumber, String addressId) {
+
+        orderDetailsModify = new OrderDetailsModify();
+
+        orderDetailsModify.setId(UUIDUtil.getUUID());
+        orderDetailsModify.setOrderCreateDate(new Date());
+        orderDetailsModify.setOrderRef(UUIDUtil.getUUID());
+        orderDetailsModify.setOrderCarriage(new BigDecimal(0.00));
+        orderDetailsModify.setOrderStatus("1");
+        orderDetailsModify.setUserId(UserLoginUtils.currentUser.getId());
+
+
+        address = addressMapper.getById(addressId);
+
+        orderDetailsModify.setOrderConsigneeName(address.getConsigneeName());
+        orderDetailsModify.setOrderConsigneePhone(address.getConsigneePhone());
+        orderDetailsModify.setOrderConsigneeAddress(address.getConsigneeAddress());
+
+        orderDetailsModify.setOrderProductNumber(1);
+
+
+
     }
 
     @Override
@@ -236,4 +264,24 @@ public class OrderDetailsModifyServiceImpl implements IOrderDetailsModifyService
         }
         return resultMap;
     }
+
+    @Transactional
+    @Override
+    public OrderDetailsModify saveStatusZero(String productId) {
+        orderDetailsModify = new OrderDetailsModify();
+        orderDetailsModify.setId(UUIDUtil.getUUID());
+        orderDetailsModify.setOrderProductNumber(1);
+        orderDetailsModify.setOrderProductId(productId);
+        orderDetailsModify.setOrderStatus("0");
+        orderDetailsModifyMapper.save(orderDetailsModify);
+        return orderDetailsModify;
+    }
+
+    @Override
+    public OrderDetailsModify queryStatusZero() {
+
+        return orderDetailsModifyMapper.queryStatusZero();
+    }
+
+
 }
