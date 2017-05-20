@@ -212,7 +212,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qianjiajia.kitchen.design.domain.ShoppingCart">
     update SHOPPING_CART
-    set USER_ID = #{userId,jdbcType=VARCHAR}
+    set USER_ID = #{userId,jdbcType=VARCHAR},
+      ORDER_ID_LIST = #{orderIdList,jdbcType=CLOB}
     where ID = #{id,jdbcType=VARCHAR}
   </update>
 

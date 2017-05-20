@@ -39,7 +39,7 @@
         <!--<table tableName="PRODUCT" domainObjectName="Product"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>-->
         <!--<table tableName="SHOPPINGCART" domainObjectName="ShoppingCart"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>-->
         <!--<table tableName="ADDRESS" domainObjectName="AddressDetails"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>-->
-        <table tableName="ORDER_ITEM" domainObjectName="OrderItem"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>
+        <table tableName="ORDER_MAP" domainObjectName="OrderMap"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>
 
         <!--<table tableName="PRO_AND_SHOP" domainObjectName="ProAndShop"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>-->
         <!--<table tableName="CN_AND_EN" domainObjectName="CnAndEn"  enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"></table>-->

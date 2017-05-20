@@ -1,7 +1,11 @@
 package com.qianjiajia.kitchen.design.service;
 
+import com.qianjiajia.kitchen.common.result.MessageResult;
 import com.qianjiajia.kitchen.design.domain.OrderDetailsModify;
 import com.qianjiajia.kitchen.design.domain.ShoppingCart;
+import com.qianjiajia.kitchen.design.query.ShopQueryView;
+
+import java.util.List;
 
 /**
  * @author qianjiajia
@@ -48,4 +52,18 @@ public interface IShoppingCartService {
 
     String queryId(ShoppingCart shoppingCart);
 
+
+
+
+    void updateNumber(String orderId, String productId);
+
+    void updateStatus(String orderId);
+
+    MessageResult deleteProductNow(String orderId, String productId);
+
+    MessageResult updateNumberPlus(String orderId, String productId);
+
+    MessageResult updateNumberMinus(String orderId, String productId);
+
+    List<ShopQueryView> queryShop();
 }

@@ -271,6 +271,7 @@ public class OrderDetailsModifyServiceImpl implements IOrderDetailsModifyService
         orderDetailsModify = new OrderDetailsModify();
         orderDetailsModify.setId(UUIDUtil.getUUID());
         orderDetailsModify.setOrderProductNumber(1);
+        orderDetailsModify.setUserId(UserLoginUtils.currentUser.getId());
         orderDetailsModify.setOrderProductId(productId);
         orderDetailsModify.setOrderStatus("0");
         orderDetailsModifyMapper.save(orderDetailsModify);

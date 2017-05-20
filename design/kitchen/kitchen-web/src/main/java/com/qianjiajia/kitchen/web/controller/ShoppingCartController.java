@@ -1,6 +1,7 @@
 package com.qianjiajia.kitchen.web.controller;
 
 import com.qianjiajia.kitchen.common.result.MessageResult;
+import com.qianjiajia.kitchen.design.query.ShopQueryView;
 import com.qianjiajia.kitchen.design.service.IShoppingCartService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -11,6 +12,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 /**
  * @author qianjiajia
@@ -28,13 +31,47 @@ public class ShoppingCartController {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
-    @ApiOperation(value = "删除购物车里面的某一种类的商品")
+    @ApiOperation(value = "购物车中的商品数量的更新--")
     @ResponseBody
-    @RequestMapping(value = "/deleteByProductId",method = RequestMethod.GET)
-    public MessageResult deleteByProductId(String productId){
-        shoppingCartService.deleteProduct(productId);
+    @RequestMapping(value = "/updateNumberPlus",method = RequestMethod.GET)
+    public MessageResult updateNumberPlus(String orderId,String productId){
+        shoppingCartService.updateNumberPlus(orderId,productId);
         return MessageResult.getSuccessInstance();
     }
+
+    @ApiOperation(value = "购物车中的商品数量的更新--/-1")
+    @ResponseBody
+    @RequestMapping(value = "/updateNumberMinus",method = RequestMethod.GET)
+    public MessageResult updateNumberMinus(String orderId,String productId){
+        shoppingCartService.updateNumberMinus(orderId,productId);
+        return MessageResult.getSuccessInstance();
+    }
+
+    @ApiOperation(value = "当用户选择去下单的时候，将购物车中的订单状态由0修改为1")
+    @ResponseBody
+    @RequestMapping(value = "/updateStatus",method = RequestMethod.GET)
+    public MessageResult updateStatus(String orderId){
+        shoppingCartService.updateStatus(orderId);
+        return MessageResult.getSuccessInstance();
+    }
+
+
+    @ApiOperation(value = "删除购物车里面的某一种类商品")
+    @ResponseBody
+    @RequestMapping(value = "/deleteByProductId",method = RequestMethod.GET)
+    public MessageResult deleteByProductId(String orderId,String productId){
+        shoppingCartService.deleteProductNow(orderId,productId);
+        return MessageResult.getSuccessInstance();
+    }
+
+    @ApiOperation(value = "购物车查询")
+    @ResponseBody
+    @RequestMapping(value = "/queryShop",method = RequestMethod.GET)
+    public MessageResult queryShop(){
+        List<ShopQueryView> shopQueryViewList = shoppingCartService.queryShop();
+        return MessageResult.getSuccessInstance(shopQueryViewList);
+    }
+
 
     @ApiOperation(value = "当购物车不存在某一商品的时候-把商品id一并添加到购物车")
     @ResponseBody

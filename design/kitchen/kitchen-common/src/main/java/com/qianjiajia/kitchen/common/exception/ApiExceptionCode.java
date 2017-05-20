@@ -20,12 +20,22 @@ public enum ApiExceptionCode {
     USER_NOT_EXIST("1006"),
     RUNTIME_EXCEPTION("9998"),
     UNKNOWN_EXCEPTION("9999"),
-    SUCCESS("200");
+    SUCCESS("200"),
+
+    PARAM_EXCEPTION("501");
 
     private final String code;
+    private String message;
     ApiExceptionCode(String code) {
         this.code = code;
     }
+
+    ApiExceptionCode(String code,String message){
+        this.code = code;
+        this.message = message;
+    }
+
+
 
     public static ApiExceptionCode get(ApiExceptionCode code){
         Preconditions.checkArgument(code != null,"API 错误码不能为空!");
